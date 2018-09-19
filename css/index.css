@@ -47,3 +47,127 @@ table {
 
 
 /* ======================= css reset ========================== */
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+  }
+
+  
+  a{
+	  text-decoration: none;
+	  color: #D44D5C;
+  }
+
+ 
+
+  main{
+	  margin: 0 90px;
+  }
+
+  .bg{
+	background-image: url("../imgs/bg.png");
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+  }
+
+  /* header part */
+
+	header{
+	overflow: hidden;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 90px;
+	z-index: 9999;
+	}
+
+	.headercontainer{
+		padding: 0 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90px;
+	}
+
+	header>.headercontainer>.first,
+	header>.headercontainer>.second,
+	header>.headercontainer>.third{
+		flex: auto;
+		width: 33%;
+	}
+
+	header>.headercontainer>.second{
+		text-align: center;
+	}
+
+	header>.headercontainer>.third{
+		text-align: right;
+	}
+
+
+	header>.headercontainer>.second>a {
+		display: inline-block;
+		width: 20%;
+		padding:15px 0px;
+		margin: 0 6%;
+	}
+
+	header>.headercontainer>.second>a:hover {
+		border-bottom: 5px #D44D5C solid;
+		opacity: 0.8;
+	}
+
+	header>.headercontainer>.third>a img{
+		height: 20px;
+		margin: 0 1%;
+	}
+
+	header>.headercontainer>.third>a:hover{
+		opacity: 0.8;
+	}
+
+
+/* footer part */
+
+	footer{
+		overflow: hidden;
+		background-color: #fff;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 90px;
+		z-index: 9999;
+	}
+
+	.footercontainer{
+		padding: 0 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90px;
+	}
+
+	footer>.footercontainer>.first,
+	footer>.footercontainer>.second,
+	footer>.footercontainer>.third{
+		flex: auto;
+		width: 33%;
+	}
+
+	footer>.footercontainer>.first{
+		color: #D44D5C;
+		text-align: left;
+	}
+
+	footer>.footercontainer>.third{
+		text-align: right;
+	}
+
+	footer>.footercontainer>.third>a:hover{
+		opacity: 0.8;
+	}
+
