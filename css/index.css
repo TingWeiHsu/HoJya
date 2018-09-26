@@ -1,238 +1,215 @@
-/* ======================= css reset ========================== */
+/* ======== 首頁 ======= */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-
-/* ======================= css reset ========================== */
-
-* {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-			box-sizing: border-box;
-  }
-
-  
-  a{
-	  text-decoration: none;
-	  color: #D44D5C;
-  }
-
- 
-
-  /* main{
-	  margin: 90px;
-  } */
-
-  /* .bg{
-	background-image: url("../imgs/bg.png");
-	width: 100%;
-	height: 100vh;
-	overflow: hidden;
-  } */
-
-
-  /* header part */
-
-	header{
-	overflow: hidden;
-	background-color: #fff;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 90px;
-	z-index: 9999;
-	}
-
-	.headercontainer{
-		padding: 0 90px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 90px;
-	}
-
-	header>.headercontainer>.first,
-	header>.headercontainer>.second,
-	header>.headercontainer>.third{
-		flex: auto;
-		width: 33%;
-	}
-
-	header>.headercontainer>.second{
-		text-align: center;
-	}
-
-	header>.headercontainer>.third{
-		text-align: right;
-	}
-
-
-	header>.headercontainer>.second>a {
-		display: inline-block;
-		width: 20%;
-		padding:15px 0px;
-		margin: 0 6%;
-	}
-
-	header>.headercontainer>.second>a:hover {
-		border-bottom: 5px #D44D5C solid;
-		opacity: 0.8;
-	}
-
-	header>.headercontainer>.third>a img{
-		height: 20px;
-		margin: 0 1%;
-	}
-
-	header>.headercontainer>.third>a:hover{
-		opacity: 0.8;
-	}
-
-
-/* footer part */
-
-	footer{
-		overflow: hidden;
-		background-color: #fff;
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-		height: 90px;
-		z-index: 9999;
-	}
-
-	.footercontainer{
-		padding: 0 90px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 90px;
-	}
-
-	footer>.footercontainer>.first,
-	footer>.footercontainer>.second,
-	footer>.footercontainer>.third{
-		flex: auto;
-		width: 33%;
-	}
-
-	footer>.footercontainer>.first{
+	.pageTitle{
+		left: 50%;
+		font-size: 70px;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 250;
+		font-family: "Rounded Mplus 1c";
 		color: #D44D5C;
-		text-align: left;
+		width: 600px;
+		text-align: center;
+		line-height: 100px;
 	}
 
-	footer>.footercontainer>.third{
-		text-align: right;
-	}
-
-	footer>.footercontainer>.third>a:hover{
-		opacity: 0.8;
-	}
-
-
-	/* testing part */
-
-	html,body{
-		height:100%;
-	}
-	#wrap{
-		overflow: hidden;
-		width:100%;
-	}
-	#main{
-		height:2944px;
-		top:0;
-		position: relative;
-		margin: 0px 5%;
-	}
-	.page{
-		width:100%;
-		margin:0;
-	}
-	#page1{
-		background-image: url("../imgs/bg.png");
-		/* width: 100%;
-		height: 100vh;
-		overflow: hidden;
-		position: absolute; */
-	}
-	#page2{
-		background-image: url("../imgs/bg.png");
-		
-	}
-	#page3{
-		background-image: url("../imgs/bg.png");
-		
-	}
-	#page4{
-		background-image: url("../imgs/bg.png");
-		
-	}
-
-	.productContain{
-		position: relative;
-		width: 100%;
-		height: 100vh;
-	}
-
-	.bigBack{
-		width: auto;
-		left: 60%;
+	.smallDescription{
+		left: 50%;
+		font-size: 21px;
 		position: absolute;
-		top: 50%; 
-		height: 75vh;
+		top: calc(55% + 70px);
 		transform: translate(-50%,-50%);
-		opacity: 0.4;
-		z-index: 100;
-	}
-	.foodPhoto{
-		left: 60%;
-		position: absolute;
-		top: 60%;
-		transform: translate(-50%,-50%);
-		height: 35vh;
 		z-index: 200;
+		font-family: "Rounded Mplus 1c";
+		color: #0B0014;
 	}
+
+	/* 首頁第二塊字用的 */
+	.lefter{
+		left:40%;
+	}
+	
+	/* 首頁第三塊說明往上調用的 */
+	.upper{
+		top: calc(50% + 70px);
+	}
+
+	#picBg{
+		display: block;
+		position: absolute;
+		top: 30px;
+		height: 100%;
+		width: calc(100% - 180px);
+	}
+
+	.mobilePic{
+		display: none;
+	}
+
+	#preparing{
+		position: absolute;
+		top: 90px;
+		left: 60%;
+		height: 80%;
+	}
+
+	#cooking{
+		position: absolute;
+		top: 90px;
+		left: 10%;
+		height: 80%;
+	}
+
+
+	/* ======== 之後要補做動態的圓點點設定 ======= */
+
+
+	.circle {
+		left: 23%;
+		font-size: 36px;
+		font-weight: 300;
+		position: absolute;
+		top: 58%;
+		transform: translate(-50%,-50%);
+		z-index: 200;
+		font-family: "Rounded Mplus 1c";
+		color: #D44D5C;
+		padding: 15px;
+		border: 2px solid #D44D5C;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+
+	.center{
+		left: 50%;
+		top: calc(60% + 70px);
+	}
+
+
+	/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
+
+	@media (max-width: 1000px) {
+		
+		#picBg{
+			display: none;
+		}
+
+		.mobilePic{
+			display: block;	
+		}
+
+		.mobilePicUp{
+			position: absolute;
+			top: 50px;
+			width: calc(100% - 180px);
+		}
+		
+		.mobilePicDown{
+			position: absolute;
+			bottom:  50px;
+			width: calc(100% - 180px);
+		}
+
+		#preparing{
+			top: 90px;
+			left: 40%;
+			height: 75%;
+		}
+	
+		#cooking{
+			top: 90px;
+			left: 5%;
+			height: 75%;
+		}
+	}
+
+	@media (max-width: 860px) {
+
+		.mobilePicUp{
+			width: calc(100% - 100px);
+		}
+
+		.mobilePicDown{
+			width: calc(100% - 100px);
+		}
+	}
+
+	@media (max-width: 770px) {
+		#preparing{
+			top: 20%;
+			left: auto;
+			width: calc(100% - 20px);
+		}
+	
+		#cooking{
+			top: 20%;
+			width: calc(100% - 20px);
+		}
+	}
+
+
+	@media (max-width: 550px) {
+
+		.mobilePicUp{
+			top: 20px;
+			width: calc(100% - 40px);
+		}
+
+		.mobilePicDown{
+			bottom:  20px;
+			width: calc(100% - 40px);
+		}
+	}
+
+
+	/* ======== 主要是調整mobile時字體 ======== */
+
+	@media (max-width: 770px) {
+		
+		.pageTitle{
+			left: 50%;
+			font-size: 30px;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 250;
+			width: 260px;
+			text-align: center;
+			line-height: 35px;
+		}
+		
+	
+		.smallDescription{
+			left: 50%;
+			font-size: 14px;
+			position: absolute;
+			top: calc(50% + 60px);
+			transform: translate(-50%,-50%);
+			z-index: 200;
+			width: 260px;
+			text-align: center;
+		}
+
+
+		/* 首頁第三塊說明往上調用的 */
+		.upper{
+			top: calc(50% + 60px);
+		}
+
+		.mobileTextUp{
+			top: 20%;
+		}
+
+		.mobileSmallTextUp{
+			top: calc(20% + 60px);
+		}
+
+		.upper{
+			top: calc(20% + 40px);
+		}
+
+	}
+
+

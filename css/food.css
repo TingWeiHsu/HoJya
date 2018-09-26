@@ -1,0 +1,56 @@
+.bigBack{
+    width: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%; 
+    height: 80vh;
+    transform: translate(-50%,-50%);
+    opacity: 0.3;
+    z-index: 100;
+}
+.foodPhoto{
+    left: 50%;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    z-index: 150;
+}
+
+.productName{
+    left: 23%;
+    font-size: 36px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+}
+
+.productSubName{
+    left: 23%;
+    font-size: 21px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #0B0014;
+}
+
+.circle {
+    left: 23%;
+    font-size: 36px;
+    font-weight: 300;
+    position: absolute;
+    top: 58%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    padding: 15px;
+    border: 2px solid #D44D5C;
+    border-radius: 50%;
+    cursor: pointer;
+}

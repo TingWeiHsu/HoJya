@@ -1,0 +1,358 @@
+/* ======================= css reset ========================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* ======================= css reset ========================== */
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+  }
+
+  
+  a{
+	  text-decoration: none;
+	  color: #D44D5C;
+  }
+
+ 
+
+
+
+  /* header part */
+
+	header{
+	overflow: hidden;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 90px;
+	z-index: 9995;
+	}
+
+	.headercontainer{
+		padding: 0 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90px;
+	}
+
+	header>.headercontainer>.first,
+	header>.headercontainer>.second,
+	header>.headercontainer>.third{
+		flex: auto;
+		width: 33%;
+	}
+
+	header>.headercontainer>.second{
+		text-align: center;
+	}
+
+	header>.headercontainer>.third{
+		text-align: right;
+	}
+
+
+	header>.headercontainer>.second>a {
+		padding:24px 1%;
+		margin: 0 6%;
+	}
+
+	header>.headercontainer>.second>a:hover {
+		border-bottom: 5px #D44D5C solid;
+		opacity: 0.8;
+	}
+
+	header>.headercontainer>.third>a img{
+		height: 20px;
+		margin: 0 1%;
+	}
+
+	header>.headercontainer>.third>a:hover{
+		opacity: 0.8;
+	}
+
+
+/* footer part */
+
+	footer{
+		overflow: hidden;
+		background-color:#fff;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 90px;
+		z-index: 9995;
+	}
+
+	.footercontainer{
+		padding: 0 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90px;
+	}
+
+	footer>.footercontainer>.first,
+	footer>.footercontainer>.second,
+	footer>.footercontainer>.third{
+		flex: auto;
+		width: 33%;
+	}
+
+	footer>.footercontainer>.first{
+		color: #D44D5C;
+		text-align: left;
+	}
+
+	footer>.footercontainer>.third{
+		text-align: right;
+	}
+
+	footer>.footercontainer>.third>a:hover{
+		opacity: 0.8;
+	}
+
+	footer>.footercontainer>.second>img{
+		height: 20px;
+		margin-left: 50%;
+	}
+
+
+	/* ======= left and right nav bar testing ======= */
+
+	.leftBox{
+			position: fixed;
+			width: 130px;
+			height: 90px;
+			background-color: #D44D5C;
+			top: 50%;
+			left: 0%;
+			transform: translate(0%,-50%);
+			z-index: 9998;
+	}
+	
+	.leftBox>a img{
+			margin-top: 25px;
+			margin-left: 10px;
+	}
+
+	.rightBox{
+		position: fixed;
+		width: 130px;
+		height: 90px;
+		background-color: #D44D5C;
+		top: 50%;
+		right: 0%;
+		transform: translate(0%,-50%);
+		z-index: 9999;
+	}
+
+	.container {
+		display: inline-block;
+		cursor: pointer;
+		margin-top: 25px;
+		margin-left: 47px;
+	}
+	
+	.bar1, .bar2, .bar3 {
+		width: 35px;
+		height: 3px;
+		background-color: #fff;
+		margin: 7px 0;
+		transition: 0.4s;
+		border-radius: 20%;
+	}
+	
+	.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+	
+	.change .bar2 {opacity: 0;}
+	
+	.change .bar3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		transform: rotate(45deg) translate(-8px, -8px);
+	}
+	
+
+/* gray background */
+
+#bg{
+    background-image: url("../imgs/bg.png");
+    background-repeat: repeat;
+    margin: 0 auto;
+    width: calc(100% - 180px);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #logoPic{
+      height: 45px;
+  }
+
+/* ======== 套件原生的東西 想改掉他 ======= */
+#fp-nav ul li .fp-tooltip {
+    color: #D44D5C;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 5px;
+    width: 5px;
+    border: 0;
+    background: #D44D5C;
+}
+
+
+/* ======= Header Footer RWD ======= */
+
+
+@media (max-width: 860px) {
+
+	#bg{
+		width: calc(100% - 100px);
+	  }
+
+	header{
+		height: 50px;
+		z-index: 9995;
+	}
+
+    .headercontainer{
+        display: none;
+	}
+	
+	footer{
+		height: 50px;
+		z-index: 9995;
+	}
+
+    .footercontainer{
+        display: none;
+    }
+
+    .leftBox{
+        top: 0px;
+        left:calc(50% - 65px);
+        transform: translate(0%,0%);
+    }
+
+    .rightBox{
+        top: auto;
+        bottom: 0px;
+		left:calc(50% - 65px);
+		transform: translate(0%,0%);
+	}
+
+
+}
+
+
+
+@media (max-width: 550px) {
+
+	#bg{
+		width: calc(100% - 40px);
+	  }
+
+	header{
+		height: 20px;
+		z-index: 9995;
+	}
+
+	footer{
+		height: 20px;
+		z-index: 9995;
+	}
+
+	.leftBox{
+		height: 50px;
+		width: 120px;
+        left:calc(50% - 60px);
+        transform: translate(0%,0%);
+	}
+	
+	#logoPic{
+		height: 40px;
+	}
+
+    .rightBox{
+		height: 50px;
+		width: 120px;
+        bottom: 0px;
+		left:calc(50% - 60px);
+	}
+
+	.leftBox>a img{
+		margin-top: 8px;
+		margin-left: 10px;
+	}
+
+	.bar1, .bar2, .bar3 {
+		width: 35px;
+		height: 2px;
+		background-color: #fff;
+		margin: 7px 0;
+		transition: 0.4s;
+		border-radius: 20%;
+	}
+
+	.container {
+		margin-top: 7px;
+		margin-left: 43px;
+	}
+
+	
+
+}
