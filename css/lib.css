@@ -19,6 +19,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: "Rounded Mplus 1c";
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -101,13 +102,13 @@ table {
 
 
 	header>.headercontainer>.second>a {
-		padding:24px 1%;
+		padding:24px 3%;
 		margin: 0 6%;
 	}
 
 	header>.headercontainer>.second>a:hover {
 		border-bottom: 5px #D44D5C solid;
-		opacity: 0.8;
+		opacity: 0.7;
 	}
 
 	header>.headercontainer>.third>a img{
@@ -116,7 +117,7 @@ table {
 	}
 
 	header>.headercontainer>.third>a:hover{
-		opacity: 0.8;
+		opacity: 0.7;
 	}
 
 
@@ -162,7 +163,7 @@ table {
 
 	footer>.footercontainer>.second>img{
 		height: 20px;
-		margin-left: 50%;
+		margin-left: calc(50% - 10px);
 	}
 
 
@@ -257,8 +258,15 @@ table {
 
 /* ======= Header Footer RWD ======= */
 
+@media (max-width: 1100px) {
 
-@media (max-width: 860px) {
+	header>.headercontainer>.second>a {
+		padding:24px 1%;
+		margin: 0 3%;
+	}
+}
+
+@media (max-width: 900px) {
 
 	#bg{
 		width: calc(100% - 100px);

@@ -15,18 +15,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
 
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/food.css" media="all" />
     
 </head>
-
 <body>
 
         <header>
                 <div class="headercontainer">
         
                     <div class="first">
-                        <a href="index.html"><img alt="HoJyaLogo" src="./imgs/hoJya.png" id="logoPic"></a>
+                        <!-- <a href="index.html"><img alt="HoJyaLogo" src="./imgs/hoJya.png" id="logoPic"></a> -->
                     </div>
                     <div class="second">
                         <a href="index.html">Home</a>
@@ -43,41 +42,72 @@
             </header>
 
 
+	<nav>
+		<div class="leftBox">
+			<a href="index.html"><img alt="HoJyaLogo" src="./imgs/lightlogo.svg" id="logoPic"></a>
+		</div>
+		<div class="rightBox">
+				<div class="container" onclick="clickFunction(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+				</div>
+		</div>
+    </nav>
+    
+    <div id="fullNav">
+        <div id="navMove">
+                <a href="index.html">Home</a>
+                <a href="food.html">Food</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+
     <div id="fullpage">
         <div class="section">
             <div id="bg">
-                <h2 class="productName">芝麻甜湯圓</h2>
-                <h3 class="productSubName">黒胡麻餡の白玉団子</h3>
-                    <img class="bigBack" src="imgs/05.png">
-                    <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
-                    <div class="circle">＋</div>
-            </div>
-        </div>
-        <div class="section">
-            <div id="bg">
-                    <h2 class="productName">銀耳四寶湯</h2>
-                    <h3 class="productSubName">白きくらげのスープ</h3>
-                	<img class="bigBack" src="imgs/01.png">
-                    <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
-                    <div class="circle">＋</div>
-            </div>
-        </div>
-        <div class="section">
-            <div id="bg">
-                    <h2 class="productName">牛肉麵</h2>
-                    <h3 class="productSubName">牛肉の煮込み麺</h3>
-                    <img class="bigBack" src="imgs/03.png">
+                    <h2 class="productName fadeMoveWord">牛肉麵</h2>
+                    <h3 class="productSubName fadeMoveWord">牛肉の煮込み麺</h3>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+
+                    <img class="bigBack" src="imgs/chop.svg">
                     <img class="foodPhoto" src="./imgs/beefnoodles.png" alt="beefnoodles">
-                    <div class="circle">＋</div>
+                    
             </div>
         </div>
         <div class="section">
             <div id="bg">
-                    <h2 class="productName">小籠包</h2>
-                    <h3 class="productSubName">しょうろんぽう</h3>
-                    <img class="bigBack" src="imgs/05.png">
+                    <h2 class="productName fadeMoveWord">銀耳四寶湯</h2>
+                    <h3 class="productSubName fadeMoveWord">白きくらげのスープ</h3>
+                    <div class="circle fadeMoveWord">＋</div>
+
+                	<img class="bigBack" src="imgs/spoon.svg">
+                    <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
+                    
+            </div>
+        </div>
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">芝麻甜湯圓</h2>
+                    <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
+                    <div class="circle fadeMoveWord">＋</div>
+
+                        <img class="bigBack" src="imgs/spoon.svg">
+                        <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
+                        
+            </div>
+        </div>
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">小籠包</h2>
+                    <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
+                    <div class="circle fadeMoveWord">＋</div>
+
+                    <img class="bigBack" src="imgs/chop.svg">
                     <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
-                    <div class="circle">＋</div>
+                    
             </div>
         </div>
     </div>
@@ -91,7 +121,7 @@
                     <p>© 2018 HoJya Taiwan ltd </p>
                 </div>
                 <div class="second">
-                    <a href="#"><img></a>
+                    <img src="./imgs/arrow.svg" alt="scrolldown">
                 </div>
                 <div class="third">				
                     <a href="contact.html">Contact</a>

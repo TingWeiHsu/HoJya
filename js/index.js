@@ -66,6 +66,24 @@ $(document).ready(function() {
         //destory(type)销毁fullpage,type可以不写或者使用all
         //reBuild()重新更新页面和尺寸，用于ajax请求改变页面结构后重建效果
         //lazyLoading
+
+        afterLoad: function(anchorLink, index){
+            if(index>= 1){
+                // $("#fadeWord").css({opacity:"0"});
+                $(".fadeWord").animate({marginTop:"0%",opacity:"1"},300);
+                $(".fadeMoveWord").animate({marginTop:"0%",opacity:"1"},300);
+                
+            }
+        },
+
+        onLeave: function(index,nextIndex,direction){
+            if(nextIndex>= 1){
+                $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
+                $(".fadeMoveWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
+            }
+        }
+        
+        
     });
 });
 
@@ -78,7 +96,27 @@ function clickFunction(x) {
 
     if(x.classList.contains("change")){
         console.log("hi");
+        $("#fullNav").animate({height:"100%",opacity:1},300);
+        $("#navMove").animate({marginTop:"0%"},300);
     } else {
         console.log("no");
+        $("#fullNav").animate({height:"0%",opacity:0},300);
+        $("#navMove").animate({marginTop:"50%"},300);
+    }
+}
+
+
+function enlargeFunction(x) {
+    x.classList.toggle("clicked");
+
+
+
+    if(x.classList.contains("clicked")){
+        console.log("hi");
+       
+    } else {
+        console.log("no");
+       
+
     }
 }
