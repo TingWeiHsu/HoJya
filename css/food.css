@@ -1,0 +1,220 @@
+.bigBack{
+    width: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%; 
+    height: 80vh;
+    transform: translate(-50%,-50%);
+    opacity: 0.3;
+    z-index: 100;
+}
+.foodPhoto{
+    left: 50%;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    z-index: 150;
+}
+
+.productName{
+    left: 23%;
+    font-size: 36px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+}
+
+.productSubName{
+    left: 23%;
+    font-size: 21px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #0B0014;
+}
+
+.circle {
+    left: 23%;
+    font-size: 36px;
+    font-weight: 300;
+    position: absolute;
+    top: 58%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    padding: 15px;
+    border: 2px solid #D44D5C;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+
+    .productName{
+        left: 50%;
+        top: 20%;
+    }
+
+    .productSubName{
+        left: 50%;
+        top: calc(20% + 50px);
+    }
+
+    .bigBack{
+        top: 55%; 
+    }
+    .foodPhoto{
+        top: 60%;
+        height: 45vh;
+    }
+
+    .circle{
+        left: 50%;
+        top: calc(20% + 125px);
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .productName{
+        font-size: 30px;
+    }
+
+    .productSubName{
+        font-size: 14px;
+        top: calc(20% + 35px);
+    }
+
+    .bigBack{
+        top: 55%;
+        height: 65vh;
+    }
+
+    .foodPhoto{
+        top: 65%;
+        height: 30vh;
+    }
+
+    .circle{
+        padding: 8px;
+    }
+}
+
+
+/* 動態實驗中 */
+
+.fadeMoveWord{
+    opacity: 0;
+    margin-top:+5%;
+}
+
+
+.marginMoveTop {
+    margin-top: -15%;
+}
+
+
+.clicked{
+	top: 100px;
+	left: calc(100% - 100px);
+}
+
+@media (max-width: 767px) {
+    .clicked{
+        top: 40px;
+        left: calc(100% - 40px);
+    }
+}
+
+
+/* 我是背景遮罩 */
+
+.magicCover{
+    position: fixed;
+    opacity: 0;
+    z-index: 10;
+    background-image: url(../imgs/bg.png);
+    background-repeat: repeat;
+    margin: 0 auto;
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    padding: 0px 180px;
+    margin-left: -90px;
+}
+
+/* 我是料理的資料 */
+
+.recipeCover{
+        margin-left: 0%;
+        width: 250px;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.6);
+        top: calc(30% + 50px);
+        margin-top:35%;
+        left: 23%;
+        transform: translate(-50%,0%);
+        border: 2px solid #fff;
+        border-radius: 10px;
+        z-index: 900;
+        opacity: 0;
+        line-height: 20px;
+}
+
+@media (max-width: 1023px) {
+    .recipeCover{
+        width: 500px;
+        top: calc(10% + 100px);
+        background-color: rgba(255, 255, 255, 0.8);
+        left: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    .recipeCover{
+        width: 300px;
+        left: 50%;
+        background-color: rgba(255, 255, 255, 0.9);
+        top: calc(10% + 150px);
+    }
+}
+
+@media (max-width: 321px) {
+    .recipeCover{
+        top: calc(10% + 80px);
+    }
+}
+
+.recipeCover>h3{
+    text-align: center;
+    font-size: 16px;
+    margin: 15px 0px 15px 0px;
+    color: #666666;
+}
+
+.recipeCover>h3:last-child{
+    margin: 20px 0px 15px 0px;
+}
+
+.recipeCover>p{
+    color: #999999;
+    margin: 5px 10px 10px 10px;
+    font-size: 14px;
+}
+
+.recipeCover>p:last-child{
+    margin: 5px 10px 20px 10px;
+}
+
+
+
+

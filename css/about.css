@@ -1,0 +1,171 @@
+/* ======== 首頁 ======= */
+
+.pageTitle{
+    left: 50%;
+    font-size: 70px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 250;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    width: 800px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.pageTitle:last-child{
+    left: 50%;
+    font-size: 70px;
+    position: absolute;
+    top: calc(40% + 140px);
+    transform: translate(-50%,-50%);
+    z-index: 250;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    width: 800px;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+
+#picBg{
+    display: block;
+    position: absolute;
+    top: 30px;
+    height: calc(100vh - 90px);
+    width: calc(100% - 180px);
+}
+
+#picSlideBg{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    margin: 90px 0px;
+    opacity: 0.5;
+}
+
+.mobilePic{
+    display: none;
+}
+
+/* #{
+    position: absolute;
+    top: 90px;
+    left: 60%;
+    height: 80%;
+} */
+
+
+
+
+
+
+/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
+
+@media (max-width: 1000px) {
+
+    #picBg{
+        display: none;
+    }
+    .mobilePic{
+        display: block;	
+    }
+
+    .mobilePicUp{
+        position: absolute;
+        top: 50px;
+        width: calc(100% - 180px);
+    }
+    
+    .mobilePicDown{
+        position: absolute;
+        bottom:  50px;
+        width: calc(100% - 180px);
+    }
+
+}
+
+@media (max-width: 860px) {
+
+    .mobilePicUp{
+        width: calc(100% - 100px);
+    }
+
+    .mobilePicDown{
+        width: calc(100% - 100px);
+    }
+}
+
+
+
+@media (max-width: 550px) {
+
+    .mobilePicUp{
+        top: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .mobilePicDown{
+        bottom:  20px;
+        width: calc(100% - 40px);
+    }
+}
+
+
+/* ======== 主要是調整mobile時字體 ======== */
+
+@media (max-width: 1100px) {
+    
+    .pageTitle{
+        left: 50%;
+        font-size: 30px;
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%,-50%);
+        z-index: 250;
+        width: 260px;
+        text-align: center;
+        line-height: 35px;
+    }
+    
+    .pageTitle:last-child{
+        left: 50%;
+        font-size: 30px;
+        position: absolute;
+        top: calc(45% + 60px);
+        transform: translate(-50%,-50%);
+        z-index: 250;
+        width: 500px;
+        text-align: center;
+        line-height: 35px;
+    }
+    
+
+
+    .mobileTextUp{
+        top: 20%;
+    }
+
+    .mobileSmallTextUp{
+        top: calc(20% + 60px);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .pageTitle:last-child{
+        width: 260px;
+    }
+
+}
+
+
+.fadeWord{
+opacity: 0;
+margin-top:+5%;
+}

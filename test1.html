@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HoJya</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css" media="all" />
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+	<header>
+		<div class="headercontainer">
+
+			<div class="first">
+				<p></p>
+			</div>
+			<div class="second">
+				<a href="index.html">Home</a>
+				<a href="food.html">Food</a>
+				<a href="about.html">About</a>
+			</div>
+			<div class="third">
+				<a href="#"><img alt="facebook" src="./imgs/facebookbutton.svg"></a>
+				<a href="#"><img alt="twitter" src="./imgs/twitter.svg"></a>
+				<a href="#"><img alt="instagram" src="./imgs/instagram.svg"></a>
+			</div>
+
+		</div>
+	</header>
+
+
+
+
+
+			
+				<div id="wrap">
+					<div id="main">
+						<div id="page1" class="page">
+							<div class="productContain">
+								<img class="bigBack" src="imgs/05.png">
+								<img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
+							</div>
+						</div>
+						<div id="page2" class="page">
+								<div class="productContain">
+										<img class="bigBack" src="imgs/05.png">
+										<img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
+								</div>
+						</div>
+						<div id="page3" class="page"></div>
+						<div id="page4" class="page"></div>
+					</div>
+				</div>
+
+
+
+	
+	
+		
+
+    <footer>
+		<div class="footercontainer">
+
+			<div class="first">
+				<p>© 2018 HoJya Taiwan ltd </p>
+			</div>
+			<div class="second">
+				<a href="#"><img></a>
+			</div>
+			<div class="third">				
+				<a href="contact.html">Contact</a>
+			</div>
+			
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+        let wrap = document.getElementById("wrap");
+        let main = document.getElementById("main");
+        // let hei = document.body.clientHeight;
+		let hei = $(window).height();
+        wrap.style.height = hei + "px";
+        let obj = document.getElementsByTagName("div");
+        for(let i=0;i<obj.length;i++){
+            if(obj[i].className == 'page'){
+                 obj[i].style.height = hei + "px";
+            }
+        }
+
+
+        //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+        let startTime = 0, //翻屏起始时间  
+            endTime = 0,  
+            now = 0;     
+        //浏览器兼容      
+        if ((navigator.userAgent.toLowerCase().indexOf("firefox")!=-1)){   
+            document.addEventListener("DOMMouseScroll",scrollFun,false);        
+        }  
+        else if (document.addEventListener) {  
+            document.addEventListener("mousewheel",scrollFun,false);  
+        }  
+        else if (document.attachEvent) {  
+            document.attachEvent("onmousewheel",scrollFun);   
+        }  
+        else{  
+            document.onmousewheel = scrollFun;  
+        }  
+    
+        //滚动事件处理函数
+        function scrollFun(event){
+            startTime = new Date().getTime();  
+            let delta = event.detail || (-event.wheelDelta);  
+            //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+            //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+            if ((endTime - startTime) < -1000){
+                if(delta>0 && parseInt(main.offsetTop) > -(hei*3)){
+                    //向下滚动
+					hei = document.body.clientHeight;
+					wrap.style.height = hei + "px";
+							let obj = document.getElementsByTagName("div");
+							for(let i=0;i<obj.length;i++){
+								if(obj[i].className == 'page'){
+									obj[i].style.height = hei + "px";
+								}
+							};
+                    now = now - hei;
+                    toPage(now);
+            } 
+                if(delta<0 && parseInt(main.offsetTop) < 0){
+                    //向上滚动
+						hei = document.body.clientHeight;
+							wrap.style.height = hei + "px";
+							let obj = document.getElementsByTagName("div");
+								for(let i=0;i<obj.length;i++){
+									if(obj[i].className == 'page'){
+										obj[i].style.height = hei + "px";
+									}
+								};
+                        now = now + hei;
+                        toPage(now);
+                }
+                 endTime = new Date().getTime();  
+            }
+               else{  
+                    event.preventDefault();    
+                }    
+        }
+         function toPage(now){        
+             $("#main").animate({top:(now+'px')},1000);     //jquery实现动画效果
+             //setTimeout("main.style.top = now + 'px'",1000);     javascript 实现动画效果
+        }   
+    </script>
+    
+
+</body>
+</html>
