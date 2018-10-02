@@ -18,7 +18,7 @@
 		left: 50%;
 		font-size: 21px;
 		position: absolute;
-		top: calc(55% + 70px);
+		top: calc(55% + 75px);
 		transform: translate(-50%,-50%);
 		z-index: 200;
 		font-family: "Rounded Mplus 1c";
@@ -72,7 +72,7 @@
 		position: absolute;
 		top: 58%;
 		transform: translate(-50%,-50%);
-		z-index: 200;
+		z-index: 1200;
 		font-family: "Rounded Mplus 1c";
 		color: #D44D5C;
 		padding: 15px;

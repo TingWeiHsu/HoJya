@@ -69,17 +69,34 @@ $(document).ready(function() {
 
         afterLoad: function(anchorLink, index){
             if(index>= 1){
-                // $("#fadeWord").css({opacity:"0"});
+                // move from 5 to 0 every time you slide
                 $(".fadeWord").animate({marginTop:"0%",opacity:"1"},300);
                 $(".fadeMoveWord").animate({marginTop:"0%",opacity:"1"},300);
+                $(".recipeCover").animate({marginTop:"0%"},300);
+
+                // detect if class is clicked, all Name should move -10 after back to 0
+                let circleLo = document.querySelectorAll(".circle");
+                for (let j = 0; j<circleLo.length; j++){
+                    if(circleLo[j].classList.contains("clicked")){
+                        $(".productName").animate({marginTop:"-10%"},300);
+                        $(".productSubName").animate({marginTop:"-10%"},300);
+                        $(".recipeCover").animate({opacity:"1",marginTop:"0%"},300);
+                        } else {
+                        $(".productName").animate({marginTop:"0%"},300);
+                        $(".productSubName").animate({marginTop:"0%"},300);
+                        $(".recipeCover").animate({opacity:"0",marginTop:"35%"},300);
+                        }
+                }
                 
             }
         },
 
         onLeave: function(index,nextIndex,direction){
             if(nextIndex>= 1){
+                // move back every time when you leave
                 $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
                 $(".fadeMoveWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
+                $(".recipeCover").animate({marginTop:"35%",opacity:"0"},10);
             }
         }
         
@@ -101,22 +118,44 @@ function clickFunction(x) {
     } else {
         console.log("no");
         $("#fullNav").animate({height:"0%",opacity:0},300);
-        $("#navMove").animate({marginTop:"50%"},300);
+        $("#navMove").animate({marginTop:"-150%"},300);
     }
 }
 
 
 function enlargeFunction(x) {
     x.classList.toggle("clicked");
-
-
-
+    
+    let circleLoop = document.querySelectorAll(".circle");
     if(x.classList.contains("clicked")){
         console.log("hi");
+        // document.querySelector(".circle").innerHTML="－";
+        
+        for (let i = 0; i < circleLoop.length ; i++){
+            circleLoop[i].classList.add("clicked");
+        }
+        $("header").animate({marginTop:"-50%"},300);
+        $("footer").animate({marginBottom:"-50%"},300);
+        $(".leftBox").animate({marginLeft:"-150%"},300);
+        $(".rightBox").animate({marginRight:"-250%"},300);
+        $(".magicCover").animate({opacity:"1",height:"100vh",padding:"0px 200px",width:"3000px"},10);
+        $(".productName").animate({marginTop:"-10%"},300);
+        $(".productSubName").animate({marginTop:"-10%"},300);
+        $(".recipeCover").animate({opacity:"1",marginTop:"0%"},300);
        
     } else {
         console.log("no");
-       
-
+        for (let i = 0; i < circleLoop.length ; i++){
+            circleLoop[i].classList.remove("clicked");
+        }
+        // document.querySelector(".circle").innerHTML="＋";
+        $("header").animate({marginTop:"0%"},300);
+        $("footer").animate({marginBottom:"0%"},300);
+        $(".leftBox").animate({marginLeft:"0%"},300);
+        $(".rightBox").animate({marginRight:"0%"},300);
+        $(".magicCover").animate({opacity:"0",height:"0vh",padding:"0px 0px",width:"100%"},10);
+        $(".productName").animate({marginTop:"0%"},300);
+        $(".productSubName").animate({marginTop:"0%"},300);
+        $(".recipeCover").animate({opacity:"0",marginTop:"35%"},300);
     }
 }
