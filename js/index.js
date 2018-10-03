@@ -96,7 +96,7 @@ $(document).ready(function() {
                 // move back every time when you leave
                 $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
                 $(".fadeMoveWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
-                $(".recipeCover").animate({marginTop:"35%",opacity:"0"},10);
+                $(".recipeCover").stop(true,true).animate({marginTop:"35%",opacity:"0"},10);
             }
         }
         
@@ -127,10 +127,10 @@ function enlargeFunction(x) {
     x.classList.toggle("clicked");
     
     let circleLoop = document.querySelectorAll(".circle");
+    
     if(x.classList.contains("clicked")){
         console.log("hi");
-        // document.querySelector(".circle").innerHTML="－";
-        
+       
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.add("clicked");
         }
@@ -142,13 +142,14 @@ function enlargeFunction(x) {
         $(".productName").animate({marginTop:"-10%"},300);
         $(".productSubName").animate({marginTop:"-10%"},300);
         $(".recipeCover").animate({opacity:"1",marginTop:"0%"},300);
+        $(".foodPhoto").animate({padding:"0px"},300);
        
     } else {
         console.log("no");
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.remove("clicked");
         }
-        // document.querySelector(".circle").innerHTML="＋";
+        
         $("header").animate({marginTop:"0%"},300);
         $("footer").animate({marginBottom:"0%"},300);
         $(".leftBox").animate({marginLeft:"0%"},300);
@@ -156,6 +157,28 @@ function enlargeFunction(x) {
         $(".magicCover").animate({opacity:"0",height:"0vh",padding:"0px 0px",width:"100%"},10);
         $(".productName").animate({marginTop:"0%"},300);
         $(".productSubName").animate({marginTop:"0%"},300);
-        $(".recipeCover").animate({opacity:"0",marginTop:"35%"},300);
+        $(".recipeCover").animate({opacity:"0",marginTop:"35%"},100);
+        $(".foodPhoto").animate({padding:"20px"},300);
     }
+    
 }
+
+
+//if the width is bigger than 1024px,  we need to make the picture  show on right
+// if (window.width < 800){
+//     console.log("test");
+// }
+
+
+
+$('.enlargeKey').hover(function(){
+    let picLoop = document.querySelectorAll(".enlarge");
+    for (let i = 0; i<picLoop.length; i++){
+        $(picLoop[i]).addClass('transitionLarge');
+    }
+},function(){
+    let picLoop = document.querySelectorAll(".enlarge");
+    for (let i = 0; i<picLoop.length; i++){
+        $(picLoop[i]).removeClass('transitionLarge');
+    }  
+});
