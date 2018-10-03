@@ -206,7 +206,7 @@ table {
 	.bar1, .bar2, .bar3 {
 		width: 35px;
 		height: 3px;
-		background-color: #fff;
+		background-color: #F5E9E2;
 		margin: 7px 0;
 		transition: 0.4s;
 		border-radius: 20%;
@@ -354,7 +354,7 @@ table {
 	.bar1, .bar2, .bar3 {
 		width: 35px;
 		height: 2px;
-		background-color: #fff;
+		background-color: #F5E9E2;
 		margin: 7px 0;
 		transition: 0.4s;
 		border-radius: 20%;

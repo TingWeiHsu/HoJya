@@ -2,14 +2,14 @@
 
 	.pageTitle{
 		left: 50%;
-		font-size: 70px;
+		font-size: 55px;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%,-50%);
 		z-index: 250;
 		font-family: "Rounded Mplus 1c";
 		color: #D44D5C;
-		width: 600px;
+		width: 650px;
 		text-align: center;
 		line-height: 100px;
 	}
