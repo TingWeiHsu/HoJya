@@ -1,49 +1,222 @@
-/* ======================= css reset ========================== */
+/* ======== 首頁 ======= */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+	.pageTitle{
+		left: 50%;
+		font-size: 55px;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 250;
+		font-family: "Rounded Mplus 1c";
+		color: #D44D5C;
+		width: 650px;
+		text-align: center;
+		line-height: 100px;
+	}
+
+	.smallDescription{
+		left: 50%;
+		font-size: 21px;
+		position: absolute;
+		top: calc(55% + 75px);
+		transform: translate(-50%,-50%);
+		z-index: 200;
+		font-family: "Rounded Mplus 1c";
+		color: #0B0014;
+	}
+
+	/* 首頁第二塊字用的 */
+	.lefter{
+		left:40%;
+	}
+	
+	/* 首頁第三塊說明往上調用的 */
+	.upper{
+		top: calc(50% + 70px);
+	}
+
+	#picBg{
+		display: block;
+		position: absolute;
+		top: 30px;
+		height: 100%;
+		width: calc(100% - 180px);
+	}
+
+	.mobilePic{
+		display: none;
+	}
+
+	#preparing{
+		position: absolute;
+		top: 90px;
+		left: 60%;
+		height: 80%;
+	}
+
+	#cooking{
+		position: absolute;
+		top: 90px;
+		left: 10%;
+		height: 80%;
+	}
+
+
+	/* ======== 之後要補做動態的圓點點設定 ======= */
+
+
+	.circle {
+		left: 23%;
+		font-size: 36px;
+		font-weight: 300;
+		position: absolute;
+		top: 58%;
+		transform: translate(-50%,-50%);
+		z-index: 1200;
+		font-family: "Rounded Mplus 1c";
+		color: #D44D5C;
+		padding: 15px;
+		border: 2px solid #D44D5C;
+		border-radius: 50%;
+		cursor: pointer;
+		/* transition: all .1s ease-in; */
+	}
 
 
 
-/* ======================= css reset ========================== */
+
+	.center{
+		left: 50%;
+		top: calc(60% + 70px);
+	}
+
+
+	/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
+
+	@media (max-width: 1000px) {
+		
+		#picBg{
+			display: none;
+		}
+
+		.mobilePic{
+			display: block;	
+		}
+
+		.mobilePicUp{
+			position: absolute;
+			top: 50px;
+			width: calc(100% - 180px);
+		}
+		
+		.mobilePicDown{
+			position: absolute;
+			bottom:  50px;
+			width: calc(100% - 180px);
+		}
+
+		#preparing{
+			top: 90px;
+			left: 40%;
+			height: 75%;
+		}
+	
+		#cooking{
+			top: 90px;
+			left: 5%;
+			height: 75%;
+		}
+	}
+
+	@media (max-width: 860px) {
+
+		.mobilePicUp{
+			width: calc(100% - 100px);
+		}
+
+		.mobilePicDown{
+			width: calc(100% - 100px);
+		}
+	}
+
+	@media (max-width: 770px) {
+		#preparing{
+			top: 20%;
+			left: auto;
+			width: calc(100% - 20px);
+		}
+	
+		#cooking{
+			top: 20%;
+			width: calc(100% - 20px);
+		}
+	}
+
+
+	@media (max-width: 550px) {
+
+		.mobilePicUp{
+			top: 20px;
+			width: calc(100% - 40px);
+		}
+
+		.mobilePicDown{
+			bottom:  20px;
+			width: calc(100% - 40px);
+		}
+	}
+
+
+	/* ======== 主要是調整mobile時字體 ======== */
+
+	@media (max-width: 770px) {
+		
+		.pageTitle{
+			left: 50%;
+			font-size: 30px;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 250;
+			width: 260px;
+			text-align: center;
+			line-height: 35px;
+		}
+		
+	
+		.smallDescription{
+			left: 50%;
+			font-size: 14px;
+			position: absolute;
+			top: calc(50% + 60px);
+			transform: translate(-50%,-50%);
+			z-index: 200;
+			width: 260px;
+			text-align: center;
+		}
+
+
+		/* 首頁第三塊說明往上調用的 */
+		.upper{
+			top: calc(50% + 60px);
+		}
+
+		.mobileTextUp{
+			top: 20%;
+		}
+
+		.mobileSmallTextUp{
+			top: calc(20% + 60px);
+		}
+
+		.upper{
+			top: calc(20% + 40px);
+		}
+
+	}
+
+
+.fadeWord{
+	opacity: 0;
+	margin-top:+5%;
+}

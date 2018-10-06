@@ -1,0 +1,352 @@
+.bigBack{
+    width: auto;
+    left: 60%;
+    position: absolute;
+    top: 50%; 
+    height: 80vh;
+    transform: translate(-50%,-50%);
+    opacity: 0.3;
+    z-index: 100;
+}
+.foodPhoto{
+    left: 60%;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    z-index: 150;
+    padding: 20px;
+}
+
+.productName{
+    left: 26%;
+    font-size: 36px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+}
+
+.productSubName{
+    left: 26%;
+    font-size: 21px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #0B0014;
+}
+
+.circle {
+    left: 26%;
+    font-size: 36px;
+    font-weight: 300;
+    position: absolute;
+    top: 58%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    padding: 15px;
+    border: 2px solid #D44D5C;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+
+    .productName{
+        left: 50%;
+        top: 20%;
+    }
+
+    .productSubName{
+        left: 50%;
+        top: calc(20% + 50px);
+    }
+
+    .bigBack{
+        left: 50%;
+        top: 55%; 
+    }
+    .foodPhoto{
+        left: 50%;
+        top: 60%;
+        height: 45vh;
+    }
+
+    .circle{
+        left: 50%;
+        top: calc(20% + 125px);
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .productName{
+        font-size: 30px;
+    }
+
+    .productSubName{
+        font-size: 14px;
+        top: calc(20% + 35px);
+    }
+
+    .bigBack{
+        top: 55%;
+        height: 65vh;
+    }
+
+    .foodPhoto{
+        top: 65%;
+        height: 30vh;
+    }
+
+    .circle{
+        padding: 8px;
+    }
+}
+
+
+/* 動態實驗中 */
+
+.fadeMoveWord{
+    opacity: 0;
+    margin-top:+5%;
+}
+
+
+.marginMoveTop {
+    margin-top: -15%;
+}
+
+
+.clicked{
+	top: 100px;
+	left: calc(100% - 100px);
+}
+
+@media (max-width: 767px) {
+    .clicked{
+        top: 40px;
+        left: calc(100% - 40px);
+    }
+}
+
+
+/* 我是背景遮罩 */
+
+.magicCover{
+    position: fixed;
+    opacity: 0;
+    z-index: 10;
+    background-image: url(../imgs/bg.png);
+    background-repeat: repeat;
+    margin: 0 auto;
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    padding: 0px 180px;
+    margin-left: -90px;
+}
+
+/* 我是料理的資料 */
+
+.recipeCover{
+        margin-left: 0%;
+        width: 300px;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 1);
+        top: calc(30% + 50px);
+        margin-top:35%;
+        left: 26%;
+        transform: translate(-50%,0%);
+        border: 2px solid #fff;
+        z-index: 900;
+        opacity: 0;
+        line-height: 20px;
+        padding: 20px 20px;
+        border-radius: 15px;
+}
+
+@media (min-width: 1200px) {
+    .recipeCover{
+        width: 450px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .recipeCover{
+        width: 500px;
+        top: calc(10% + 100px);
+        background-color: rgba(255, 255, 255, 1);
+        left: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    .recipeCover{
+        width: 300px;
+        left: 50%;
+        background-color: rgba(255, 255, 255, 1);
+        top: calc(10% + 100px);
+    }
+}
+
+@media (max-width: 325px) {
+    .recipeCover{
+        top: calc(10% + 80px);
+    }
+}
+
+.recipeCover>h3{
+    text-align: center;
+    font-size: 16px;
+    margin: 15px 0px 15px 0px;
+    color: #666666;
+}
+
+.recipeCover>h3:last-child{
+    margin: 20px 0px 15px 0px;
+}
+
+.recipeCover>p{
+    text-align: center;
+    color: #999999;
+    margin: 5px 10px 10px 10px;
+    font-size: 14px;
+}
+
+.recipeCover>p:last-child{
+    margin: 5px 10px 20px 10px;
+}
+
+
+
+#moveRotate{
+    position: fixed;
+    width:100%;
+    right:0;
+    margin:0 auto;
+    height: 1px;
+    z-index: 10;
+    margin-right: -250%;
+}
+
+.centerLine{
+   width:2px;
+   height:45vh;
+   background-color: #D44D5C;
+   position: absolute;
+   left:calc(100% - 100px);
+   top:250px;
+ }
+
+ .grow { 
+    transition: all .1s ease-in-out; 
+  }
+
+  .cir{
+    width:12px;
+    height:12px;
+    border:1px solid  #D44D5C;
+    border-radius:100%;
+    position: absolute;
+    background-color: #D44D5C;
+    cursor: pointer;
+  }
+
+  .circle1{
+    top:250px;
+    left:calc(100% - 105px);
+  }
+
+  .circle2{
+    top:calc(250px + 15vh);
+    left:calc(100% - 105px);
+  }
+
+  .circle3{
+    top:calc(250px + 30vh);
+    left:calc(100% - 105px);
+  }
+
+  .circle4{
+    top:calc(250px + 45vh);
+    left:calc(100% - 105px);
+  }
+
+  .growBig { 
+    transform: scale(7); 
+  }
+
+  .circlePic1,
+  .circlePic2,
+  .circlePic3,
+  .circlePic4{
+   width:80px;
+   height:80px;
+   border:1px solid  transparent;
+   padding:5px;
+   border-radius:100%;
+   position: absolute;
+   background-color: #ffffff;
+   background-repeat: no-repeat;
+   background-size: 70px;
+   background-position: center;
+   cursor: pointer;
+   transition-delay: 1s;
+   transition: .3s ease; 
+   transform: scale(0);
+  }
+
+  .circlePic1{
+    background-image: url(../imgs/beefnoodles.png);
+    top:216px;
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic2{
+    background-image: url(../imgs/food_soup.png);
+    top:calc(216px + 15vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic3{
+    background-image: url(../imgs/food_riceball.png);
+    top:calc(216px + 30vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic4{
+    background-image: url(../imgs/syoronbou.png);
+    top:calc(216px + 45vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .picBig{
+    transform: scale(1);
+  }
+
+  .circleSelected{
+    background-color: #ffffff;
+    border: 2px solid #D44D5C;
+    padding: 1px;
+    width: 12px;
+    height: 12px;
+  }
+
+  @media (max-width: 900px) {
+    #moveRotate{
+        display: none;
+    }
+  }

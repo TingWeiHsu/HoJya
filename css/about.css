@@ -1,0 +1,304 @@
+/* ======== 首頁 ======= */
+
+.pageTitle{
+    left: 50%;
+    font-size: 55px;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 250;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    width: 700px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.pageTitle:last-child{
+    left: 50%;
+    font-size: 55px;
+    position: absolute;
+    top: calc(40% + 150px);
+    transform: translate(-50%,-50%);
+    z-index: 250;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    width: 700px;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+
+#picBg{
+    display: block;
+    position: absolute;
+    top: 30px;
+    height: calc(100vh - 90px);
+    width: calc(100% - 180px);
+}
+
+.picOne{
+    height: 300px;
+    top:calc(40% - 153px);
+    left: calc(50% - 80px);
+}
+
+.picTwo{
+    height: 30px;
+    top:calc(40% + 95px);
+    left: calc(50% + 290px);
+}
+
+.picThree{
+    height: 50px;
+    top:calc(40% + 195px);
+    left: calc(50% + 60px);
+}
+
+.picFour{
+    height: 100px;
+    top:calc(40% + 40px);
+    left: calc(50% - 340px);
+}
+
+.enlarge{
+    position: absolute;
+    z-index: 1500;
+    display: block;
+    transition:.4s all;
+    -webkit-transition:.4s all;
+    transform: scale(0);
+}
+
+.transitionLarge {
+    -webkit-transform: scale(1); 
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+
+#picSlideBg{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    margin: 90px 0px;
+    opacity: 0.5;
+}
+
+.mobilePic{
+    display: none;
+}
+
+
+
+#map {
+    position: absolute;
+    z-index: 100;
+    width: calc(100% - 180px);
+    height: calc(100vh - 90px);
+    background-color: grey;
+  }
+
+
+#contactInfor{
+    position: absolute;
+    z-index: 200;
+    width: 450px;
+    height: 400px;
+    background-color: #ffffff;
+    top:calc(50% - 200px);
+    left: calc(50% - 225px);
+    padding: 50px;
+    border-radius: 15px;
+}
+
+#contactInfor>h2{
+    font-size: 21px;
+    text-align: center;
+    color: #D44D5C;
+   
+}
+
+#contactInfor>p{
+    font-size: 14px;
+    color: #666666;
+    margin-left: 15px;
+}
+
+#contactInfor>.contactTitle{
+    font-size: 16px;
+    margin: 15px 0px;
+    color: #999999;
+    margin-left: 15px;
+}
+
+#contactInfor>img{
+    float: right;
+    margin-top: -250px;
+}
+
+
+
+.smallDeco{
+    width: 10px;
+    height: 10px;
+    background-color: #D44D5C;
+    border-radius: 50%;
+    position: relative;
+}
+
+.leftUp{
+    top: -20px;
+    left: -20px;
+}
+
+.rightDown{
+    top: 300px;
+    left: 360px;
+}
+
+
+
+/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
+
+@media (max-width: 1100px) {
+
+    #picBg{
+        display: none;
+    }
+
+    .mobilePic{
+        display: block;	
+    }
+
+    .mobilePicUp{
+        position: absolute;
+        top: 50px;
+        width: calc(100% - 180px);
+    }
+    
+    .mobilePicDown{
+        position: absolute;
+        bottom:  50px;
+        width: calc(100% - 180px);
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    #map {
+        width: calc(100% - 100px);
+        height: calc(100vh - 50px);
+      }
+
+    .mobilePicUp{
+        width: calc(100% - 100px);
+    }
+
+    .mobilePicDown{
+        width: calc(100% - 100px);
+    }
+}
+
+
+
+@media (max-width: 550px) {
+
+    #map {
+        width: calc(100% - 40px);
+        height: calc(100vh - 20px);
+      }
+
+    .mobilePicUp{
+        top: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .mobilePicDown{
+        bottom:  20px;
+        width: calc(100% - 40px);
+    }
+
+    #contactInfor{
+        width: 250px;
+        height: 350px;
+        top:calc(50% - 175px);
+        left: calc(50% - 125px);
+        padding: 50px 20px;
+        border-radius: 15px;
+    }
+
+    .leftUp{
+        top: -30px;
+        left: -0px;
+    }
+    
+    .rightDown{
+        top: 257px;
+        left: 200px;
+    }
+}
+
+
+/* ======== 主要是調整mobile時字體 ======== */
+
+@media (max-width: 1100px) {
+    
+    .pageTitle{
+        left: 50%;
+        font-size: 30px;
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%,-50%);
+        z-index: 250;
+        width: 260px;
+        text-align: center;
+        line-height: 35px;
+    }
+    
+    .pageTitle:last-child{
+        left: 50%;
+        font-size: 30px;
+        position: absolute;
+        top: calc(45% + 60px);
+        transform: translate(-50%,-50%);
+        z-index: 250;
+        width: 500px;
+        text-align: center;
+        line-height: 40px;
+    }
+    
+    .mobileTextUp{
+        top: 20%;
+    }
+
+    .mobileSmallTextUp{
+        top: calc(20% + 60px);
+    }
+
+    .enlarge{
+        position: absolute;
+        z-index: 1500;
+        display: none;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .pageTitle:last-child{
+        width: 260px;
+    }
+
+}
+
+
+.fadeWord{
+opacity: 0;
+margin-top:+5%;
+}

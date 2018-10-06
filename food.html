@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>Food HoJya</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jesse">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
+
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/food.css" media="all" />
+    
+</head>
+<body onload="loadingPage()">
+
+    <div class="pageLoadingCover"></div>
+    <header>
+                <div class="headercontainer">
+        
+                    <div class="first">
+                        <!-- <a href="index.html"><img alt="HoJyaLogo" src="./imgs/hoJya.png" id="logoPic"></a> -->
+                    </div>
+                    <div class="second">
+                        <a href="index.html" class="link">Home</a>
+                        <a href="food.html" class="link">Food</a>
+                        <a href="about.html" class="link">About</a>
+                    </div>
+                    <div class="third">
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+        
+                </div>
+    </header>
+
+
+	<nav>
+		<div class="leftBox">
+			<a href="index.html" class="link"><div></div></a>
+		</div>
+		<div class="rightBox">
+				<div class="container" onclick="clickFunction(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+				</div>
+		</div>
+    </nav>
+    
+    <div id="fullNav">
+            <div id="navMove">
+                    <a href="index.html">ホーム</a>
+                    <a href="food.html">食べもの</a>
+                        <div class="smallLink">
+                            <a href="food.html#page1">牛肉の煮込み麺</a>
+                            <a href="food.html#page2">白きくらげのスープ</a>
+                            <a href="food.html#page3">黒胡麻餡の白玉団子</a>
+                            <a href="food.html#page4">しょうろんぽう</a>
+                        </div>
+                    <a href="about.html">について</a>
+                    <a href="about.html#page2">お問い合わせ</a>
+            </div>
+    </div>
+
+
+    <div id="moveRotate">
+            <div class="centerLine"></div>
+            <a href="food.html#page1">
+                <div class="circlePic1"></div>
+                <div class="cir circle1 grow"></div>
+            </a>
+            <a href="food.html#page2">
+                <div class="circlePic2"></div>
+                <div class="cir circle2 grow"></div>
+            </a>
+            <a href="food.html#page3">
+                <div class="circlePic3"></div>
+                <div class="cir circle3 grow"></div>
+            </a>
+            <a href="food.html#page4">
+                <div class="circlePic4"></div>
+                <div class="cir circle4 grow"></div
+            ></a>
+    </div>
+
+
+    <div id="fullpage" onmousemove="circleMoveAround(event)">
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">牛肉麵</h2>
+                    <h3 class="productSubName fadeMoveWord">牛肉の煮込み麺</h3>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+
+                    <img class="bigBack" src="imgs/chop.svg">
+                    <img class="foodPhoto" src="./imgs/beefnoodles.png" alt="beefnoodles">
+                    <div class="magicCover"></div>
+            </div>
+            <div class="recipeCover">
+                    <h3>材 料</h3>
+                    <p>牛すね肉、にんじん、大根、玉ねぎ、生姜、葱、セロリ、麺、八角、五香粉、豆板醤、ケチャップ、酒、醤油、砂糖、白胡椒</p>
+                    
+            </div>
+        </div>
+
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">銀耳四寶湯</h2>
+                    <h3 class="productSubName fadeMoveWord">白きくらげのスープ</h3>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+
+                	<img class="bigBack" src="imgs/spoon.svg">
+                    <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
+                    <div class="magicCover"></div>
+            </div>
+            <div class="recipeCover">
+                    <h3>材 料</h3>
+                    <p>銀耳、蓮の実、紅棗、白果、桂圓(干しリュウガン)、氷砂糖</p>
+                    
+            </div>
+        </div>
+
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">芝麻甜湯圓</h2>
+                    <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+
+                    <img class="bigBack" src="imgs/spoon.svg">
+                    <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
+                    <div class="magicCover"></div>
+            </div>
+            <div class="recipeCover">
+                    <h3>材 料</h3>
+                    <p>すりごま黒、白玉粉、水、砂糖、ごま油</p>
+                    
+            </div>
+        </div>
+        <div class="section">
+            <div id="bg">
+                    <h2 class="productName fadeMoveWord">小籠包</h2>
+                    <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+
+                    <img class="bigBack" src="imgs/chop.svg">
+                    <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
+                    <div class="magicCover"></div>                
+            </div>
+            <div class="recipeCover">
+                    <h3>材 料</h3>
+                    <p>豚ひき肉、玉ねぎ、しょうが、だし醤油、酒、オイスターソース、ゴマ油、塩・こしょう、強力粉、ごま油</p>
+                    
+            </div>
+        </div>
+    </div>
+
+    
+   
+
+
+    <footer>
+            <div class="footercontainer">
+    
+                <div class="first">
+                    <p>© 2018 HoJya Taiwan ltd </p>
+                </div>
+                <div class="second"></div>
+                <div class="third">				
+                    <a href="about.html#page2">Contact</a>
+                </div>
+                
+            </div>
+        </footer>
+
+
+
+
+
+
+
+<script src="js/index.js"></script>    
+</body>
+
+</html>
