@@ -39,9 +39,9 @@
 }
 
 .picOne{
-    height: 180px;
-    top:calc(40% - 143px);
-    left: calc(50% - 60px);
+    height: 300px;
+    top:calc(40% - 153px);
+    left: calc(50% - 80px);
 }
 
 .picTwo{
@@ -66,6 +66,7 @@
     position: absolute;
     z-index: 1500;
     display: block;
+    transition:.4s all;
     -webkit-transition:.4s all;
     transform: scale(0);
 }
@@ -98,14 +99,14 @@
     position: absolute;
     z-index: 100;
     width: calc(100% - 180px);
-    height: 100vh;
+    height: calc(100vh - 90px);
     background-color: grey;
   }
 
 
 #contactInfor{
     position: absolute;
-    z-index: 1000;
+    z-index: 200;
     width: 450px;
     height: 400px;
     background-color: #ffffff;
@@ -192,6 +193,7 @@
 
     #map {
         width: calc(100% - 100px);
+        height: calc(100vh - 50px);
       }
 
     .mobilePicUp{
@@ -209,6 +211,7 @@
 
     #map {
         width: calc(100% - 40px);
+        height: calc(100vh - 20px);
       }
 
     .mobilePicUp{

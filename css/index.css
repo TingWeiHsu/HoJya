@@ -79,7 +79,10 @@
 		border: 2px solid #D44D5C;
 		border-radius: 50%;
 		cursor: pointer;
+		/* transition: all .1s ease-in; */
 	}
+
+
 
 
 	.center{

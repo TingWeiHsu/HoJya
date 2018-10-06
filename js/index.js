@@ -1,4 +1,26 @@
 
+// have a changing page effect when go and leave
+
+function loadingPage() {
+    setTimeout(function(){ 
+        console.log("yo");
+        $(".pageLoadingCover").animate({marginTop:"-300%"},500,"swing");
+    }, 500);
+};
+
+$('a.link').click(function(e){
+    e.preventDefault();
+    let moveTo = this.getAttribute("href");
+    $(".pageLoadingCover").animate({marginTop:"0%"},500,"swing");
+    setTimeout(function(){
+        window.location = moveTo;
+    }, 500);
+});
+
+
+
+
+// page scroll effect 
 
 $(document).ready(function() {
     $('#fullpage').fullpage({
@@ -87,7 +109,19 @@ $(document).ready(function() {
                         $(".recipeCover").animate({opacity:"0",marginTop:"35%"},300);
                         }
                 }
+
+                // detect which page is user watching and give special effect on circle
+                let hashArray = ["#page1","#page2","#page3","#page4"];
+                let hashNum = window.location.hash;
+                let circleCArray = ['.circle1','.circle2','.circle3','.circle4'];
+                for (let h = 0; h < hashArray.length ; h ++ ){
+                    if ( hashNum === hashArray[h]){
+                        let CN = circleCArray[h];
+                        $(CN).addClass('circleSelected');
+                    } 
+                };
                 
+
             }
         },
 
@@ -97,6 +131,7 @@ $(document).ready(function() {
                 $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
                 $(".fadeMoveWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
                 $(".recipeCover").stop(true,true).animate({marginTop:"35%",opacity:"0"},10);
+                $(".cir").removeClass('circleSelected');
             }
         }
         
@@ -106,7 +141,7 @@ $(document).ready(function() {
 
 
 
-// 漢堡排選單的點擊改變樣式
+// click hambuger nav and change whole page
 
 function clickFunction(x) {
     x.classList.toggle("change");
@@ -120,17 +155,29 @@ function clickFunction(x) {
         $("#fullNav").animate({height:"0%",opacity:0},300);
         $("#navMove").animate({marginTop:"-150%"},300);
     }
+
+    $('.smallLink').click(function(e){
+        setTimeout(function(){
+            $("#navMove").animate({marginTop:"-150%"},300);
+            $("#fullNav").animate({opacity:0},300);
+        }, 300);
+        x.classList.remove("change");
+    })
+    
 }
 
 
+
+// click + to enlarge the food infor and make other things disappeared
+
 function enlargeFunction(x) {
+    // click + to toggle it
     x.classList.toggle("clicked");
     
+
     let circleLoop = document.querySelectorAll(".circle");
-    
     if(x.classList.contains("clicked")){
-        console.log("hi");
-       
+        // the check if one of circle is clicked, change all of them to be clicked
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.add("clicked");
         }
@@ -143,13 +190,13 @@ function enlargeFunction(x) {
         $(".productSubName").animate({marginTop:"-10%"},300);
         $(".recipeCover").animate({opacity:"1",marginTop:"0%"},300);
         $(".foodPhoto").animate({padding:"0px"},300);
+        $("#moveRotate").animate({marginRight:"0%"},300);
        
     } else {
         console.log("no");
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.remove("clicked");
-        }
-        
+        };
         $("header").animate({marginTop:"0%"},300);
         $("footer").animate({marginBottom:"0%"},300);
         $(".leftBox").animate({marginLeft:"0%"},300);
@@ -159,17 +206,28 @@ function enlargeFunction(x) {
         $(".productSubName").animate({marginTop:"0%"},300);
         $(".recipeCover").animate({opacity:"0",marginTop:"35%"},100);
         $(".foodPhoto").animate({padding:"20px"},300);
+        $("#moveRotate").animate({marginRight:"-250%"},300); 
     }
-    
+
+    // detect which page and change circle bar
+    let hashArray = ["#page1","#page2","#page3","#page4"];
+    let hashNum = window.location.hash;
+                let circleCArray = ['.circle1','.circle2','.circle3','.circle4'];
+                for (let h = 0; h < hashArray.length ; h ++ ){
+                    if ( hashNum === hashArray[h]){
+                        let CN = circleCArray[h];
+                        $(CN).addClass('circleSelected');
+                         } else if (hashNum === "") {
+                            let CN = circleCArray[0];
+                            $(CN).addClass('circleSelected');
+                         }
+                    
+                 };
 }
 
 
-//if the width is bigger than 1024px,  we need to make the picture  show on right
-// if (window.width < 800){
-//     console.log("test");
-// }
 
-
+// About page enlarge decorative small pics
 
 $('.enlargeKey').hover(function(){
     let picLoop = document.querySelectorAll(".enlarge");
@@ -182,3 +240,82 @@ $('.enlargeKey').hover(function(){
         $(picLoop[i]).removeClass('transitionLarge');
     }  
 });
+
+
+
+// circle bar with photos when hover
+
+let circleCArray = ['.circle1','.circle2','.circle3','.circle4'];
+let circlePArray = ['.circlePic1','.circlePic2','.circlePic3','.circlePic4'];
+
+for ( let y = 0; y < circleCArray.length ; y++) {
+    console.log("hey");
+    let circleNum = circleCArray[y];
+    let circlePN = circlePArray[y];
+
+    // the first time when hover to enlarge
+    $(circleNum).hover(function(){
+        $(circleNum).addClass('growBig');
+        $(circlePN).addClass('picBig');
+    
+    },function(){
+        $(circleNum).removeClass('growBig');
+        $(circlePN).removeClass('picBig');
+    });
+
+    $(circlePN).hover(function(){
+        $(circleNum).addClass('growBig');
+        $(circlePN).addClass('picBig');
+    },function(){
+        $(circleNum).removeClass('growBig');
+        $(circlePN).removeClass('picBig');
+    });
+}
+
+
+
+
+// let all circle moooooooooooove 
+
+function circleMoveAround(e){
+
+    // mouse move everytime will get something
+    let x = e.clientX;
+    let y = e.clientY;
+    let  coor = "Coordinates: (" + x + "," + y + ")";
+    console.log(coor);
+
+    // detect the correct x and y of circle
+
+    let cirxy = document.querySelector(".circle").getBoundingClientRect();
+    let cY = cirxy.top + 35;
+    let cX = cirxy.left + 35;
+    console.log(cY);
+    console.log(cX);
+
+    // let's move our circle
+
+    let newX = (x-cX)/20;
+    let newY = (y-cY)/20;
+
+ 
+    console.log(newX);
+    console.log(newY);
+    let circleArr = document.querySelectorAll(".circle");
+
+ 
+
+    for (let i = 0; i < circleArr.length ; i++){
+        if (i === 0) {
+            circleArr[i].style.transform = `translate(${newX-35}px,${newY-35}px)`; 
+        } else if ( i === 1) {
+            circleArr[i].style.transform = `translate(${newX-35}px,${newY-75}px)`; 
+        } else if ( i === 2) {
+            circleArr[i].style.transform = `translate(${newX-35}px,${newY-105}px)`;
+        } else if ( i === 3) {
+            circleArr[i].style.transform = `translate(${newX-35}px,${newY-135}px)`;
+        }
+    }
+    
+}
+

@@ -167,7 +167,6 @@
         left: 26%;
         transform: translate(-50%,0%);
         border: 2px solid #fff;
-        border-radius: 10px;
         z-index: 900;
         opacity: 0;
         line-height: 20px;
@@ -229,4 +228,125 @@
 
 
 
+#moveRotate{
+    position: fixed;
+    width:100%;
+    right:0;
+    margin:0 auto;
+    height: 1px;
+    z-index: 10;
+    margin-right: -250%;
+}
 
+.centerLine{
+   width:2px;
+   height:45vh;
+   background-color: #D44D5C;
+   position: absolute;
+   left:calc(100% - 100px);
+   top:250px;
+ }
+
+ .grow { 
+    transition: all .1s ease-in-out; 
+  }
+
+  .cir{
+    width:12px;
+    height:12px;
+    border:1px solid  #D44D5C;
+    border-radius:100%;
+    position: absolute;
+    background-color: #D44D5C;
+    cursor: pointer;
+  }
+
+  .circle1{
+    top:250px;
+    left:calc(100% - 105px);
+  }
+
+  .circle2{
+    top:calc(250px + 15vh);
+    left:calc(100% - 105px);
+  }
+
+  .circle3{
+    top:calc(250px + 30vh);
+    left:calc(100% - 105px);
+  }
+
+  .circle4{
+    top:calc(250px + 45vh);
+    left:calc(100% - 105px);
+  }
+
+  .growBig { 
+    transform: scale(7); 
+  }
+
+  .circlePic1,
+  .circlePic2,
+  .circlePic3,
+  .circlePic4{
+   width:80px;
+   height:80px;
+   border:1px solid  transparent;
+   padding:5px;
+   border-radius:100%;
+   position: absolute;
+   background-color: #ffffff;
+   background-repeat: no-repeat;
+   background-size: 70px;
+   background-position: center;
+   cursor: pointer;
+   transition-delay: 1s;
+   transition: .3s ease; 
+   transform: scale(0);
+  }
+
+  .circlePic1{
+    background-image: url(../imgs/beefnoodles.png);
+    top:216px;
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic2{
+    background-image: url(../imgs/food_soup.png);
+    top:calc(216px + 15vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic3{
+    background-image: url(../imgs/food_riceball.png);
+    top:calc(216px + 30vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .circlePic4{
+    background-image: url(../imgs/syoronbou.png);
+    top:calc(216px + 45vh);
+    left:calc(100% - 139px);
+    z-index: 500;
+  }
+
+  .picBig{
+    transform: scale(1);
+  }
+
+  .circleSelected{
+    background-color: #ffffff;
+    border: 2px solid #D44D5C;
+    padding: 1px;
+    width: 12px;
+    height: 12px;
+  }
+
+  @media (max-width: 900px) {
+    #moveRotate{
+        display: none;
+    }
+  }
