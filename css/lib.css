@@ -512,3 +512,15 @@ table {
 	background-size: 10%;
 	z-index: 300;
 }
+
+@media (max-width: 900px) {
+	.pageLoadingCover{
+		background-size: 20%;
+	}
+}
+
+@media (max-width: 500px) {
+	.pageLoadingCover{
+		background-size: 30%;
+	}
+}

@@ -277,6 +277,9 @@ for ( let y = 0; y < circleCArray.length ; y++) {
 
 // let all circle moooooooooooove 
 
+
+
+
 function circleMoveAround(e){
 
     // mouse move everytime will get something
@@ -303,19 +306,24 @@ function circleMoveAround(e){
     console.log(newY);
     let circleArr = document.querySelectorAll(".circle");
 
- 
-
-    for (let i = 0; i < circleArr.length ; i++){
-        if (i === 0) {
-            circleArr[i].style.transform = `translate(${newX-35}px,${newY-35}px)`; 
-        } else if ( i === 1) {
-            circleArr[i].style.transform = `translate(${newX-35}px,${newY-75}px)`; 
-        } else if ( i === 2) {
-            circleArr[i].style.transform = `translate(${newX-35}px,${newY-105}px)`;
-        } else if ( i === 3) {
-            circleArr[i].style.transform = `translate(${newX-35}px,${newY-135}px)`;
+    let w = $(window).width();
+    if (w > 1025) {
+    
+        for (let i = 0; i < circleArr.length ; i++){
+            if (i === 0) {
+                circleArr[i].style.transform = `translate(${newX-35}px,${newY-35}px)`; 
+            } else if ( i === 1) {
+                circleArr[i].style.transform = `translate(${newX-35}px,${newY-75}px)`; 
+            } else if ( i === 2) {
+                circleArr[i].style.transform = `translate(${newX-35}px,${newY-105}px)`;
+            } else if ( i === 3) {
+                circleArr[i].style.transform = `translate(${newX-35}px,${newY-135}px)`;
+            }
         }
+        
     }
+
+    
     
 }
 
