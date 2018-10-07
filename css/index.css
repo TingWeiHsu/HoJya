@@ -209,9 +209,13 @@
 			top: calc(20% + 60px);
 		}
 
-		.upper{
-			top: calc(20% + 40px);
+		.circle{
+			padding: 8px;
+			font-size: 21px;
+			font-weight: 400;
+			
 		}
+		
 
 	}
 

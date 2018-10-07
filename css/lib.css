@@ -315,6 +315,7 @@ table {
 }
 
 
+
 /* ======= Header Footer RWD ======= */
 
 @media (max-width: 1100px) {
@@ -384,9 +385,9 @@ table {
 	}
 
 	.leftBox{
-		height: 50px;
-		width: 120px;
-        left:calc(50% - 60px);
+		height: 35px;
+		width: 80px;
+        left:calc(50% - 40px);
         transform: translate(0%,0%);
 	}
 	
@@ -397,10 +398,10 @@ table {
 	}
 
     .rightBox{
-		height: 50px;
-		width: 120px;
+		height: 35px;
+		width: 80px;
         bottom: 0px;
-		left:calc(50% - 60px);
+		left:calc(50% - 40px);
 	}
 
 	.leftBox>a img{
@@ -409,20 +410,30 @@ table {
 	}
 
 	.bar1, .bar2, .bar3 {
-		width: 35px;
+		width: 25px;
 		height: 2px;
-		background-color: #F5E9E2;
-		margin: 7px 0;
-		transition: 0.4s;
-		border-radius: 20%;
+		margin: 5px 0;
 	}
 
 	.container {
-		margin-top: 7px;
-		margin-left: 43px;
+		margin-top: 4px;
+		margin-left: 28px;
 	}
 
 
+
+
+}
+
+@media (max-width: 420px) {
+	.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+		transform: rotate(-45deg) translate(-2px, 2px);
+	}
+
+	.container {
+		margin-top: 6px;
+	}
 }
 
 
@@ -475,7 +486,7 @@ table {
 	text-align: center;
     font-size: 16px;
     font-family: "Rounded Mplus 1c";
-    color: #D44D5C;
+    color: #0B0014;
     display: block;
     line-height: 30px;
 }
@@ -491,6 +502,7 @@ table {
 	}
 
     .smallLink>a{
+		opacity: 0.8;
 		display: block;
         font-size: 14px;
         line-height: 25px;
