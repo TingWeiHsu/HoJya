@@ -339,8 +339,29 @@ function circleMoveAround(e){
         }
         
     }
-
-    
     
 }
 
+
+// nav bar had hover and keep the effect
+
+if (window.location.pathname == "/index.html"){
+    console.log("innnndex");
+    $("#indexLink").addClass('hoverEffectLink');
+} else {
+    $("#indexLink").removeClass('hoverEffectLink');
+}
+
+if (window.location.pathname == "/food.html"){
+    console.log("innnndex");
+    $("#foodLink").addClass('hoverEffectLink');
+} else {
+    $("#foodLink").removeClass('hoverEffectLink');
+}
+
+if (window.location.pathname == "/about.html"){
+    console.log("innnndex");
+    $("#aboutLink").addClass('hoverEffectLink');
+} else {
+    $("#aboutLink").removeClass('hoverEffectLink');
+}
