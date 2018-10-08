@@ -108,15 +108,22 @@
     }
 
     .circle{
-        padding: 8px;
-        font-size: 21px;
-        font-weight: 400;
-        
+        padding: 10px;
+        font-size: 30px;
     }
 }
 
 
-/* 動態實驗中 */
+@media (max-width: 550px) {
+    .circle{
+        padding: 8px;
+        font-size: 21px;
+        font-weight: 400;
+    }
+}
+
+
+/* 動態 */
 
 .fadeMoveWord{
     opacity: 0;
@@ -131,13 +138,15 @@
 
 .clicked{
 	top: 100px;
-	left: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transition: all .3s;
 }
 
 @media (max-width: 767px) {
     .clicked{
         top: 40px;
         left: calc(100% - 40px);
+        transition: all .3s;
     }
 }
 

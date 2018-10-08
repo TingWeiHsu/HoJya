@@ -353,16 +353,21 @@ table {
     .leftBox{
         top: 0px;
         left:calc(50% - 65px);
-        transform: translate(0%,0%);
+		transform: translate(0%,0%);
+		height: 70px;
     }
 
     .rightBox{
+		height: 70px;
         top: auto;
         bottom: 0px;
 		left:calc(50% - 65px);
 		transform: translate(0%,0%);
 	}
 
+	.container {
+		margin-top: 18px;
+	}
 
 }
 
@@ -425,7 +430,7 @@ table {
 
 }
 
-@media (max-width: 420px) {
+@media (max-width: 550px) {
 	.change .bar1 {
 		-webkit-transform: rotate(-45deg) translate(-6px, 6px);
 		transform: rotate(-45deg) translate(-2px, 2px);

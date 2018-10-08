@@ -174,6 +174,7 @@ function enlargeFunction(x) {
     // click + to toggle it
     x.classList.toggle("clicked");
     
+    
 
     let circleLoop = document.querySelectorAll(".circle");
     if(x.classList.contains("clicked")){
@@ -183,14 +184,22 @@ function enlargeFunction(x) {
         }
         $("header").animate({marginTop:"-50%"},300);
         $("footer").animate({marginBottom:"-50%"},300);
-        $(".leftBox").animate({marginLeft:"-150%"},300);
-        $(".rightBox").animate({marginRight:"-250%"},300);
+        
         $(".magicCover").animate({opacity:"1",height:"100vh",padding:"0px 200px",width:"3000px"},10);
         $(".productName").animate({marginTop:"-10%"},300);
         $(".productSubName").animate({marginTop:"-10%"},300);
         $(".recipeCover").animate({opacity:"1",marginTop:"0%"},300);
         $(".foodPhoto").animate({padding:"0px"},300);
         $("#moveRotate").animate({marginRight:"0%"},300);
+
+        let w = $(window).width();
+        if (w < 900) {
+            $(".leftBox").animate({marginTop:"-150%"},300);
+            $(".rightBox").animate({marginTop:"-250%"},300);
+        } else if (w > 900) {
+            $(".leftBox").animate({marginLeft:"-150%"},300);
+            $(".rightBox").animate({marginRight:"-250%"},300);
+        }
        
     } else {
         console.log("no");
@@ -199,14 +208,22 @@ function enlargeFunction(x) {
         };
         $("header").animate({marginTop:"0%"},300);
         $("footer").animate({marginBottom:"0%"},300);
-        $(".leftBox").animate({marginLeft:"0%"},300);
-        $(".rightBox").animate({marginRight:"0%"},300);
+
         $(".magicCover").animate({opacity:"0",height:"0vh",padding:"0px 0px",width:"100%"},10);
         $(".productName").animate({marginTop:"0%"},300);
         $(".productSubName").animate({marginTop:"0%"},300);
         $(".recipeCover").animate({opacity:"0",marginTop:"35%"},100);
         $(".foodPhoto").animate({padding:"20px"},300);
         $("#moveRotate").animate({marginRight:"-250%"},300); 
+
+        let w = $(window).width();
+        if (w < 900) {
+            $(".leftBox").animate({marginTop:"0%"},300);
+            $(".rightBox").animate({marginTop:"0%"},300);
+        } else if (w > 900) {
+            $(".leftBox").animate({marginLeft:"0%"},300);
+            $(".rightBox").animate({marginRight:"0%"},300);
+        }
     }
 
     // detect which page and change circle bar
