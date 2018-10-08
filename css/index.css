@@ -219,6 +219,26 @@
 
 	}
 
+	/* #mobileArrow{
+		display: none;
+	} */
+
+	@media (max-width: 900px) {
+		#mobileArrow{
+		width: auto;
+		background-image: url("../imgs/arrow.svg");
+		background-repeat: no-repeat;
+		background-size: 18px;
+		background-position: center;
+		height: 13px;
+		-webkit-animation: arrow 1s infinite; /* Safari 4.0 - 8.0 */
+    	animation: arrow 1s infinite;
+		animation-play-state: running;
+		animation-timing-function: linear;
+		margin-top:80vh;
+		}
+	}
+
 
 .fadeWord{
 	opacity: 0;

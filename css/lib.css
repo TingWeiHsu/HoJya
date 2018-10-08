@@ -530,6 +530,8 @@ table {
 	z-index: 300;
 }
 
+
+
 @media (max-width: 900px) {
 	.pageLoadingCover{
 		background-size: 20%;
