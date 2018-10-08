@@ -315,6 +315,7 @@ table {
 }
 
 
+
 /* ======= Header Footer RWD ======= */
 
 @media (max-width: 1100px) {
@@ -352,16 +353,21 @@ table {
     .leftBox{
         top: 0px;
         left:calc(50% - 65px);
-        transform: translate(0%,0%);
+		transform: translate(0%,0%);
+		height: 70px;
     }
 
     .rightBox{
+		height: 70px;
         top: auto;
         bottom: 0px;
 		left:calc(50% - 65px);
 		transform: translate(0%,0%);
 	}
 
+	.container {
+		margin-top: 18px;
+	}
 
 }
 
@@ -384,23 +390,23 @@ table {
 	}
 
 	.leftBox{
-		height: 50px;
-		width: 120px;
-        left:calc(50% - 60px);
+		height: 35px;
+		width: 80px;
+        left:calc(50% - 40px);
         transform: translate(0%,0%);
 	}
 	
 	.leftBox>a>div{
-		width: 120px;
-		height: 80px;
+		width: 80px;
+		height: 35px;
 		display: block;
 	}
 
     .rightBox{
-		height: 50px;
-		width: 120px;
+		height: 35px;
+		width: 80px;
         bottom: 0px;
-		left:calc(50% - 60px);
+		left:calc(50% - 40px);
 	}
 
 	.leftBox>a img{
@@ -409,20 +415,30 @@ table {
 	}
 
 	.bar1, .bar2, .bar3 {
-		width: 35px;
+		width: 25px;
 		height: 2px;
-		background-color: #F5E9E2;
-		margin: 7px 0;
-		transition: 0.4s;
-		border-radius: 20%;
+		margin: 5px 0;
 	}
 
 	.container {
-		margin-top: 7px;
-		margin-left: 43px;
+		margin-top: 4px;
+		margin-left: 28px;
 	}
 
 
+
+
+}
+
+@media (max-width: 550px) {
+	.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+		transform: rotate(-45deg) translate(-2px, 2px);
+	}
+
+	.container {
+		margin-top: 6px;
+	}
 }
 
 
@@ -475,7 +491,7 @@ table {
 	text-align: center;
     font-size: 16px;
     font-family: "Rounded Mplus 1c";
-    color: #D44D5C;
+    color: #0B0014;
     display: block;
     line-height: 30px;
 }
@@ -491,6 +507,7 @@ table {
 	}
 
     .smallLink>a{
+		opacity: 0.8;
 		display: block;
         font-size: 14px;
         line-height: 25px;
@@ -513,6 +530,49 @@ table {
 	z-index: 300;
 }
 
+.smallDot{
+    width: 10px;
+    height: 10px;
+    background-color: #D44D5C;
+    border-radius: 50%;
+	position: absolute;
+    
+}
+
+@keyframes myshine {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+/* @keyframes myslowshine {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+} */
+
+
+.dotOne{
+	top: calc(50% + 5%);
+	left: calc(50% - 3%);
+	animation: myshine .5s infinite;
+}
+
+.dotTwo{
+	top: calc(50% + 5%);
+	left: calc(50%);
+	animation: myshine .5s infinite;
+	animation-delay: .2s;
+}
+
+.dotThree{
+	top: calc(50% + 5%);
+	left: calc(50% + 3%);
+	animation: myshine .5s infinite;
+}
+
+
+
+
 @media (max-width: 900px) {
 	.pageLoadingCover{
 		background-size: 20%;
@@ -522,5 +582,14 @@ table {
 @media (max-width: 500px) {
 	.pageLoadingCover{
 		background-size: 30%;
+	}
+
+	.smallDot{
+		width: 5px;
+		height: 5px;
+		background-color: #D44D5C;
+		border-radius: 50%;
+		position: absolute;
+		
 	}
 }
