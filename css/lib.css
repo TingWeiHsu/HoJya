@@ -397,8 +397,8 @@ table {
 	}
 	
 	.leftBox>a>div{
-		width: 120px;
-		height: 80px;
+		width: 80px;
+		height: 35px;
 		display: block;
 	}
 
@@ -530,6 +530,47 @@ table {
 	z-index: 300;
 }
 
+.smallDot{
+    width: 10px;
+    height: 10px;
+    background-color: #D44D5C;
+    border-radius: 50%;
+	position: absolute;
+    
+}
+
+@keyframes myshine {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+/* @keyframes myslowshine {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+} */
+
+
+.dotOne{
+	top: calc(50% + 5%);
+	left: calc(50% - 3%);
+	animation: myshine .5s infinite;
+}
+
+.dotTwo{
+	top: calc(50% + 5%);
+	left: calc(50%);
+	animation: myshine .5s infinite;
+	animation-delay: .2s;
+}
+
+.dotThree{
+	top: calc(50% + 5%);
+	left: calc(50% + 3%);
+	animation: myshine .5s infinite;
+}
+
+
 
 
 @media (max-width: 900px) {
@@ -541,5 +582,14 @@ table {
 @media (max-width: 500px) {
 	.pageLoadingCover{
 		background-size: 30%;
+	}
+
+	.smallDot{
+		width: 5px;
+		height: 5px;
+		background-color: #D44D5C;
+		border-radius: 50%;
+		position: absolute;
+		
 	}
 }
