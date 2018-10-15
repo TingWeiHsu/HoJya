@@ -70,6 +70,7 @@ $(document).ready(function() {
         //slidesNavPosition横向导航的位置，默认为bottom，可以设置为top或bottom
         slidesNavPositon:"top",
         //scrollOverflow内容超过满屏后是否显示滚动条，默认为false,如果为true则会显示滚动条，若需滚动查看内容还需要jquery.slimscroll插件的配合
+        
         //sectionSelector:section选择器。默认为.section
         //slideSelector:slide选择器，默认为.slide
 
@@ -148,18 +149,18 @@ function clickFunction(x) {
 
     if(x.classList.contains("change")){
         console.log("hi");
-        $("#fullNav").animate({height:"100%",opacity:1},300);
-        $("#navMove").animate({marginTop:"0%"},300);
+        $("#fullNav").animate({height:"100%",opacity:1},500);
+        $("#navMove").animate({marginTop:"0%"},500);
     } else {
         console.log("no");
-        $("#fullNav").animate({height:"0%",opacity:0},300);
-        $("#navMove").animate({marginTop:"-150%"},300);
+        $("#fullNav").animate({height:"0%",opacity:0},500);
+        $("#navMove").animate({marginTop:"-150%"},500);
     }
 
     $('.smallLink').click(function(e){
         setTimeout(function(){
-            $("#navMove").animate({marginTop:"-150%"},300);
-            $("#fullNav").animate({opacity:0},300);
+            $("#navMove").animate({marginTop:"-150%"},500);
+            $("#fullNav").animate({opacity:0},500);
         }, 300);
         x.classList.remove("change");
     })
@@ -303,15 +304,14 @@ function circleMoveAround(e){
     let x = e.clientX;
     let y = e.clientY;
     let  coor = "Coordinates: (" + x + "," + y + ")";
-    console.log(coor);
+  
 
     // detect the correct x and y of circle
 
     let cirxy = document.querySelector(".circle").getBoundingClientRect();
     let cY = cirxy.top + 35;
     let cX = cirxy.left + 35;
-    console.log(cY);
-    console.log(cX);
+
 
     // let's move our circle
 
@@ -319,8 +319,7 @@ function circleMoveAround(e){
     let newY = (y-cY)/20;
 
  
-    console.log(newX);
-    console.log(newY);
+  
     let circleArr = document.querySelectorAll(".circle");
 
     let w = $(window).width();
@@ -339,8 +338,50 @@ function circleMoveAround(e){
         }
         
     }
-
-    
     
 }
+
+
+// nav bar had hover and keep the effect
+
+if (window.location.pathname == "/index.html"){
+    console.log("innnndex");
+    $("#indexLink").addClass('hoverEffectLink');
+} else {
+    $("#indexLink").removeClass('hoverEffectLink');
+}
+
+if (window.location.pathname == "/food.html"){
+    console.log("innnndex");
+    $("#foodLink").addClass('hoverEffectLink');
+} else {
+    $("#foodLink").removeClass('hoverEffectLink');
+}
+
+if (window.location.pathname == "/about.html"){
+    console.log("innnndex");
+    $("#aboutLink").addClass('hoverEffectLink');
+} else {
+    $("#aboutLink").removeClass('hoverEffectLink');
+}
+
+
+
+// hover and get recommendation text 
+$(".restaurantBox").hover(function(){
+    $(".recipeCover").css("background-position-x", "210px");
+    $(".recipeCover").css("background-position-y", "50px");
+    $(".recipeCover").css("transition", "ease-in-out .8s");
+    $(".hoverText").css("display", "block");
+    
+    }, function(){
+    $(".recipeCover").css("background-position-x", "400px");
+    $(".recipeCover").css("background-position-y", "150px");
+    $(".recipeCover").css("transition", "initial");
+    $(".hoverText").css("display", "none");
+});
+
+
+
+
 

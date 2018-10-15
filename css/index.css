@@ -67,17 +67,21 @@
 
 	.circle {
 		left: 23%;
-		font-size: 36px;
-		font-weight: 300;
 		position: absolute;
 		top: 58%;
 		transform: translate(-50%,-50%);
 		z-index: 1200;
-		font-family: "Rounded Mplus 1c";
+		background-image: url('../imgs/circleplus.svg');
+		background-repeat: no-repeat;
+		background-size: 70px;
+		position: absolute;
+		height: 70px;
+		width: 70px;
+		/* font-family: "Rounded Mplus 1c";
 		color: #D44D5C;
 		padding: 15px;
 		border: 2px solid #D44D5C;
-		border-radius: 50%;
+		border-radius: 50%; */
 		cursor: pointer;
 		/* transition: all .1s ease-in; */
 	}
@@ -205,9 +209,14 @@
 			top: 20%;
 		}
 
-		.mobileSmallTextUp{
+		.mobileSmallTextUpOne{
 			top: calc(20% + 60px);
 		}
+
+		.mobileSmallTextUp{
+			top: calc(20% + 50px);
+		}
+		
 
 		.circle{
 			padding: 8px;
