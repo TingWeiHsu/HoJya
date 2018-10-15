@@ -234,7 +234,7 @@ table {
 			left: 0%;
 			transform: translate(0%,-50%);
 			z-index: 9998;
-			background-image: url("../imgs/lightlogo.svg");
+			background-image: url("../imgs/lightlogo.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 85%;
@@ -526,15 +526,16 @@ table {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-image: url(../imgs/logo.svg);
+	background-image: url(../imgs/logo.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #fff;
-	background-size: 10%;
+	background-size: 15%;
 	z-index: 300;
 }
 
 .smallDot{
+	margin-top: 40px;
     width: 10px;
     height: 10px;
     background-color: #D44D5C;

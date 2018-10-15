@@ -41,11 +41,11 @@
 }
 
 .circle {
-    left: 26%;
+    /* 
     font-size: 36px;
     font-weight: 300;
     position: absolute;
-    top: 58%;
+
     transform: translate(-50%,-50%);
     z-index: 200;
     font-family: "Rounded Mplus 1c";
@@ -53,8 +53,19 @@
     padding: 15px;
     border: 2px solid #D44D5C;
     border-radius: 50%;
+    cursor: pointer; */
+    background-image: url('../imgs/circleplus.svg');
+    background-repeat: no-repeat;
+    background-size: 70px;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    left: 26%;
+    top: 58%;
+    z-index: 200;
     cursor: pointer;
 }
+
 
 
 @media (max-width: 1024px) {
@@ -80,8 +91,8 @@
     }
 
     .circle{
-        left: 50%;
-        top: calc(20% + 125px);
+        left: calc(50% - 35px);
+        top: calc(20% + 80px);
     }
 }
 
@@ -108,17 +119,22 @@
     }
 
     .circle{
-        padding: 10px;
-        font-size: 30px;
+        background-size: 54px;
+        height: 54px;
+        width: 54px;
+        left: calc(50% - 27px);
+        top: calc(20% + 100px);
     }
 }
 
 
 @media (max-width: 550px) {
     .circle{
-        padding: 8px;
-        font-size: 21px;
-        font-weight: 400;
+        background-size: 41px;
+        height: 41px;
+        width: 41px;
+        left: calc(50% - 20px);
+        top: calc(20% + 100px);
     }
 }
 
@@ -142,10 +158,34 @@
     transition: all .3s;
 }
 
+@media (max-width: 1024px) {
+    .clicked{
+        top: 65px;
+        left: calc(100% - 135px);
+        transition: all .3s;
+    }
+}
+
+@media (max-width: 900px) {
+    .clicked{
+        top: 35px;
+        left: calc(100% - 105px);
+        transition: all .3s;
+    }
+}
+
 @media (max-width: 767px) {
     .clicked{
         top: 40px;
-        left: calc(100% - 40px);
+        left: calc(100% - 94px);
+        transition: all .3s;
+    }
+}
+
+@media (max-width: 550px) {
+    .clicked{
+        top: 20px;
+        left: calc(100% - 60px);
         transition: all .3s;
     }
 }
@@ -157,7 +197,7 @@
     position: fixed;
     opacity: 0;
     z-index: 10;
-    background-image: url(../imgs/bg.png);
+    background-image: url("../imgs/bg.png");
     background-repeat: repeat;
     margin: 0 auto;
     width: 100%;
@@ -173,17 +213,24 @@
         margin-left: 0%;
         width: 300px;
         position: absolute;
+    
         background-color: rgba(255, 255, 255, 1);
         top: calc(30% + 50px);
         margin-top:35%;
         left: 26%;
         transform: translate(-50%,0%);
-        border: 2px solid #fff;
+        border: 2px solid transparent;
         z-index: 900;
         opacity: 0;
         line-height: 20px;
         padding: 20px 20px;
         border-radius: 15px;
+        background-image: url("../imgs/round.svg");
+        background-repeat: no-repeat;
+        background-position-x: 400px;
+        background-position-y: 150px;
+        /* transition: ease-in-out .5s;
+        opacity: 0; */
 }
 
 @media (min-width: 1200px) {
@@ -259,6 +306,8 @@
    top:250px;
  }
 
+ 
+
  .grow { 
     transition: all .1s ease-in-out; 
   }
@@ -318,28 +367,30 @@
   }
 
   .circlePic1{
-    background-image: url(../imgs/beefnoodles.png);
+    background-image: url("../imgs/beefnoodles.png");
     top:216px;
     left:calc(100% - 139px);
     z-index: 500;
   }
 
   .circlePic2{
-    background-image: url(../imgs/food_soup.png);
+    background-image: url("../imgs/syoronbou.png");
+    
     top:calc(216px + 15vh);
     left:calc(100% - 139px);
     z-index: 500;
   }
 
   .circlePic3{
-    background-image: url(../imgs/food_riceball.png);
+    background-image: url("../imgs/food_soup.png");
+    
     top:calc(216px + 30vh);
     left:calc(100% - 139px);
     z-index: 500;
   }
 
   .circlePic4{
-    background-image: url(../imgs/syoronbou.png);
+    background-image: url("../imgs/food_riceball.png");
     top:calc(216px + 45vh);
     left:calc(100% - 139px);
     z-index: 500;
@@ -360,5 +411,296 @@
   @media (max-width: 900px) {
     #moveRotate{
         display: none;
+    }
+  }
+
+
+  .restaurantBox{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 5px;
+  }
+
+  .restaurantBox>p{
+      color: #D44D5C;
+      margin: 0 10px;
+      display: none;
+  }
+
+  .restaurantBox>.restaurantEnter{
+      background-image: url("../imgs/restaurantbutton.svg");
+      background-repeat: no-repeat;
+      width: 45px;
+      height: 45px;
+      margin: 0 10px 0 0;
+      cursor: pointer;
+    }
+
+
+.hoverCircle{
+    display: none;
+    background-color:pink;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow: hidden;
+    right: -20px;
+    top: 100px;
+    z-index: -10;
+    animation: growCircle  .2s;
+    animation-play-state: running;
+    animation-timing-function: linear;
+
+}
+
+ 
+
+@keyframes growCircle {
+0%   {transform:scale(0,0)}
+100% {transform:scale(1,1)}
+}
+
+
+
+
+
+#restaurantFullPage{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    background-color: #eeeeee;
+    z-index: 9999;
+    display: none;
+}
+
+.restaurantCard{
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    display: flex;
+    overflow-y: hidden;
+    align-items: center;
+}
+
+.restaurantCard> div {
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    scroll-snap-align: center;
+ }
+
+ .restaurantCard> div:nth-child(1) {
+     background-color: aliceblue;
+ }
+
+ .restaurantCard> div:nth-child(2) {
+    background-color: pink;
+}
+
+.restaurantCard> div:nth-child(3) {
+    background-color: aliceblue;
+}
+
+.restaurantCard>.restaurantBG{
+    /* background-image: url("../imgs/02dintaifeng.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurantCard>.restaurantBG>.restBig{
+    width: 600px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+}
+
+.restDetail{
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+}
+
+.restDetail>h1{
+    font-size: 30px;
+    font-family: "Rounded Mplus 1c";
+    color: #D44D5C;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.restDetail>h2{
+    font-size: 16px;
+    font-family: "Rounded Mplus 1c";
+    color: #999999;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.restDetail>p{
+    font-size: 14px;
+    font-family: "Rounded Mplus 1c";
+    color: #666666;
+    margin-bottom: 6px;
+    /* text-align: center; */
+    letter-spacing: .5px;
+}
+
+.restDetail>a{
+    background-image: url("../imgs/homepage.svg");
+    background-repeat: no-repeat;
+    background-size: 45px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    margin-left: 84%;
+    margin-top: 30%;
+    display: block;
+}
+
+
+
+.restPicture{
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #ffffff;
+}
+
+
+
+/*  left and right button  */
+
+
+.restaurantCard .btn {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    border-radius: 2px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: initial;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .restaurantCard .btn.next {
+    background-image: url('../imgs/arrR.svg');
+    right: 10px;
+  }
+  
+  .restaurantCard .btn.prev {
+    background-image: url('../imgs/arrL.svg');
+    left: 10px;
+  }
+
+
+  .resClose{
+    background-image: url('../imgs/circleplus.svg');
+    background-repeat: no-repeat;
+    background-size: 70px;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 65px;
+    right: 65px;
+    z-index: 200;
+    cursor: pointer;
+  }
+
+
+  @media (max-width: 730px) {
+
+    .restaurantCard>.restaurantBG>.restBig{
+        display: block;
+        height: 500px;
+        width: 270px;
+    }
+
+    .restDetail{
+        width: 270px;
+        height: 50%;
+        padding: 35px 20px 20px 20px;
+    }
+
+    .restPicture{
+        height: 50%;
+        width: 270px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .restDetail>a{
+        background-image: url("../imgs/homepage.svg");
+        background-repeat: no-repeat;
+        margin-left: 80%;
+        margin-top: 10%;
+    }
+
+    .resClose{
+        top: 13px;
+        right: 13px;
+        background-size: 54px;
+        height: 54px;
+        width: 54px;
+    }
+
+  }
+
+
+  @media (max-width: 550px) {
+
+    .restaurantCard .btn.prev{
+        left: 5px;
+        height: 50px;
+        width: 20px;
+        background-size: 18px;
+    }
+
+    .restaurantCard .btn.next{
+        right: 5px;
+        height: 50px;
+        width: 20px;
+        background-size: 18px;
+    }
+
+    .restaurantBox>.restaurantEnter {
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+    }
+
+    .resClose{
+        background-size: 41px;
+        height: 41px;
+        width: 41px;
+        top: 20px;
+        right: 20px;
+        z-index: 200;
+    }
+
+  }
+
+
+  @media (max-width: 400px) {
+    .restDetail>a{
+        background-image: url("../imgs/homepage.svg");
+        background-repeat: no-repeat;
+        background-size: 40px;
+        width: 40px;
+        height: 40px;
     }
   }

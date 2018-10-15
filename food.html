@@ -103,7 +103,7 @@
             <div id="bg">
                     <h2 class="productName fadeMoveWord">牛肉麵</h2>
                     <h3 class="productSubName fadeMoveWord">牛肉の煮込み麺</h3>
-                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
                     <img class="bigBack" src="imgs/chop.svg">
                     <img class="foodPhoto" src="./imgs/beefnoodles.png" alt="beefnoodles">
@@ -112,15 +112,41 @@
             <div class="recipeCover">
                     <h3>材 料</h3>
                     <p>牛すね肉、にんじん、大根、玉ねぎ、生姜、葱、セロリ、麺、八角、五香粉、豆板醤、ケチャップ、酒、醤油、砂糖、白胡椒</p>
+                    <div class="restaurantBox">
+                        <p class="hoverText">おすすめ</p>
+                        <div class="restaurantEnter" id="beef_noodles"></div>
+                        <div class="hoverCircle"></div>
+                    </div>
                     
             </div>
         </div>
 
         <div class="section">
+                <div id="bg">
+                        <h2 class="productName fadeMoveWord">小籠包</h2>
+                        <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
+                        <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
+    
+                        <img class="bigBack" src="imgs/chop.svg">
+                        <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
+                        <div class="magicCover"></div>                
+                </div>
+                <div class="recipeCover">
+                        <h3>材 料</h3>
+                        <p>豚ひき肉、玉ねぎ、しょうが、だし醤油、酒、オイスターソース、ゴマ油、塩・こしょう、強力粉、ごま油</p>
+                        <div class="restaurantBox">
+                                <p class="hoverText">おすすめ</p>
+                                <div class="restaurantEnter" id="syoronbou"></div>
+                                <div class="hoverCircle"></div>
+                            </div>
+                </div>
+            </div>
+
+        <div class="section">
             <div id="bg">
                     <h2 class="productName fadeMoveWord">銀耳四寶湯</h2>
                     <h3 class="productSubName fadeMoveWord">白きくらげのスープ</h3>
-                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
                 	<img class="bigBack" src="imgs/spoon.svg">
                     <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
@@ -129,7 +155,11 @@
             <div class="recipeCover">
                     <h3>材 料</h3>
                     <p>銀耳、蓮の実、紅棗、白果、桂圓(干しリュウガン)、氷砂糖</p>
-                    
+                    <div class="restaurantBox">
+                            <p class="hoverText">おすすめ</p>
+                            <div class="restaurantEnter" id="snow_mushroom"></div>
+                            <div class="hoverCircle"></div>
+                        </div>
             </div>
         </div>
 
@@ -137,7 +167,7 @@
             <div id="bg">
                     <h2 class="productName fadeMoveWord">芝麻甜湯圓</h2>
                     <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
-                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
+                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
                     <img class="bigBack" src="imgs/spoon.svg">
                     <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
@@ -146,25 +176,14 @@
             <div class="recipeCover">
                     <h3>材 料</h3>
                     <p>すりごま黒、白玉粉、水、砂糖、ごま油</p>
-                    
+                    <div class="restaurantBox">
+                            <p class="hoverText">おすすめ</p>
+                            <div class="restaurantEnter" id="sesame_mochi"></div>
+                            <div class="hoverCircle"></div>
+                        </div>
             </div>
         </div>
-        <div class="section">
-            <div id="bg">
-                    <h2 class="productName fadeMoveWord">小籠包</h2>
-                    <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
-                    <div class="circle fadeMoveWord" onclick="enlargeFunction(this)">＋</div>
-
-                    <img class="bigBack" src="imgs/chop.svg">
-                    <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
-                    <div class="magicCover"></div>                
-            </div>
-            <div class="recipeCover">
-                    <h3>材 料</h3>
-                    <p>豚ひき肉、玉ねぎ、しょうが、だし醤油、酒、オイスターソース、ゴマ油、塩・こしょう、強力粉、ごま油</p>
-                    
-            </div>
-        </div>
+       
     </div>
 
     
@@ -183,15 +202,40 @@
                 </div>
                 
             </div>
-        </footer>
+    </footer>
+
+
+    
+
+    <div id="restaurantFullPage"  onmousemove="circleMoAround(event)">
+        <div class="restaurantCard" id="restaurantCard">
+
+           
+        </div>
+        <div class="resClose"></div>
+    </div>
 
 
 
 
-
+   
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyEowNWviLOxQeEUY_Lmp05I-LsjdDVJk",
+    authDomain: "hojya-taiwan-food.firebaseapp.com",
+    databaseURL: "https://hojya-taiwan-food.firebaseio.com",
+    projectId: "hojya-taiwan-food",
+    storageBucket: "hojya-taiwan-food.appspot.com",
+    messagingSenderId: "793087052568"
+  };
+  firebase.initializeApp(config);
+</script>
 
 
 <script src="js/index.js"></script>    
+<script src="js/restaurant.js"></script> 
 </body>
 
 </html>
