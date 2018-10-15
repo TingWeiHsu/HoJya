@@ -382,6 +382,23 @@ $(".restaurantBox").hover(function(){
 });
 
 
+// will move to next page function 
+
+function downToNext () {
+    let x = 1;
+    console.log(window.location.hash);
+    if (window.location.hash == "" || window.location.hash == `#page${x}`) {
+        console.log(x);
+        window.location.hash =  `#page${x+1}`; 
+    } else if (window.location.hash == `#page${x+1}`) {
+        console.log(x);
+        window.location.hash =  `#page${x+2}`; 
+    } else if (window.location.hash == `#page${x+2}`) {
+        console.log(x);
+        window.location.hash =  `#page${x+3}`; 
+    }
+}
+
 
 
 
