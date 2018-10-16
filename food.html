@@ -11,9 +11,6 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Jesse">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
 
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
@@ -31,9 +28,7 @@
     <header>
                 <div class="headercontainer">
         
-                    <div class="first">
-                        <!-- <a href="index.html"><img alt="HoJyaLogo" src="./imgs/hoJya.png" id="logoPic"></a> -->
-                    </div>
+                    <div class="first"></div>
                     <div class="second">
                             <a href="index.html" class="link" id="indexLink">Home</a>
                             <a href="food.html" class="link" id="foodLink">Food</a>
@@ -106,7 +101,7 @@
                     <h3 class="productSubName fadeMoveWord">牛肉の煮込み麺</h3>
                     <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
-                    <img class="bigBack" src="imgs/chop.svg">
+                    <img class="bigBack" src="imgs/chop.png">
                     <img class="foodPhoto" src="./imgs/beefnoodles.png" alt="beefnoodles">
                     <div class="magicCover"></div>
             </div>
@@ -128,7 +123,7 @@
                         <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
                         <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
     
-                        <img class="bigBack" src="imgs/chop.svg">
+                        <img class="bigBack" src="imgs/chop.png">
                         <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
                         <div class="magicCover"></div>                
                 </div>
@@ -139,7 +134,7 @@
                                 <p class="hoverText">おすすめ</p>
                                 <div class="restaurantEnter" id="syoronbou"></div>
                                 <div class="hoverCircle"></div>
-                            </div>
+                        </div>
                 </div>
             </div>
 
@@ -149,7 +144,7 @@
                     <h3 class="productSubName fadeMoveWord">白きくらげのスープ</h3>
                     <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
-                	<img class="bigBack" src="imgs/spoon.svg">
+                	<img class="bigBack" src="imgs/spoon.png">
                     <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
                     <div class="magicCover"></div>
             </div>
@@ -160,7 +155,7 @@
                             <p class="hoverText">おすすめ</p>
                             <div class="restaurantEnter" id="snow_mushroom"></div>
                             <div class="hoverCircle"></div>
-                        </div>
+                    </div>
             </div>
         </div>
 
@@ -170,7 +165,7 @@
                     <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
                     <div class="circle fadeMoveWord" onclick="enlargeFunction(this)"></div>
 
-                    <img class="bigBack" src="imgs/spoon.svg">
+                    <img class="bigBack" src="imgs/spoon.png">
                     <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
                     <div class="magicCover"></div>
             </div>
@@ -181,7 +176,7 @@
                             <p class="hoverText">おすすめ</p>
                             <div class="restaurantEnter" id="sesame_mochi"></div>
                             <div class="hoverCircle"></div>
-                        </div>
+                    </div>
             </div>
         </div>
        
@@ -197,7 +192,7 @@
                 <div class="first">
                     <p>© 2018 HoJya Taiwan ltd </p>
                 </div>
-                <div class="second"></div>
+                <div class="second" onclick="downToNext()"></div>
                 <div class="third">				
                     <a href="about.html#page2">Contact</a>
                 </div>
@@ -219,6 +214,9 @@
 
 
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
    
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 <script>

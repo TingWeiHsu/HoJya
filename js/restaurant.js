@@ -22,7 +22,6 @@ let db = firebase.database();
 
 
 function create(ek){
-    console.log(ek);
 
     let arrowSpanL = document.createElement('span');
     let arrowSpanR = document.createElement('span');
@@ -34,7 +33,6 @@ function create(ek){
     document.getElementById('restaurantCard').appendChild(arrowSpanR);
 
     db.ref(ek).on('child_added', function(snapshot) {
-        console.log(snapshot.val());
     
         let titleH = document.createElement("h1");
         titleH.textContent = snapshot.val().name;
@@ -46,13 +44,22 @@ function create(ek){
         timeP.textContent = snapshot.val().time;
         let telP = document.createElement("p");
         telP.textContent = snapshot.val().tel;
+
+        
+        let moreSp = document.createElement("span");
+        moreSp.textContent = "公式サイト";
+        moreSp.classList.add("moreSpan");
         let iconA = document.createElement("a");
         iconA.setAttribute("href", snapshot.val().link );
         iconA.setAttribute("target", "_blank");
-        
+        iconA.classList.add("moreA");
+
+        let officialBox = document.createElement("div");
+        officialBox.classList.add("officialBox");
     
         let textBox = document.createElement("div");
         textBox.classList.add("restDetail");
+        
     
         // ++++++ need to set background
         let picBox = document.createElement("div");
@@ -77,7 +84,9 @@ function create(ek){
         textBox.appendChild(addressP);
         textBox.appendChild(timeP);
         textBox.appendChild(telP);
-        textBox.appendChild(iconA);
+        officialBox.appendChild(moreSp);
+        officialBox.appendChild(iconA);
+        textBox.appendChild(officialBox);
     
         mediumBox.appendChild(textBox);
         mediumBox.appendChild(picBox);
@@ -86,6 +95,22 @@ function create(ek){
     
         document.getElementById('restaurantCard').appendChild(restaurantDiv);
         
+        function checkHover () {
+            $(".moreA").hover(function(){
+                $(".restBig").css("background-position-x", "80px");
+                $(".restBig").css("background-position-y", "150px");
+                $(".restBig").css("transition", "ease-in-out .8s");
+                $(".moreSpan").css("display", "block");
+                
+                }, function(){
+                $(".restBig").css("background-position-x", "400px");
+                $(".restBig").css("background-position-y", "300px");
+                $(".restBig").css("transition", "initial");
+                $(".moreSpan").css("display", "none");
+            });
+        }
+
+        checkHover ();
     })
 
 
@@ -95,8 +120,6 @@ function create(ek){
     const gallery = document.querySelector('#restaurantFullPage');
     const gallery_scroller = document.querySelector('#restaurantCard');
     const gallery_item_size = document.querySelector('div').clientWidth;
-
-    console.log(gallery_item_size);
 
     gallery.querySelector('.btn.next').addEventListener('click', scrollToNextPage);
     gallery.querySelector('.btn.prev').addEventListener('click', scrollToPrevPage);
@@ -108,6 +131,8 @@ function create(ek){
     gallery_scroller.scrollBy(-gallery_item_size, 0);
     }
 
+
+    
    
 }
 
@@ -115,7 +140,7 @@ function create(ek){
 
 
 
-
+// move the circle in restaurant 
 
 function circleMoAround(e){
 
@@ -126,19 +151,15 @@ function circleMoAround(e){
   
 
     // detect the correct x and y of circle
-
     let cirxy = document.querySelector(".resClose").getBoundingClientRect();
     let cY = cirxy.top + 35;
     let cX = cirxy.left + 35;
 
 
     // let's move our circle
-
     let newX = (x-cX)/20;
     let newY = (y-cY)/20;
 
- 
-  
     let circleArr = document.querySelectorAll(".resClose");
 
     let w = $(window).width();
@@ -153,6 +174,8 @@ function circleMoAround(e){
     }
     
 }
+
+
 
 
 

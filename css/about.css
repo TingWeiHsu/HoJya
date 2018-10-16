@@ -145,23 +145,7 @@
 
 
 
-/* .smallDeco{
-    width: 10px;
-    height: 10px;
-    background-color: #D44D5C;
-    border-radius: 50%;
-    position: relative;
-}
 
-.leftUp{
-    top: -20px;
-    left: -20px;
-}
-
-.rightDown{
-    top: 300px;
-    left: 360px;
-} */
 
 
 
@@ -234,16 +218,7 @@
         padding: 50px 20px;
         border-radius: 15px;
     }
-/* 
-    .leftUp{
-        top: -30px;
-        left: -0px;
-    }
-    
-    .rightDown{
-        top: 257px;
-        left: 200px;
-    } */
+
 }
 
 
