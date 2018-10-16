@@ -11,9 +11,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Jesse">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
+
 
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
@@ -82,12 +80,12 @@
     <div id="fullpage" onmousemove="circleMoveAround(event)">
         <div class="section">
             <div id="bg">
-				<img id="picBg" src="./imgs/picbg.svg" alt="picturebg">
-					<img class="mobilePic mobilePicUp" src="./imgs/uppic.svg" alt="picturebg">
-					<img class="mobilePic mobilePicDown" src="./imgs/downpic.svg" alt="picturebg">
+				<img id="picBg" src="./imgs/picbg.png" alt="picturebg">
+					<img class="mobilePic mobilePicUp" src="./imgs/uppic.png" alt="picturebg">
+					<img class="mobilePic mobilePicDown" src="./imgs/downpic.png" alt="picturebg">
 				<h2 class="pageTitle fadeWord">台湾絶品美味しい<br>食べ物おすすめ</h2>
                 <h3 class="smallDescription fadeWord">Best Taiwanese Cuisine Introduction</h3>
-                <div id="mobileArrow"></div>
+                <div id="mobileArrow" onclick="downToNext()"></div>
             </div>
         </div>
         <div class="section">
@@ -97,12 +95,6 @@
 					<h3 class="smallDescription upper lefter mobileSmallTextUpOne fadeWord">Share the Greatest Restaurant for You</h3>
             </div>
         </div>
-        <!-- <div class="section">
-            <div class="slide"> Slide 1 </div>
-            <div class="slide"> Slide 2 </div>
-            <div class="slide active"> Slide 3 </div>
-            <div class="slide"> Slide 4 </div>
-        </div> -->
         <div class="section">
             <div id="bg">
 					<img id="cooking" src="./imgs/preparing.svg" alt="foodbracket">
@@ -134,7 +126,9 @@
 
 
 
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script>
 <script src="js/index.js"></script>    
 </body>
 

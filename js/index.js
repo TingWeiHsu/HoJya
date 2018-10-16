@@ -3,7 +3,6 @@
 
 function loadingPage() {
     setTimeout(function(){ 
-        console.log("yo");
         $(".pageLoadingCover").animate({marginTop:"-300%"},500,"swing");
     }, 500);
 };
@@ -148,11 +147,9 @@ function clickFunction(x) {
     x.classList.toggle("change");
 
     if(x.classList.contains("change")){
-        console.log("hi");
         $("#fullNav").animate({height:"100%",opacity:1},500);
         $("#navMove").animate({marginTop:"0%"},500);
     } else {
-        console.log("no");
         $("#fullNav").animate({height:"0%",opacity:0},500);
         $("#navMove").animate({marginTop:"-150%"},500);
     }
@@ -203,7 +200,6 @@ function enlargeFunction(x) {
         }
        
     } else {
-        console.log("no");
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.remove("clicked");
         };
@@ -267,7 +263,6 @@ let circleCArray = ['.circle1','.circle2','.circle3','.circle4'];
 let circlePArray = ['.circlePic1','.circlePic2','.circlePic3','.circlePic4'];
 
 for ( let y = 0; y < circleCArray.length ; y++) {
-    console.log("hey");
     let circleNum = circleCArray[y];
     let circlePN = circlePArray[y];
 
@@ -345,21 +340,18 @@ function circleMoveAround(e){
 // nav bar had hover and keep the effect
 
 if (window.location.pathname == "/index.html"){
-    console.log("innnndex");
     $("#indexLink").addClass('hoverEffectLink');
 } else {
     $("#indexLink").removeClass('hoverEffectLink');
 }
 
 if (window.location.pathname == "/food.html"){
-    console.log("innnndex");
     $("#foodLink").addClass('hoverEffectLink');
 } else {
     $("#foodLink").removeClass('hoverEffectLink');
 }
 
 if (window.location.pathname == "/about.html"){
-    console.log("innnndex");
     $("#aboutLink").addClass('hoverEffectLink');
 } else {
     $("#aboutLink").removeClass('hoverEffectLink');
@@ -386,15 +378,11 @@ $(".restaurantBox").hover(function(){
 
 function downToNext () {
     let x = 1;
-    console.log(window.location.hash);
     if (window.location.hash == "" || window.location.hash == `#page${x}`) {
-        console.log(x);
         window.location.hash =  `#page${x+1}`; 
     } else if (window.location.hash == `#page${x+1}`) {
-        console.log(x);
         window.location.hash =  `#page${x+2}`; 
     } else if (window.location.hash == `#page${x+2}`) {
-        console.log(x);
         window.location.hash =  `#page${x+3}`; 
     }
 }

@@ -22,7 +22,6 @@ let db = firebase.database();
 
 
 function create(ek){
-    console.log(ek);
 
     let arrowSpanL = document.createElement('span');
     let arrowSpanR = document.createElement('span');
@@ -34,7 +33,6 @@ function create(ek){
     document.getElementById('restaurantCard').appendChild(arrowSpanR);
 
     db.ref(ek).on('child_added', function(snapshot) {
-        console.log(snapshot.val());
     
         let titleH = document.createElement("h1");
         titleH.textContent = snapshot.val().name;
@@ -122,8 +120,6 @@ function create(ek){
     const gallery = document.querySelector('#restaurantFullPage');
     const gallery_scroller = document.querySelector('#restaurantCard');
     const gallery_item_size = document.querySelector('div').clientWidth;
-
-    console.log(gallery_item_size);
 
     gallery.querySelector('.btn.next').addEventListener('click', scrollToNextPage);
     gallery.querySelector('.btn.prev').addEventListener('click', scrollToPrevPage);
