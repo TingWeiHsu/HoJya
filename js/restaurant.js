@@ -1,16 +1,33 @@
 
+  // Initialize Firebase
+  
 
 
 $(".restaurantEnter").click(function(e){
+    let x = e.clientX;
+    let y = e.clientY;
+    console.log(x,y);
+    $(".clickWhiteCircle").css("top", `calc(-2500px + ${y}px)`);
+    $(".clickWhiteCircle").css("left", `calc(-2500px + ${x}px)`);
+    $(".clickWhiteCircle").css("display", "block");
     // click and then show the full page  if ok want to add transition animation before go to full page
-    $("#restaurantFullPage").css("display", "block");
-    // get the id as the key for data
-    let enterKey = e.target.id;
-    create(enterKey);
+
+    setTimeout(function(){ 
+        
+        // get the id as the key for data
+        let enterKey = e.target.id;
+        
+        create(enterKey);
+     }, 1000);
+    
 });
 
 $(".resClose").click(function(){
+    $(".clickCircle").css("margin-top", "0%");
+    $(".clickWhiteCircle").css("display", "none");
     $("#restaurantFullPage").css("display", "none");
+    $(".clickCircle").css("display", "none");
+   
     document.getElementById('restaurantCard').innerHTML="";
 });
 
@@ -22,6 +39,9 @@ let db = firebase.database();
 
 
 function create(ek){
+    $(".clickCircle").css("display", "block");
+    $("#restaurantFullPage").css("display", "block");
+    
 
     let arrowSpanL = document.createElement('span');
     let arrowSpanR = document.createElement('span');
@@ -34,6 +54,21 @@ function create(ek){
 
     db.ref(ek).on('child_added', function(snapshot) {
     
+        let img = document.createElement("img");
+        img.setAttribute("src",snapshot.val().bg);
+
+        img.onload = function(){
+
+        $(".clickCircle").animate({marginTop:"-100vh"},1500);
+        
+
+         
+
+
+         
+
+
+
         let titleH = document.createElement("h1");
         titleH.textContent = snapshot.val().name;
         let subH = document.createElement("h2");
@@ -111,6 +146,7 @@ function create(ek){
         }
 
         checkHover ();
+        }
     })
 
 

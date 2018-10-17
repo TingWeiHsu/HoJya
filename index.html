@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" media="all" />
     
 </head>
-<body onload="loadingPage()" >
+<body onload="loadingPage()" onmousemove="circleMoveAround(event)">
 
         <div class="pageLoadingCover">
                 <div class="smallDot dotOne"></div>
@@ -77,7 +77,7 @@
     </div>
 
 
-    <div id="fullpage" onmousemove="circleMoveAround(event)">
+    <div id="fullpage" >
         <div class="section">
             <div id="bg">
 				<img id="picBg" src="./imgs/picbg.png" alt="picturebg">
@@ -90,14 +90,14 @@
         </div>
         <div class="section">
             <div id="bg">
-					<img id="preparing" src="./imgs/doing.svg" alt="foodbracket">
+					<img id="preparing" src="./imgs/doing.png" alt="foodbracket">
 					<h2 class="pageTitle lefter mobileTextUp fadeWord">良いお店を紹介します</h2>
 					<h3 class="smallDescription upper lefter mobileSmallTextUpOne fadeWord">Share the Greatest Restaurant for You</h3>
             </div>
         </div>
         <div class="section">
             <div id="bg">
-					<img id="cooking" src="./imgs/preparing.svg" alt="foodbracket">
+					<img id="cooking" src="./imgs/preparing.png" alt="foodbracket">
                     <h2 class="pageTitle mobileTextUp fadeWord">グルメ旅に行こう</h2>
                     <h3 class="smallDescription upper mobileSmallTextUp fadeWord">Discover Now</h3>
                     <a href="food.html" class="link"><div class="circle center fadeWord"></div></a>
