@@ -233,7 +233,7 @@ table {
 			top: 50%;
 			left: 0%;
 			transform: translate(0%,-50%);
-			z-index: 9998;
+			z-index: 9997;
 			background-image: url("../imgs/lightlogo.png");
 			background-repeat: no-repeat;
 			background-position: center;
@@ -254,7 +254,7 @@ table {
 		top: 50%;
 		right: 0%;
 		transform: translate(0%,-50%);
-		z-index: 9999;
+		z-index: 9997;
 	}
 
 	.container {
