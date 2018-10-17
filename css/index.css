@@ -38,8 +38,8 @@
 	#picBg{
 		display: block;
 		position: absolute;
-		top: 30px;
-		height: 100%;
+		top: 50%;
+		transform: translateY(-50%);
 		width: calc(100% - 180px);
 	}
 

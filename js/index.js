@@ -3,7 +3,7 @@
 
 function loadingPage() {
     setTimeout(function(){ 
-        $(".pageLoadingCover").animate({marginTop:"-300%"},500,"swing");
+        $(".pageLoadingCover").animate({marginTop:"-100vh"},500,"swing");
     }, 500);
 };
 
@@ -90,12 +90,22 @@ $(document).ready(function() {
         //lazyLoading
 
         afterLoad: function(anchorLink, index){
+
+            let w = $(window).width();
+            if (w > 1025) {
+                let circleArr = document.querySelectorAll(".circle");
+                for (let i = 0; i < circleArr.length ; i++){
+                    circleArr[i].style.transform = `translate(-35px,-35px)`; 
+                }
+            }
+
             if(index>= 1){
                 // move from 5 to 0 every time you slide
                 $(".fadeWord").animate({marginTop:"0%",opacity:"1"},300);
                 $(".fadeMoveWord").animate({marginTop:"0%",opacity:"1"},300);
                 $(".recipeCover").animate({marginTop:"0%"},300);
-
+                
+                
                 // detect if class is clicked, all Name should move -10 after back to 0
                 let circleLo = document.querySelectorAll(".circle");
                 for (let j = 0; j<circleLo.length; j++){
@@ -126,6 +136,7 @@ $(document).ready(function() {
         },
 
         onLeave: function(index,nextIndex,direction){
+            
             if(nextIndex>= 1){
                 // move back every time when you leave
                 $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
@@ -237,7 +248,7 @@ function enlargeFunction(x) {
                          }
                     
                  };
-}
+    }
 
 
 
@@ -291,8 +302,6 @@ for ( let y = 0; y < circleCArray.length ; y++) {
 // let all circle moooooooooooove 
 
 
-
-
 function circleMoveAround(e){
 
     // mouse move everytime will get something
@@ -313,13 +322,12 @@ function circleMoveAround(e){
     let newX = (x-cX)/20;
     let newY = (y-cY)/20;
 
- 
   
     let circleArr = document.querySelectorAll(".circle");
 
     let w = $(window).width();
     if (w > 1025) {
-    
+        
         for (let i = 0; i < circleArr.length ; i++){
             if (i === 0) {
                 circleArr[i].style.transform = `translate(${newX-35}px,${newY-35}px)`; 
@@ -361,13 +369,29 @@ if (window.location.pathname == "/about.html"){
 
 // hover and get recommendation text 
 $(".restaurantBox").hover(function(){
+    let w = $(window).width();
+
     $(".recipeCover").css("background-position-x", "210px");
     $(".recipeCover").css("background-position-y", "50px");
     $(".recipeCover").css("transition", "ease-in-out .8s");
     $(".hoverText").css("display", "block");
+
+    if (w < 550) {
+        $(".recipeCover").css("background-position-x", "60px");
+        $(".recipeCover").css("background-position-y", "50px");
+    } else if (w < 1024){
+        $(".recipeCover").css("background-position-x", "210px");
+        $(".recipeCover").css("background-position-y", "50px");
+    } else if (w < 1200 && w > 1024){
+        $(".recipeCover").css("background-position-x", "60px");
+        $(".recipeCover").css("background-position-y", "80px");
+    } else if (w > 1200) {
+        $(".recipeCover").css("background-position-x", "210px");
+        $(".recipeCover").css("background-position-y", "50px");
+    }
     
     }, function(){
-    $(".recipeCover").css("background-position-x", "400px");
+    $(".recipeCover").css("background-position-x", "410px");
     $(".recipeCover").css("background-position-y", "150px");
     $(".recipeCover").css("transition", "initial");
     $(".hoverText").css("display", "none");

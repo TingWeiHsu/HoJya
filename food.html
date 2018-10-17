@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/food.css" media="all" />
     
 </head>
-<body onload="loadingPage()">
+<body onload="loadingPage()" onmousemove="circleMoveAround(event)">
 
         <div class="pageLoadingCover">
                 <div class="smallDot dotOne"></div>
@@ -94,7 +94,7 @@
     </div>
 
 
-    <div id="fullpage" onmousemove="circleMoveAround(event)">
+    <div id="fullpage">
         <div class="section">
             <div id="bg">
                     <h2 class="productName fadeMoveWord">牛肉麵</h2>
@@ -111,7 +111,7 @@
                     <div class="restaurantBox">
                         <p class="hoverText">おすすめ</p>
                         <div class="restaurantEnter" id="beef_noodles"></div>
-                        <div class="hoverCircle"></div>
+                        
                     </div>
                     
             </div>
@@ -133,7 +133,7 @@
                         <div class="restaurantBox">
                                 <p class="hoverText">おすすめ</p>
                                 <div class="restaurantEnter" id="syoronbou"></div>
-                                <div class="hoverCircle"></div>
+                               
                         </div>
                 </div>
             </div>
@@ -154,12 +154,12 @@
                     <div class="restaurantBox">
                             <p class="hoverText">おすすめ</p>
                             <div class="restaurantEnter" id="snow_mushroom"></div>
-                            <div class="hoverCircle"></div>
+                        
                     </div>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" >
             <div id="bg">
                     <h2 class="productName fadeMoveWord">芝麻甜湯圓</h2>
                     <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
@@ -175,16 +175,16 @@
                     <div class="restaurantBox">
                             <p class="hoverText">おすすめ</p>
                             <div class="restaurantEnter" id="sesame_mochi"></div>
-                            <div class="hoverCircle"></div>
+                            
                     </div>
             </div>
         </div>
        
     </div>
 
-    
-   
 
+    <div class="clickCircle"></div>
+    <div class="clickWhiteCircle"></div>
 
     <footer>
             <div class="footercontainer">
@@ -202,12 +202,9 @@
 
 
     
-
+   
     <div id="restaurantFullPage"  onmousemove="circleMoAround(event)">
-        <div class="restaurantCard" id="restaurantCard">
-
-           
-        </div>
+        <div class="restaurantCard" id="restaurantCard"></div>
         <div class="resClose"></div>
     </div>
 
@@ -220,8 +217,7 @@
    
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyDyEowNWviLOxQeEUY_Lmp05I-LsjdDVJk",
     authDomain: "hojya-taiwan-food.firebaseapp.com",
     databaseURL: "https://hojya-taiwan-food.firebaseio.com",
