@@ -24,4 +24,12 @@
     #fp-nav.right {
         display: none;
     }
+
+    div> .gmnoprint{
+        display: none;
+    }
+
+    .gm-style>button{
+        display:none;
+    }
 }
