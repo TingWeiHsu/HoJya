@@ -58,11 +58,11 @@ $(document).ready(function() {
         //menu绑定菜单，设定的相关属性与anchors的值对应后，菜单可以控制滚动条，默认为false。可设置为菜单的jquery选择器
         //menu:"#fullpageMenu",
         //navigation是否显示导航，默认为false
-        navigation:false,
+        navigation:true,
         //navigationPosition导航小圆点的位置
         navigationPosition:"right",
         //navigationTooltips导航小圆点的提示，注意按顺序设置
-        navigationTooltips:['Sweet','Soup','Noodles','Syoronbou'],
+        // navigationTooltips:['Sweet','Soup','Noodles','Syoronbou'],
         //showActiveTooltip是否显示当前页面的tooltip信息，默认为false
         //slidesNavigation 是否显示横向幻灯片的导航，默认为false
         slidesNavigation:true,
@@ -183,7 +183,7 @@ function enlargeFunction(x) {
     // click + to toggle it
     x.classList.toggle("clicked");
     
-    
+    $("#fp-nav").css("display","none");
 
     let circleLoop = document.querySelectorAll(".circle");
     if(x.classList.contains("clicked")){
@@ -205,12 +205,15 @@ function enlargeFunction(x) {
         if (w < 900) {
             $(".leftBox").animate({marginTop:"-150%"},300);
             $(".rightBox").animate({marginTop:"-250%"},300);
-        } else if (w > 900) {
-            $(".leftBox").animate({marginLeft:"-150%"},300);
-            $(".rightBox").animate({marginRight:"-250%"},300);
-        }
+        } 
        
     } else {
+        let w = $(window).width();
+        $("#fp-nav").css("display","initial");
+        if (w < 550) {
+            $("#fp-nav").css("display","none");
+        } 
+
         for (let i = 0; i < circleLoop.length ; i++){
             circleLoop[i].classList.remove("clicked");
         };
@@ -224,14 +227,11 @@ function enlargeFunction(x) {
         $(".foodPhoto").animate({padding:"20px"},300);
         $("#moveRotate").animate({marginRight:"-250%"},300); 
 
-        let w = $(window).width();
+        
         if (w < 900) {
             $(".leftBox").animate({marginTop:"0%"},300);
             $(".rightBox").animate({marginTop:"0%"},300);
-        } else if (w > 900) {
-            $(".leftBox").animate({marginLeft:"0%"},300);
-            $(".rightBox").animate({marginRight:"0%"},300);
-        }
+        } 
     }
 
     // detect which page and change circle bar
@@ -408,6 +408,49 @@ function downToNext () {
         window.location.hash =  `#page${x+2}`; 
     } else if (window.location.hash == `#page${x+2}`) {
         window.location.hash =  `#page${x+3}`; 
+    }
+}
+
+
+//change the nav text color when in this page
+
+
+let navMobArr = $("#navMove>a").length;
+console.log(navMobArr);
+
+for (let y = 0; y < navMobArr ; y ++ ){
+    let navMobHref = $("#navMove>a")[y].getAttribute("href");
+    let pathNameNow = window.location.pathname.slice(1);
+    console.log(navMobHref);
+    
+    if (navMobHref == pathNameNow){
+        console.log($("#navMove>a")[y]);
+        
+        $("#navMove>a").eq(y).css({'opacity':'1'});
+       
+        
+    } else if ( navMobHref.slice(0,10) == pathNameNow && pathNameNow == "about.html"){
+        $("#navMove>a").eq(4).css({'opacity':'1'});
+    } else {
+        console.log($("#navMove>a")[y]);
+        $("#navMove>a").eq(y).css({"opacity":"0.5"});
+        
+
+        $("#navMove>a").eq(y).hover(function(){
+            $(this).css({"opacity":"0.9"});
+        }, function(){
+            $(this).css("opacity", "0.5");
+        });
+    }
+
+    if ( navMobHref == pathNameNow && pathNameNow == "food.html"){
+        $(".smallLink>a").css({'opacity':'1'});
+
+        $(".smallLink>a").hover(function(){
+            $(this).css("opacity", "0.5");
+            }, function(){
+            $(this).css("opacity", "1");
+        });
     }
 }
 

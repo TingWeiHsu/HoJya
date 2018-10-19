@@ -1,6 +1,6 @@
 .bigBack{
     width: auto;
-    left: 60%;
+    left: 65%;
     position: absolute;
     top: 50%; 
     height: 80vh;
@@ -9,7 +9,7 @@
     z-index: 100;
 }
 .foodPhoto{
-    left: 60%;
+    left: 65%;
     position: absolute;
     top: 55%;
     transform: translate(-50%,-50%);
@@ -145,7 +145,7 @@
 .clicked{
 	top: 100px;
     left: calc(100% - 100px);
-    transition: all .3s;
+    transition: all .3s ease-in;
     background-image: url("../imgs/backpage.svg");
 }
 

@@ -23,7 +23,7 @@ $(".restaurantEnter").click(function(e){
 });
 
 $(".resClose").click(function(){
-    $(".clickCircle").css("margin-top", "0%");
+    $(".clickCircle").css("margin-top", "0");
     $(".clickWhiteCircle").css("display", "none");
     $("#restaurantFullPage").css("display", "none");
     $(".clickCircle").css("display", "none");
@@ -59,9 +59,9 @@ function create(ek){
 
         img.onload = function(){
 
-        $(".clickCircle").animate({marginTop:"-100vh"},1500);
+        // $(".clickCircle").animate({marginTop:"-100vh"},1500);
         
-
+        $(".clickCircle").fadeOut("5s");
          
 
 
