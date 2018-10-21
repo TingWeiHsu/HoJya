@@ -420,7 +420,7 @@ console.log(navMobArr);
 
 for (let y = 0; y < navMobArr ; y ++ ){
     let navMobHref = $("#navMove>a")[y].getAttribute("href");
-    let pathNameNow = window.location.pathname.slice(1);
+    let pathNameNow = window.location.pathname.slice(15);
     console.log(navMobHref);
     
     if (navMobHref == pathNameNow){
