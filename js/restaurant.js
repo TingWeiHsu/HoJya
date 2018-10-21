@@ -42,6 +42,16 @@ function create(ek){
     $(".clickCircle").css("display", "block");
     $("#restaurantFullPage").css("display", "block");
     
+    let count = [];
+
+    db.ref(ek).on("child_added", function(snap) {
+    console.log("added:", snap.key);
+    count.push(snap.key);
+
+    console.log(count);
+    });
+
+    
 
     let arrowSpanL = document.createElement('span');
     let arrowSpanR = document.createElement('span');
@@ -51,6 +61,8 @@ function create(ek){
     arrowSpanR.classList.add("next");
     document.getElementById('restaurantCard').appendChild(arrowSpanL);
     document.getElementById('restaurantCard').appendChild(arrowSpanR);
+
+    let ind = 1;
 
     db.ref(ek).on('child_added', function(snapshot) {
     
@@ -112,6 +124,8 @@ function create(ek){
         restaurantDiv.classList.add("restaurantBG");
         restaurantDiv.style.backgroundImage = `url(${snapshot.val().bg})`;
         restaurantDiv.setAttribute("id","restaurantBG");
+        restaurantDiv.setAttribute("id",`${ind}`);
+        ind += 1;
     
     
         textBox.appendChild(titleH);
@@ -151,7 +165,7 @@ function create(ek){
 
 
 
-    // scroll arrow to another page
+    // scroll arrow to another restaurant page
 
     const gallery = document.querySelector('#restaurantFullPage');
     const gallery_scroller = document.querySelector('#restaurantCard');
@@ -167,9 +181,6 @@ function create(ek){
     gallery_scroller.scrollBy(-gallery_item_size, 0);
     }
 
-
-    
-   
 }
 
 
