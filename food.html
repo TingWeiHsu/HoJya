@@ -16,7 +16,7 @@
     <meta name="twitter:site" content="@Rosy">
     <meta property="og:title" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
     <meta property="og:url" content="https://tingweihsu.github.io/HoJya-Project/index.html">
-    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/1_1.jpg?alt=media&token=73a20e85-6765-4816-aa09-9115628b697e">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-21%20%E4%B8%8B%E5%8D%8810.15.40.png?alt=media&token=ed564af8-cebb-4ca0-82cb-cc7ff0adab05">
     <meta property="og:description" content="美味しい台湾料理とおすすめ">
 
 
@@ -72,10 +72,10 @@
                     <a href="index.html">ホーム</a>
                     <a href="food.html">台湾料理</a>
                         <div class="smallLink">
-                            <a href="food.html#page1">牛肉の煮込み麺</a>
-                            <a href="food.html#page2">白きくらげのスープ</a>
-                            <a href="food.html#page3">黒胡麻餡の白玉団子</a>
-                            <a href="food.html#page4">しょうろんぽう</a>
+                                <a href="food.html#page1">牛肉の煮込み麺</a>
+                                <a href="food.html#page2">しょうろんぽう</a>
+                                <a href="food.html#page3">白きくらげのスープ</a>
+                                <a href="food.html#page4">黒胡麻餡の白玉団子</a>
                         </div>
                     <a href="about.html">について</a>
                     <a href="about.html#page2">お問い合わせ</a>
@@ -209,7 +209,7 @@
                     <a href="https://www.facebook.com/sharer.php?title=HoJya台湾絶品美味しい食べ物おすすめ&u=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
                     <p>© 2018 HoJya Taiwan ltd </p>
                 </div>
-                <div class="second" onclick="downToNext()"></div>
+                <div class="second" id="movingArrow" onclick="downToNext()"></div>
                 <div class="third">				
                     <a href="about.html#page2">Contact</a>
                 </div>
@@ -220,8 +220,8 @@
 
     
    
-    <div id="restaurantFullPage"  onmousemove="circleMoAround(event)">
-        <div class="restaurantCard" id="restaurantCard"></div>
+    <div id="restaurantFullPage"  onmousemove="circleMoAround(event)" >
+        <div class="restaurantCard" id="restaurantCard" onscroll="scrollDetect()"></div>
         <div class="resClose"></div>
     </div>
 

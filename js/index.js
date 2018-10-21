@@ -168,7 +168,8 @@ function clickFunction(x) {
     $('.smallLink').click(function(e){
         setTimeout(function(){
             $("#navMove").animate({marginTop:"-150%"},500);
-            $("#fullNav").animate({opacity:0},500);
+           
+            $("#fullNav").animate({height:"0%",opacity:0},500);
         }, 300);
         x.classList.remove("change");
     })
@@ -308,7 +309,6 @@ function circleMoveAround(e){
     let x = e.clientX;
     let y = e.clientY;
     let  coor = "Coordinates: (" + x + "," + y + ")";
-  
 
     // detect the correct x and y of circle
 
@@ -401,15 +401,30 @@ $(".restaurantBox").hover(function(){
 // will move to next page function 
 
 function downToNext () {
-    let x = 1;
-    if (window.location.hash == "" || window.location.hash == `#page${x}`) {
-        window.location.hash =  `#page${x+1}`; 
-    } else if (window.location.hash == `#page${x+1}`) {
-        window.location.hash =  `#page${x+2}`; 
-    } else if (window.location.hash == `#page${x+2}`) {
-        window.location.hash =  `#page${x+3}`; 
+    let x = window.location.hash.slice(5);
+
+    // get number of page
+    let secArr = document.querySelectorAll(".section");
+    let secNum = secArr.length;
+    console.log(secArr.length);
+    console.log(window.location.hash.slice(5));
+
+    if (window.location.hash == "") {
+        window.location.hash =  `#page2`; 
+    } else if (x < secNum) {
+        x = Number(x) + 1 ;
+        window.location.hash =  `#page${x}`; 
+    } 
+
+    if (x == secNum){
+        $("#movingArrow").css({'opacity':'0'});
+    } else if (x < secNum) {
+        $("#movingArrow").css({'opacity':'1'});
     }
+
 }
+
+
 
 
 //change the nav text color when in this page
