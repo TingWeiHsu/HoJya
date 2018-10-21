@@ -168,7 +168,8 @@ function clickFunction(x) {
     $('.smallLink').click(function(e){
         setTimeout(function(){
             $("#navMove").animate({marginTop:"-150%"},500);
-            $("#fullNav").animate({opacity:0},500);
+           
+            $("#fullNav").animate({height:"0%",opacity:0},500);
         }, 300);
         x.classList.remove("change");
     })
