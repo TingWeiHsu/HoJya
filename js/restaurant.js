@@ -59,6 +59,8 @@ function create(ek){
     arrowSpanR.classList.add("btn");
     arrowSpanL.classList.add("prev");
     arrowSpanR.classList.add("next");
+    arrowSpanL.setAttribute("id","leftRestButton");
+    arrowSpanR.setAttribute("id","rightRestButton");
     document.getElementById('restaurantCard').appendChild(arrowSpanL);
     document.getElementById('restaurantCard').appendChild(arrowSpanR);
 
@@ -223,6 +225,28 @@ function circleMoAround(e){
 }
 
 
+// removing the arrow when scroll
+
+function scrollDetect() {
+    let totalWidth = document.getElementById('restaurantCard').scrollWidth;
+    let oneWidth = $("#restaurantCard").width();
+    let place = $("#restaurantCard").scrollLeft();
+
+    let halfW = oneWidth/2;
+    console.log(halfW);
+
+    if (place < Number(halfW)) {
+        $("#leftRestButton").css({'opacity':'0'});
+    } else if (place > Number(halfW)) {
+        $("#leftRestButton").css({'opacity':'1'});
+    }
+
+    if (Number(totalWidth) - Number(oneWidth)- Number(halfW) < place){
+        $("#rightRestButton").css({'opacity':'0'});
+    } else {
+        $("#rightRestButton").css({'opacity':'1'});
+    }
+}
 
 
 

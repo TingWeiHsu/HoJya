@@ -308,7 +308,6 @@ function circleMoveAround(e){
     let x = e.clientX;
     let y = e.clientY;
     let  coor = "Coordinates: (" + x + "," + y + ")";
-  
 
     // detect the correct x and y of circle
 
