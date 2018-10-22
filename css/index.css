@@ -157,6 +157,14 @@
 		}
 	}
 
+	@media (max-width: 767px){
+		.circle {
+			background-size: 54px;
+			height: 54px;
+			width: 54px;
+		}
+	}
+
 
 	@media (max-width: 550px) {
 
@@ -169,6 +177,13 @@
 			bottom:  20px;
 			width: calc(100% - 40px);
 		}
+
+		.circle{
+			height: 41px;
+			background-size: 41px;
+			width: 41px;
+		}
+
 	}
 
 
@@ -219,19 +234,12 @@
 		}
 		
 
-		.circle{
-			padding: 8px;
-			font-size: 21px;
-			font-weight: 400;
-			
-		}
+		
 		
 
 	}
 
-	/* #mobileArrow{
-		display: none;
-	} */
+	
 
 	@media (max-width: 900px) {
 		#mobileArrow{
