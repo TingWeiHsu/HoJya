@@ -62,7 +62,7 @@
     left: calc(50% - 340px);
 }
 
-.enlarge{
+.enlargePic{
     position: absolute;
     z-index: 1500;
     display: block;
@@ -258,7 +258,7 @@
         top: calc(20% + 60px);
     }
 
-    .enlarge{
+    .enlargePic{
         position: absolute;
         z-index: 1500;
         display: none;

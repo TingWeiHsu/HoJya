@@ -1,211 +1,174 @@
-
-  // Initialize Firebase
-  
-
-
-$(".restaurantEnter").click(function(e){
-    let x = e.clientX;
-    let y = e.clientY;
-    console.log(x,y);
-    $(".clickWhiteCircle").css("top", `calc(-2500px + ${y}px)`);
-    $(".clickWhiteCircle").css("left", `calc(-2500px + ${x}px)`);
-    $(".clickWhiteCircle").css("display", "block");
-    // click and then show the full page  if ok want to add transition animation before go to full page
-
-    setTimeout(function(){ 
-        
-        // get the id as the key for data
-        let enterKey = e.target.id;
-        
-        create(enterKey);
-     }, 1000);
-    
-});
-
-$(".resClose").click(function(){
-    $(".clickCircle").css("margin-top", "0");
-    $(".clickWhiteCircle").css("display", "none");
-    $("#restaurantFullPage").css("display", "none");
-    $(".clickCircle").css("display", "none");
-   
-    document.getElementById('restaurantCard').innerHTML="";
-});
-
+//  ==================== GET DATA AND CREATE ELEMENT FUNCTION ==================== 
 
 let db = firebase.database();
 
-
-
-
-
-function create(ek){
-    $(".clickCircle").css("display", "block");
-    $("#restaurantFullPage").css("display", "block");
-    
-    let count = [];
-
-    db.ref(ek).on("child_added", function(snap) {
-    console.log("added:", snap.key);
-    count.push(snap.key);
-
-    console.log(count);
-    });
-
-    
-
-    let arrowSpanL = document.createElement('span');
-    let arrowSpanR = document.createElement('span');
-    arrowSpanL.classList.add("btn");
-    arrowSpanR.classList.add("btn");
-    arrowSpanL.classList.add("prev");
-    arrowSpanR.classList.add("next");
-    arrowSpanL.setAttribute("id","leftRestButton");
-    arrowSpanR.setAttribute("id","rightRestButton");
-    document.getElementById('restaurantCard').appendChild(arrowSpanL);
-    document.getElementById('restaurantCard').appendChild(arrowSpanR);
-
-    let ind = 1;
-
-    db.ref(ek).on('child_added', function(snapshot) {
-    
-        let img = document.createElement("img");
-        img.setAttribute("src",snapshot.val().bg);
-
-        img.onload = function(){
-
-        // $(".clickCircle").animate({marginTop:"-100vh"},1500);
-        
-        $(".clickCircle").fadeOut("5s");
-         
-
-
-         
-
-
-
-        let titleH = document.createElement("h1");
-        titleH.textContent = snapshot.val().name;
-        let subH = document.createElement("h2");
-        subH.textContent = snapshot.val().pinyin;
-        let addressP = document.createElement("p");
-        addressP.textContent = snapshot.val().address;
-        let timeP = document.createElement("p");
-        timeP.textContent = snapshot.val().time;
-        let telP = document.createElement("p");
-        telP.textContent = snapshot.val().tel;
-
-        
-        let moreSp = document.createElement("span");
-        moreSp.textContent = "公式サイト";
-        moreSp.classList.add("moreSpan");
-        let iconA = document.createElement("a");
-        iconA.setAttribute("href", snapshot.val().link );
-        iconA.setAttribute("target", "_blank");
-        iconA.classList.add("moreA");
-
-        let officialBox = document.createElement("div");
-        officialBox.classList.add("officialBox");
-    
-        let textBox = document.createElement("div");
-        textBox.classList.add("restDetail");
-        
-    
-        // ++++++ need to set background
-        let picBox = document.createElement("div");
-        picBox.classList.add("restPicture");
-        picBox.style.backgroundImage = `url(${snapshot.val().pic})`;
-    
-        let mediumBox = document.createElement("div");
-        mediumBox.classList.add("restBig");
-    
-    
-    
-    
-        // the biggest layer ++++++ need to set background
-        let restaurantDiv = document.createElement('div');
-        restaurantDiv.classList.add("restaurantBG");
-        restaurantDiv.style.backgroundImage = `url(${snapshot.val().bg})`;
-        restaurantDiv.setAttribute("id","restaurantBG");
-        restaurantDiv.setAttribute("id",`${ind}`);
-        ind += 1;
-    
-    
-        textBox.appendChild(titleH);
-        textBox.appendChild(subH);
-        textBox.appendChild(addressP);
-        textBox.appendChild(timeP);
-        textBox.appendChild(telP);
-        officialBox.appendChild(moreSp);
-        officialBox.appendChild(iconA);
-        textBox.appendChild(officialBox);
-    
-        mediumBox.appendChild(textBox);
-        mediumBox.appendChild(picBox);
-    
-        restaurantDiv.appendChild(mediumBox);
-    
-        document.getElementById('restaurantCard').appendChild(restaurantDiv);
-        
-        function checkHover () {
-            $(".moreA").hover(function(){
-                $(".restBig").css("background-position-x", "80px");
-                $(".restBig").css("background-position-y", "150px");
-                $(".restBig").css("transition", "ease-in-out .8s");
-                $(".moreSpan").css("display", "block");
-                
-                }, function(){
-                $(".restBig").css("background-position-x", "400px");
-                $(".restBig").css("background-position-y", "300px");
-                $(".restBig").css("transition", "initial");
-                $(".moreSpan").css("display", "none");
-            });
-        }
-
-        checkHover ();
-        }
-    })
-
-
-
-    // scroll arrow to another restaurant page
-
-    const gallery = document.querySelector('#restaurantFullPage');
-    const gallery_scroller = document.querySelector('#restaurantCard');
-    const gallery_item_size = document.querySelector('div').clientWidth;
-
-    gallery.querySelector('.btn.next').addEventListener('click', scrollToNextPage);
-    gallery.querySelector('.btn.prev').addEventListener('click', scrollToPrevPage);
-
-    function scrollToNextPage() {
-    gallery_scroller.scrollBy(gallery_item_size, 0);
-    }
-    function scrollToPrevPage() {
-    gallery_scroller.scrollBy(-gallery_item_size, 0);
-    }
-
+const createE = function(tagN, classN, textC, setKey, setValue){
+    let theElement = document.createElement(tagN);
+    theElement.className = classN;
+    theElement.textContent = textC ? textC:"";
+    theElement[setKey] = setValue;
+    return theElement;
 }
 
 
 
+//  ==================== click spoon and chopsticks icon and enter to restaurant part ==================== 
+
+    $(".restaurantEnter").click(function(e){
+        // get user x and y position and grow a circle just that point until bigger than screen
+        let x = e.clientX;
+        let y = e.clientY;
+        $(".clickWhiteCircle").css("top", `calc(-2500px + ${y}px)`);
+        $(".clickWhiteCircle").css("left", `calc(-2500px + ${x}px)`);
+        $(".clickWhiteCircle").css("display", "block");
+
+        // use seatimeout after the circle animation finished and start to show restaurant information
+        setTimeout(function(){ 
+            // get the id from the icon user clicked, as the key for data
+            let enterKey = e.target.id;
+            create_Restaurant_Section(enterKey);
+        }, 1000);
+        
+    });
 
 
-// move the circle in restaurant 
 
-function circleMoAround(e){
+//  ==================== click to close restaurant part  ==================== 
 
-    // mouse move everytime will get something
+    $(".resClose").click(function(){
+        $(".clickCircle").css("margin-top", "0");
+        $(".clickWhiteCircle").css("display", "none");
+        $("#restaurantFullPage").css("display", "none");
+        $(".clickCircle").css("display", "none");
+        //clean to make it default
+        document.getElementById('restaurantCard').innerHTML="";
+    });
+
+
+
+// ==================== produce the restaurant information after got them from the database ==================== 
+
+    function create_Restaurant_Section(ek){
+        // the gray bg which will cover the full screen first
+        $(".clickCircle").css("display", "block");
+        // show the real restaurant part page infor
+        $("#restaurantFullPage").css("display", "block");
+
+        let arrowSpanL = createE("span", "btn", null, "id", "leftRestButton");
+        let arrowSpanR = createE("span", "btn", null, "id", "rightRestButton");
+        arrowSpanL.classList.add("prev");
+        arrowSpanR.classList.add("next");
+        
+        document.getElementById('restaurantCard').appendChild(arrowSpanL);
+        document.getElementById('restaurantCard').appendChild(arrowSpanR);
+
+
+        db.ref(ek).on('child_added', function(snapshot) {
+        
+            // create a img source, make sure to got the img before show whole information
+            let testImg = createE("img", null, null, "src", snapshot.val().bg);
+
+            testImg.onload = function(){
+                
+                // img finished, hide the gray full screen cover
+                $(".clickCircle").fadeOut("5s");
+
+                // information part
+                let titleH = createE("h1", null, snapshot.val().name, null, null);
+                let subH = createE("h2", null, snapshot.val().pinyin, null, null);
+                let addressP = createE("p", null, snapshot.val().address, null, null);
+                let timeP = createE("p", null, snapshot.val().time, null, null);
+                let telP = createE("p", null, snapshot.val().tel, null, null);
+                
+                // Link to home site information part
+                let moreSp = createE("span", "moreSpan", "公式サイト", null, null);
+                let iconA = createE("a", "moreA", null, "target", "_blank");
+                iconA.setAttribute("href", snapshot.val().link );        
+                
+                let officialBox = createE("div", "officialBox", null, null, null);
+                let textBox = createE("div", "restDetail", null, null, null);
+                
+                // restaurant food's container need to set background image
+                let picBox = createE("div", "restPicture", null, null, null);
+                picBox.style.backgroundImage = `url(${snapshot.val().pic})`;
+            
+                let mediumBox = createE("div", "restBig", null, null, null);
+            
+                // the biggest full screen, need to set background image
+                let restaurantDiv = createE("div", "restaurantBG", null, "id", "restaurantBG");
+                restaurantDiv.style.backgroundImage = `url(${snapshot.val().bg})`;
+
+
+                textBox.appendChild(titleH);
+                textBox.appendChild(subH);
+                textBox.appendChild(addressP);
+                textBox.appendChild(timeP);
+                textBox.appendChild(telP);
+                officialBox.appendChild(moreSp);
+                officialBox.appendChild(iconA);
+                textBox.appendChild(officialBox);
+                mediumBox.appendChild(textBox);
+                mediumBox.appendChild(picBox);            
+                restaurantDiv.appendChild(mediumBox);
+                document.getElementById('restaurantCard').appendChild(restaurantDiv);
+                
+                // click restaurant home icon and have hover effect 
+                function checkHover () {
+                    $(".moreA").hover(function(){
+                        $(".restBig").css("background-position-x", "80px");
+                        $(".restBig").css("background-position-y", "150px");
+                        $(".restBig").css("transition", "ease-in-out .8s");
+                        $(".moreSpan").css("display", "block");
+                        
+                        }, function(){
+                        $(".restBig").css("background-position-x", "400px");
+                        $(".restBig").css("background-position-y", "300px");
+                        $(".restBig").css("transition", "initial");
+                        $(".moreSpan").css("display", "none");
+                    });
+                }
+                checkHover ();
+
+            }
+        })
+
+
+
+        // click arrow to another restaurant page
+
+        const gallery = document.querySelector('#restaurantFullPage');
+        const gallery_scroller = document.querySelector('#restaurantCard');
+        const gallery_item_size = document.querySelector('div').clientWidth;
+
+        gallery.querySelector('.btn.next').addEventListener('click', scrollToNextPage);
+        gallery.querySelector('.btn.prev').addEventListener('click', scrollToPrevPage);
+
+        function scrollToNextPage() {
+        gallery_scroller.scrollBy(gallery_item_size, 0);
+        }
+        function scrollToPrevPage() {
+        gallery_scroller.scrollBy(-gallery_item_size, 0);
+        }
+
+    }
+
+
+
+// ==================== RESTAURANT move the circle plus icon in restaurant ==================== 
+
+function move_Restaurant_Circle_Around(e){
+
+    // mouse move everytime will get x and y data
     let x = e.clientX;
     let y = e.clientY;
-    let  coor = "Coordinates: (" + x + "," + y + ")";
   
-
-    // detect the correct x and y of circle
+    // detect the correct x and y data of circle
     let cirxy = document.querySelector(".resClose").getBoundingClientRect();
     let cY = cirxy.top + 35;
     let cX = cirxy.left + 35;
 
 
-    // let's move our circle
+    // let's move our circle, everytime move just bit of px
     let newX = (x-cX)/20;
     let newY = (y-cY)/20;
 
@@ -225,15 +188,15 @@ function circleMoAround(e){
 }
 
 
-// removing the arrow when scroll
 
-function scrollDetect() {
+//  ==================== RESTAURANT removing the arrow when cannot scroll anymore ==================== 
+
+function detect_Remove_Unnecessary_Arrow() {
     let totalWidth = document.getElementById('restaurantCard').scrollWidth;
     let oneWidth = $("#restaurantCard").width();
     let place = $("#restaurantCard").scrollLeft();
 
     let halfW = oneWidth/2;
-    console.log(halfW);
 
     if (place < Number(halfW)) {
         $("#leftRestButton").css({'opacity':'0'});
