@@ -1,7 +1,7 @@
 
 // ==================== ALL Changing page effect with loading ==================== 
-// when go to that page will show cover leave
-
+    
+    // when go to that page will show cover leave
     function show_Loading_Cover() {
         setTimeout(function(){ 
             $(".pageLoadingCover").animate({marginTop:"-100vh"},500,"swing");

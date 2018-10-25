@@ -26,21 +26,21 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+body{
 	line-height: 1;
 }
-ol, ul {
+ol, ul{
 	list-style: none;
 }
-blockquote, q {
+blockquote, q 
 	quotes: none;
 }
 blockquote:before, blockquote:after,
-q:before, q:after {
+q:before, q:after{
 	content: '';
 	content: none;
 }
-table {
+table{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -381,7 +381,6 @@ a {
 	}
 
 
-
 	@media (max-width: 550px) {
 
 		#bg{
@@ -451,6 +450,7 @@ a {
 
 
 /* ======================= mobile full page nav part ======================= */
+
 
 	#fullNav{
 		position: fixed;
@@ -552,7 +552,6 @@ a {
     0%   {opacity: 1;}
     100% {opacity: 0;}
 }
-
 
 .dotOne{
 	top: calc(50% + 5%);

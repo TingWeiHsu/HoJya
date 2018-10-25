@@ -1,4 +1,5 @@
-/* ======== 首頁 ======= */
+/* ======== home page ======= */
+
 
 	.pageTitle{
 		left: 50%;
@@ -25,12 +26,19 @@
 		color: #0B0014;
 	}
 
-	/* 首頁第二塊字用的 */
+
+	/* word moving */
+	.fadeWord{
+		opacity: 0;
+		margin-top:+5%;
+	}
+
+	/* second section's title */
 	.lefter{
 		left:40%;
 	}
 	
-	/* 首頁第三塊說明往上調用的 */
+	/* third section's title make it upper */
 	.upper{
 		top: calc(50% + 70px);
 	}
@@ -62,10 +70,10 @@
 	}
 
 
-	/* ======== 之後要補做動態的圓點點設定 ======= */
+	/* ======== moving circle plus icon ======= */
 
 
-	.circle {
+	.circle{
 		left: 23%;
 		position: absolute;
 		top: 58%;
@@ -77,17 +85,8 @@
 		position: absolute;
 		height: 70px;
 		width: 70px;
-		/* font-family: "Rounded Mplus 1c";
-		color: #D44D5C;
-		padding: 15px;
-		border: 2px solid #D44D5C;
-		border-radius: 50%; */
 		cursor: pointer;
-		/* transition: all .1s ease-in; */
 	}
-
-
-
 
 	.center{
 		left: 50%;
@@ -95,7 +94,8 @@
 	}
 
 
-	/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
+	/* ======== mobile part ======== */
+
 
 	@media (max-width: 1000px) {
 		
@@ -130,6 +130,25 @@
 			left: 5%;
 			height: 75%;
 		}
+
+	}
+
+	@media (max-width: 900px) {
+
+		#mobileArrow{
+		width: auto;
+		background-image: url("../imgs/arrow.svg");
+		background-repeat: no-repeat;
+		background-size: 18px;
+		background-position: center;
+		height: 13px;
+		-webkit-animation: arrow 1s infinite; /* Safari 4.0 - 8.0 */
+    	animation: arrow 1s infinite;
+		animation-play-state: running;
+		animation-timing-function: linear;
+		margin-top:80vh;
+		}
+
 	}
 
 	@media (max-width: 860px) {
@@ -141,9 +160,11 @@
 		.mobilePicDown{
 			width: calc(100% - 100px);
 		}
+
 	}
 
 	@media (max-width: 770px) {
+
 		#preparing{
 			top: 20%;
 			left: 50%;
@@ -155,14 +176,57 @@
 			left: 50%;
 			transform: translateX(-50%);
 		}
+
+				
+		.pageTitle{
+			left: 50%;
+			font-size: 30px;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 250;
+			width: 260px;
+			text-align: center;
+			line-height: 35px;
+		}
+		
+		.smallDescription{
+			left: 50%;
+			font-size: 14px;
+			position: absolute;
+			top: calc(50% + 60px);
+			transform: translate(-50%,-50%);
+			z-index: 200;
+			width: 260px;
+			text-align: center;
+		}
+
+		.upper{
+			top: calc(50% + 60px);
+		}
+
+		.mobileTextUp{
+			top: 20%;
+		}
+
+		.mobileSmallTextUpOne{
+			top: calc(20% + 60px);
+		}
+
+		.mobileSmallTextUp{
+			top: calc(20% + 50px);
+		}
+
 	}
 
 	@media (max-width: 767px){
-		.circle {
+
+		.circle{
 			background-size: 54px;
 			height: 54px;
 			width: 54px;
 		}
+
 	}
 
 
@@ -187,78 +251,4 @@
 	}
 
 
-	/* ======== 主要是調整mobile時字體 ======== */
-
-	@media (max-width: 770px) {
-		
-		.pageTitle{
-			left: 50%;
-			font-size: 30px;
-			position: absolute;
-			top: 50%;
-			transform: translate(-50%,-50%);
-			z-index: 250;
-			width: 260px;
-			text-align: center;
-			line-height: 35px;
-		}
-		
 	
-		.smallDescription{
-			left: 50%;
-			font-size: 14px;
-			position: absolute;
-			top: calc(50% + 60px);
-			transform: translate(-50%,-50%);
-			z-index: 200;
-			width: 260px;
-			text-align: center;
-		}
-
-
-		/* 首頁第三塊說明往上調用的 */
-		.upper{
-			top: calc(50% + 60px);
-		}
-
-		.mobileTextUp{
-			top: 20%;
-		}
-
-		.mobileSmallTextUpOne{
-			top: calc(20% + 60px);
-		}
-
-		.mobileSmallTextUp{
-			top: calc(20% + 50px);
-		}
-		
-
-		
-		
-
-	}
-
-	
-
-	@media (max-width: 900px) {
-		#mobileArrow{
-		width: auto;
-		background-image: url("../imgs/arrow.svg");
-		background-repeat: no-repeat;
-		background-size: 18px;
-		background-position: center;
-		height: 13px;
-		-webkit-animation: arrow 1s infinite; /* Safari 4.0 - 8.0 */
-    	animation: arrow 1s infinite;
-		animation-play-state: running;
-		animation-timing-function: linear;
-		margin-top:80vh;
-		}
-	}
-
-
-.fadeWord{
-	opacity: 0;
-	margin-top:+5%;
-}
