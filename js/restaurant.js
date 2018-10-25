@@ -63,7 +63,7 @@ const createE = function(tagN, classN, textC, setKey, setValue){
         document.getElementById('restaurantCard').appendChild(arrowSpanR);
 
 
-        db.ref(ek).on('child_added', function(snapshot) {
+        db.ref(ek).on('child_added', function(snapshot){
         
             // create a img source, make sure to got the img before show whole information
             let testImg = createE("img", null, null, "src", snapshot.val().bg);
@@ -98,7 +98,6 @@ const createE = function(tagN, classN, textC, setKey, setValue){
                 let restaurantDiv = createE("div", "restaurantBG", null, "id", "restaurantBG");
                 restaurantDiv.style.backgroundImage = `url(${snapshot.val().bg})`;
 
-
                 textBox.appendChild(titleH);
                 textBox.appendChild(subH);
                 textBox.appendChild(addressP);
@@ -131,8 +130,6 @@ const createE = function(tagN, classN, textC, setKey, setValue){
 
             }
         })
-
-
 
         // click arrow to another restaurant page
 
