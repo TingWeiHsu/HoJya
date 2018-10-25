@@ -2,7 +2,7 @@
 // ==================== ALL Changing page effect with loading ==================== 
     
     // when go to that page will show cover leave
-    function show_Loading_Cover() {
+    function show_Loading_Cover(){
         setTimeout(function(){ 
             $(".pageLoadingCover").animate({marginTop:"-100vh"},500,"swing");
         }, 500);
@@ -22,7 +22,7 @@
 
 // ==================== ALL Page scroll effect Using fullpage.js ==================== 
 
-    $(document).ready(function() {
+    $(document).ready(function(){
         $('#fullPage').fullpage({
 
             sectionsColor:['#fff','#fff','#fff','#fff'],
@@ -37,22 +37,19 @@
             slidesNavigation:true,
             slidesNavPositon:"top",
             
-
             afterLoad: function(anchorLink, index){
 
-            
                 let w = $(window).width();
                 let circleArr = document.querySelectorAll(".circle");
                 
-                
                 // ============= make circlePlus icon to original places everytime scroll ============= 
-                if (w > 1025) {
+                if (w > 1025){
                     for (let i = 0; i < circleArr.length ; i++){
                         circleArr[i].style.transform = `translate(-35px,-35px)`; 
                     }
                 }
 
-                if(index >= 1){
+                if (index >= 1){
 
                 // ============= Scroll and food detail elements action ============= 
 
@@ -63,8 +60,8 @@
                     
                     // detect if circle Plus class is clicked, food detail elements should move upper again 
                     // already finished 5% to 0% but again upper 10% 
-                    for (let j = 0; j<circleArr.length; j++){
-                        if(circleArr[j].classList.contains("clicked")){
+                    for (let j = 0; j < circleArr.length ; j++){
+                        if (circleArr[j].classList.contains("clicked")){
                             $(".productName").animate({marginTop:"-10%"},300);
                             $(".productSubName").animate({marginTop:"-10%"},300);
                             $(".ingredientBox").animate({opacity:"1",marginTop:"0%"},300);
@@ -79,19 +76,18 @@
                     let hashArray = ["#page1","#page2","#page3","#page4"];
                     let hashNum = window.location.hash;
                     let circleCArray = ['.circleDotPlace1','.circleDotPlace2','.circleDotPlace3','.circleDotPlace4'];
-                    for (let h = 0; h < hashArray.length ; h ++ ){
-                        if ( hashNum === hashArray[h]){
+                    for (let h = 0; h < hashArray.length ; h ++){
+                        if (hashNum === hashArray[h]){
                             let circleNumber = circleCArray[h];
                             $(circleNumber).addClass('circleSelected');
                         } 
                     };
-                    
-
                 }
             },
+
             onLeave: function(index,nextIndex,direction){
                 
-                if(nextIndex >= 1){
+                if (nextIndex >= 1){
                     // move back food detail elements every time when you scroll to other section
                     $(".fadeWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
                     $(".fadeMoveWord").stop(true,true).animate({marginTop:"+5%",opacity:"0"},300);
@@ -106,11 +102,11 @@
 
 // ==================== ALL click hambuger nav and show whole page Nav in mobile page ==================== 
 
-    function click_Show_Mobile_Nav(x) {
+    function click_Show_Mobile_Nav(x){
         x.classList.toggle("changeLooking");
 
         // if the button was clicked, moved them to show on page, vice versa
-        if(x.classList.contains("changeLooking")){
+        if (x.classList.contains("changeLooking")){
             $("#fullNav").animate({height:"100%",opacity:1},500);
             $("#navMove").animate({marginTop:"0%"},500);
         } else {
@@ -155,16 +151,16 @@
         let circleArr = document.querySelectorAll(".circle");
 
         let w = $(window).width();
-        if (w > 1025) {
+        if (w > 1025){
             
             for (let i = 0; i < circleArr.length ; i++){
-                if (i === 0) {
+                if (i === 0){
                     circleArr[i].style.transform = `translate(${newX-35}px,${newY-35}px)`; 
-                } else if ( i === 1) {
+                } else if (i === 1){
                     circleArr[i].style.transform = `translate(${newX-35}px,${newY-75}px)`; 
-                } else if ( i === 2) {
+                } else if (i === 2){
                     circleArr[i].style.transform = `translate(${newX-35}px,${newY-105}px)`;
-                } else if ( i === 3) {
+                } else if (i === 3){
                     circleArr[i].style.transform = `translate(${newX-35}px,${newY-135}px)`;
                 }
             }
@@ -199,7 +195,7 @@
 
 // ==================== ALL click arrow will move to next page function ==================== 
 
-    function down_To_Next_Section () {
+    function down_To_Next_Section(){
         let pageHash = window.location.hash.slice(5);
 
         // get number of page
@@ -207,9 +203,9 @@
         let secNum = secArr.length;
 
         // if in the first page withous hash yet, clicked just move to second page
-        if (window.location.hash == "") {
+        if (window.location.hash == ""){
             window.location.hash =  `#page2`; 
-        } else if (pageHash < secNum) {
+        } else if (pageHash < secNum){
             // if have hash number already then just add 1 will move to next page
             pageHash = Number(pageHash) + 1 ;
             window.location.hash =  `#page${pageHash}`; 
@@ -218,7 +214,7 @@
         if (pageHash == secNum){
             // if hash number is as the same as the total number of section then make arrow hide
             $("#movingArrow").css({'opacity':'0'});
-        } else if (pageHash < secNum) {
+        } else if (pageHash < secNum){
             $("#movingArrow").css({'opacity':'1'});
         }
     }
@@ -227,9 +223,9 @@
 
 // ==================== ALL detect if scroll to last page, will make the clickable arrow disappeared ==================== 
 
-    document.getElementById("fullPage").addEventListener("transitionend", detect_Disappear_Footer_Arrow);
+    document.getElementById("fullPage").addEventListener("transitionend",detect_Disappear_Footer_Arrow);
 
-    function detect_Disappear_Footer_Arrow() {
+    function detect_Disappear_Footer_Arrow(){
         // get the right hash and right section number where user now
         let pageHash = window.location.hash.slice(5);
 
@@ -250,7 +246,7 @@
 
     let navMobArr = $("#navMove>a").length;
 
-    for (let y = 0; y < navMobArr ; y ++ ){
+    for (let y = 0; y < navMobArr ; y ++){
         let navMobHref = $("#navMove>a")[y].getAttribute("href");
         let pathNameNow = window.location.pathname.slice(15);
         
@@ -267,7 +263,7 @@
             });
         }
 
-        if ( navMobHref == pathNameNow && pathNameNow == "food.html"){
+        if (navMobHref == pathNameNow && pathNameNow == "food.html"){
             $(".mobileNavFoodLink>a").css({'opacity':'1'});
             $(".mobileNavFoodLink>a").hover(function(){
                 $(this).css("opacity", "0.5");

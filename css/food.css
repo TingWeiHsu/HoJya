@@ -41,7 +41,7 @@
     color: #0B0014;
 }
 
-.circle {
+.circle{
     background-image: url('../imgs/circleplus.svg');
     background-repeat: no-repeat;
     background-size: 70px;
@@ -85,6 +85,7 @@
         left: calc(50% - 35px);
         top: calc(20% + 80px);
     }
+
 }
 
 
@@ -116,10 +117,12 @@
         left: calc(50% - 27px);
         top: calc(20% + 100px);
     }
+
 }
 
 
 @media (max-width: 550px) {
+
     .circle{
         background-size: 41px;
         height: 41px;
@@ -127,6 +130,7 @@
         left: calc(50% - 20px);
         top: calc(20% + 100px);
     }
+
 }
 
 
@@ -150,36 +154,45 @@
 }
 
 @media (max-width: 1024px) {
+
     .clicked{
         top: 65px;
         left: calc(100% - 135px);
         transition: all .3s;
     }
+
 }
 
 @media (max-width: 900px) {
+
     .clicked{
         top: 35px;
         left: calc(100% - 105px);
         transition: all .3s;
     }
+
 }
 
 @media (max-width: 767px) {
+
     .clicked{
         top: 40px;
         left: calc(100% - 94px);
         transition: all .3s;
     }
+
 }
 
 @media (max-width: 550px) {
+
     .clicked{
         top: 20px;
         left: calc(100% - 60px);
         transition: all .3s;
     }
+
 }
+
 
 .grayBackGroundCover{
     position: fixed;
@@ -196,24 +209,24 @@
 }
 
 .ingredientBox{
-        margin-left: 0%;
-        width: 300px;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 1);
-        top: calc(30% + 50px);
-        margin-top:35%;
-        left: 26%;
-        transform: translate(-50%,0%);
-        border: 2px solid transparent;
-        z-index: 900;
-        opacity: 0;
-        line-height: 20px;
-        padding: 20px 20px;
-        border-radius: 15px;
-        background-image: url("../imgs/round.svg");
-        background-repeat: no-repeat;
-        background-position-x: 410px;
-        background-position-y: 150px;
+    margin-left: 0%;
+    width: 300px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    top: calc(30% + 50px);
+    margin-top:35%;
+    left: 26%;
+    transform: translate(-50%,0%);
+    border: 2px solid transparent;
+    z-index: 900;
+    opacity: 0;
+    line-height: 20px;
+    padding: 20px 20px;
+    border-radius: 15px;
+    background-image: url("../imgs/round.svg");
+    background-repeat: no-repeat;
+    background-position-x: 410px;
+    background-position-y: 150px;
 }
 
 @media (min-width: 1200px) {
@@ -276,6 +289,10 @@
     margin: 5px 10px 20px 10px;
 }
 
+
+/* ======== pic inside circle navigation bar on web only right hand side ======= */
+
+
 #circlePicDotNavigate{
     position: fixed;
     width:100%;
@@ -324,10 +341,10 @@
     left:calc(100% - 105px);
 }
 
-  .circleDotPlace4{
+.circleDotPlace4{
     top:calc(250px + 45vh);
     left:calc(100% - 105px);
-  }
+}
 
 .growBig { 
     transform: scale(7); 
@@ -401,27 +418,33 @@
 
 }
 
+
+/* ======== click and enter to restaurant part ======= */
+
+
 .restaurantBox{
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
 }
 
 .restaurantBox>p{
-      color: #D44D5C;
-      margin: 0 10px;
-      display: none;
-      font-size: 16px;
+    color: #D44D5C;
+    margin: 0 10px;
+    display: none;
+    font-size: 16px;
 }
 
 .restaurantBox>.restaurantEnter{
-      background-image: url("../imgs/restaurantbutton.svg");
-      background-repeat: no-repeat;
-      width: 45px;
-      height: 45px;
-      cursor: pointer;
+    background-image: url("../imgs/restaurantbutton.svg");
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
 }
+
+/* from the mouse to grow the circle until full screen */
 
 .clickWhiteCircle{
     display: none;
@@ -437,6 +460,14 @@
     transform:scale(0,0);
 }
 
+
+@keyframes growCircle {
+    0%   {transform:scale(0,0)}
+    100% {transform:scale(1,1)}
+}
+
+/* cover the screen before img loaded */
+
 .clickCircle{
     display: none;
     background-color: #eeeeee;
@@ -448,14 +479,7 @@
 }
 
 
-@keyframes growCircle {
-0%   {transform:scale(0,0)}
-100% {transform:scale(1,1)}
-}
-
-
-
-
+/* restaurant part */
 
 
 #restaurantFullPage{
@@ -482,28 +506,27 @@
     scroll-snap-points-x: repeat(300px);
 }
 
-.restaurantCard> div {
+.restaurantCard>div{
     height: 100vh;
     min-width: 100%;
     min-height: 100%;
     scroll-snap-align: center;
     scroll-behavior: smooth;
- }
+}
 
- .restaurantCard> div:nth-child(1) {
-     background-color: aliceblue;
- }
+.restaurantCard>div:nth-child(1){
+    background-color: aliceblue;
+}
 
- .restaurantCard> div:nth-child(2) {
+.restaurantCard>div:nth-child(2){
     background-color: pink;
 }
 
-.restaurantCard> div:nth-child(3) {
+.restaurantCard>div:nth-child(3){
     background-color: aliceblue;
 }
 
 .restaurantCard>.restaurantBG{
-    /* background-image: url("../imgs/02dintaifeng.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -517,7 +540,6 @@
     background-color: #ffffff;
     border-radius: 15px;
     display: flex;
-
     background-image: url("../imgs/round.svg");
     background-repeat: no-repeat;
     background-position-x: 400px;
@@ -531,7 +553,6 @@
     animation: moveToUp  .3s;
     animation-play-state: running;
     animation-timing-function: linear;
-
 }
 
 .moreSpan{
@@ -542,10 +563,9 @@
 }
 
 
-
 @keyframes moveToUp {
-0%   {margin-top: 10px}
-100% {margin-top: 0px}
+    0%   {margin-top: 10px}
+    100% {margin-top: 0px}
 }
 
 
@@ -594,7 +614,6 @@
 }
 
 
-
 .restPicture{
     width: 300px;
     height: 300px;
@@ -606,11 +625,10 @@
 }
 
 
-
 /*  left and right button  */
 
 
-.restaurantCard .btn {
+.restaurantCard .btn{
     position: absolute; 
     top: 50%;
     transform: translateY(-50%);
@@ -624,16 +642,15 @@
     cursor: pointer;
   }
   
-  .restaurantCard .btn.next {
+  .restaurantCard .btn.next{
     background-image: url('../imgs/arrR.svg');
     right: 10px;
   }
   
-  .restaurantCard .btn.prev {
+  .restaurantCard .btn.prev{
     background-image: url('../imgs/arrL.svg');
     left: 10px;
   }
-
 
   .resClose{
     background-image: url('../imgs/backpage.svg');
@@ -649,7 +666,7 @@
   }
 
 
-  @media (max-width: 730px) {
+@media (max-width: 730px) {
 
     .restaurantCard>.restaurantBG>.restBig{
         display: block;
@@ -690,10 +707,10 @@
         margin-top: 20px;
     }
 
-  }
+}
 
 
-  @media (max-width: 550px) {
+@media (max-width: 550px) {
 
     .restaurantCard .btn.prev{
         left: 5px;
@@ -731,10 +748,11 @@
         font-size: 14px;
     }
     
-  }
+}
 
 
-  @media (max-width: 400px) {
+@media (max-width: 400px) {
+
     .restDetail>a{
         background-image: url("../imgs/homepage.svg");
         background-repeat: no-repeat;
@@ -742,24 +760,15 @@
         width: 40px;
         height: 40px;
     }
-  }
 
-
-
-
-  #leftRestButton{
-      opacity: 0;
-  }
-
-  #rightRestButton{
-    opacity: 1;
 }
 
-#nokey {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    z-index: 1;
+/* ======== restaurant part scroll's default setting ======= */
+
+#leftRestButton{
+      opacity: 0;
+}
+
+#rightRestButton{
+    opacity: 1;
 }
