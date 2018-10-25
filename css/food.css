@@ -8,6 +8,7 @@
     opacity: 0.3;
     z-index: 100;
 }
+
 .foodPhoto{
     left: 65%;
     position: absolute;
@@ -129,18 +130,17 @@
 }
 
 
-/* 動態 */
+/* action part setting */
+
 
 .fadeMoveWord{
     opacity: 0;
     margin-top:+5%;
 }
 
-
-.marginMoveTop {
+.marginMoveTop{
     margin-top: -15%;
 }
-
 
 .clicked{
 	top: 100px;
@@ -181,10 +181,7 @@
     }
 }
 
-
-/* 我是背景遮罩 */
-
-.magicCover{
+.grayBackGroundCover{
     position: fixed;
     opacity: 0;
     z-index: 10;
@@ -198,13 +195,10 @@
     margin-left: -90px;
 }
 
-/* 我是料理的資料 */
-
-.recipeCover{
+.ingredientBox{
         margin-left: 0%;
         width: 300px;
         position: absolute;
-    
         background-color: rgba(255, 255, 255, 1);
         top: calc(30% + 50px);
         margin-top:35%;
@@ -223,60 +217,66 @@
 }
 
 @media (min-width: 1200px) {
-    .recipeCover{
+
+    .ingredientBox{
         width: 450px;
     }
+
 }
 
 @media (max-width: 1023px) {
-    .recipeCover{
+
+    .ingredientBox{
         width: 500px;
         top: calc(10% + 100px);
-        background-color: rgba(255, 255, 255, 1);
         left: 50%;
+        background-color: rgba(255, 255, 255, 1);
     }
+
 }
 
 @media (max-width: 550px) {
-    .recipeCover{
+
+    .ingredientBox{
         width: 300px;
         left: 50%;
         background-color: rgba(255, 255, 255, 1);
         top: calc(10% + 100px);
     }
+
 }
 
 @media (max-width: 325px) {
-    .recipeCover{
+
+    .ingredientBox{
         top: calc(10% + 80px);
     }
+
 }
 
-.recipeCover>h3{
+.ingredientBox>h3{
     text-align: center;
     font-size: 16px;
     margin: 15px 0px 15px 0px;
     color: #666666;
 }
 
-.recipeCover>h3:last-child{
+.ingredientBox>h3:last-child{
     margin: 20px 0px 15px 0px;
 }
 
-.recipeCover>p{
+.ingredientBox>p{
     text-align: center;
     color: #999999;
     margin: 5px 10px 10px 10px;
     font-size: 14px;
 }
 
-.recipeCover>p:last-child{
+.ingredientBox>p:last-child{
     margin: 5px 10px 20px 10px;
 }
 
-
-
-#moveRotate{
+#circlePicDotNavigate{
     position: fixed;
     width:100%;
     right:0;
@@ -293,15 +293,13 @@
    position: absolute;
    left:calc(100% - 100px);
    top:250px;
- }
+}
 
- 
-
- .grow { 
+.grow{ 
     transition: all .1s ease-in-out; 
-  }
+}
 
-  .cir{
+.cir{
     width:12px;
     height:12px;
     border:1px solid  #D44D5C;
@@ -309,36 +307,36 @@
     position: absolute;
     background-color: #D44D5C;
     cursor: pointer;
-  }
+}
 
-  .circle1{
+.circleDotPlace1{
     top:250px;
     left:calc(100% - 105px);
-  }
+}
 
-  .circle2{
+.circleDotPlace2{
     top:calc(250px + 15vh);
     left:calc(100% - 105px);
-  }
+}
 
-  .circle3{
+.circleDotPlace3{
     top:calc(250px + 30vh);
     left:calc(100% - 105px);
-  }
+}
 
-  .circle4{
+  .circleDotPlace4{
     top:calc(250px + 45vh);
     left:calc(100% - 105px);
   }
 
-  .growBig { 
+.growBig { 
     transform: scale(7); 
-  }
+}
 
-  .circlePic1,
-  .circlePic2,
-  .circlePic3,
-  .circlePic4{
+.circlePic1,
+.circlePic2,
+.circlePic3,
+.circlePic4{
    width:80px;
    height:80px;
    border:1px solid  transparent;
@@ -353,82 +351,77 @@
    transition-delay: 1s;
    transition: .3s ease; 
    transform: scale(0);
-  }
+}
 
-  .circlePic1{
+.circlePic1{
     background-image: url("../imgs/beefnoodles.png");
     top:216px;
     left:calc(100% - 139px);
     z-index: 500;
-  }
+}
 
-  .circlePic2{
+.circlePic2{
     background-image: url("../imgs/syoronbou.png");
-    
     top:calc(216px + 15vh);
     left:calc(100% - 139px);
     z-index: 500;
-  }
+}
 
-  .circlePic3{
+.circlePic3{
     background-image: url("../imgs/food_soup.png");
-    
     top:calc(216px + 30vh);
     left:calc(100% - 139px);
     z-index: 500;
-  }
+}
 
-  .circlePic4{
+.circlePic4{
     background-image: url("../imgs/food_riceball.png");
     top:calc(216px + 45vh);
     left:calc(100% - 139px);
     z-index: 500;
-  }
+}
 
-  .picBig{
+.picBig{
     transform: scale(1);
-  }
+}
 
-  .circleSelected{
+.circleSelected{
     background-color: #ffffff;
     border: 2px solid #D44D5C;
     padding: 1px;
     width: 12px;
     height: 12px;
-  }
+}
 
-  @media (max-width: 900px) {
-    #moveRotate{
+@media (max-width: 900px) {
+
+    #circlePicDotNavigate{
         display: none;
     }
-  }
 
+}
 
-  .restaurantBox{
+.restaurantBox{
       display: flex;
       align-items: center;
       justify-content: flex-end;
       padding: 5px;
-  }
+}
 
-  .restaurantBox>p{
+.restaurantBox>p{
       color: #D44D5C;
       margin: 0 10px;
       display: none;
       font-size: 16px;
-  }
+}
 
-  .restaurantBox>.restaurantEnter{
+.restaurantBox>.restaurantEnter{
       background-image: url("../imgs/restaurantbutton.svg");
       background-repeat: no-repeat;
       width: 45px;
       height: 45px;
       cursor: pointer;
-    }
-
-    
-
-
+}
 
 .clickWhiteCircle{
     display: none;
@@ -474,6 +467,7 @@
     background-color: #eeeeee;
     z-index: 9997;
     display: none;
+    touch-action: none;
 }
 
 .restaurantCard{
@@ -730,7 +724,7 @@
         z-index: 200;
     }
 
-    .recipeCover>p{
+    .ingredientBox>p{
         text-align: center;
         color: #999999;
         margin: 5px 0px 10px 0px;
@@ -759,4 +753,13 @@
 
   #rightRestButton{
     opacity: 1;
+}
+
+#nokey {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }

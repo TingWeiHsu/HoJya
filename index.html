@@ -11,104 +11,100 @@
     <meta name="description" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
     <meta name="keywords" content="食べもの, 台湾, 料理,　美味しい,　うまい,　おすすめ,　紹介,　旅行,　国外,　小籠包,　日本,　日本語,　観光,　旅, グルメ, food, delicious, taiwan, taiwanese, cook, nice, great, introduction, recommendation, restaurants, travel, trip, best">
     <meta name="author" content="Nozomi, TingWei Hsu">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Rosy">
     <meta property="og:title" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
     <meta property="og:url" content="https://tingweihsu.github.io/HoJya-Project/index.html">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-21%20%E4%B8%8B%E5%8D%8810.15.40.png?alt=media&token=ed564af8-cebb-4ca0-82cb-cc7ff0adab05">
     <meta property="og:description" content="美味しい台湾料理とおすすめ">
-
-
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/index.css" media="all" />
-    
 </head>
-<body onload="loadingPage()" onmousemove="circleMoveAround(event)">
+<body onload="show_Loading_Cover()" onmousemove="move_Circle_Around(event)">
 
-        <div class="pageLoadingCover">
-                <div class="smallDot dotOne"></div>
-                <div class="smallDot dotTwo"></div>
-                <div class="smallDot dotThree"></div>
+
+    <div class="pageLoadingCover">
+        <div class="smallDot dotOne"></div>
+        <div class="smallDot dotTwo"></div>
+        <div class="smallDot dotThree"></div>
+    </div>
+
+
+    <header>
+        <div class="headerContainer">
+            <div class="firstDiv">
+                <a href="index.html"></a>
             </div>
-
-        <header>
-                <div class="headercontainer">
-        
-                    <div class="first">
-                        <a href="index.html"></a>
-                    </div>
-                    <div class="second">
-                            <a href="index.html" class="link" id="indexLink">Home</a>
-                            <a href="food.html" class="link" id="foodLink">Food</a>
-                            <a href="about.html" class="link" id="aboutLink">About</a>
-                    </div>
-                    <div class="third">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-        
-                </div>
-            </header>
+            <div class="secondDiv">
+                <a href="index.html" class="linkToLoading" id="indexLink">Home</a>
+                <a href="food.html" class="linkToLoading" id="foodLink">Food</a>
+                <a href="about.html" class="linkToLoading" id="aboutLink">About</a>
+            </div>
+            <div class="thirdDiv">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </header>
 
 
 	<nav>
-        <div class="leftBox">
-            <a href="index.html" class="link"><div></div></a>
+        <div class="topLogoMobileBox">
+            <a href="index.html" class="linkToLoading"><div></div></a>
         </div>
-		<div class="rightBox">
-				<div class="container" onclick="clickFunction(this)">
-						<div class="bar1"></div>
-						<div class="bar2"></div>
-						<div class="bar3"></div>
-				</div>
+		<div class="bottomNavMobileBox">
+			<div class="threeBarsContainer" onclick="click_Show_Mobile_Nav(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
 		</div>
 	</nav>
 
     
     <div id="fullNav">
-            <div id="navMove">
-                    <a href="index.html">ホーム</a>
-                    <a href="food.html">台湾料理</a>
-                        <div class="smallLink">
-                            <a href="food.html#page1">牛肉の煮込み麺</a>
-                            <a href="food.html#page2">しょうろんぽう</a>
-                            <a href="food.html#page3">白きくらげのスープ</a>
-                            <a href="food.html#page4">黒胡麻餡の白玉団子</a>
-                        </div>
-                    <a href="about.html">について</a>
-                    <a href="about.html#page2">お問い合わせ</a>
+        <div id="navMove">
+            <a href="index.html">ホーム</a>
+            <a href="food.html">台湾料理</a>
+            <div class="mobileNavFoodLink">
+                <a href="food.html#page1">牛肉の煮込み麺</a>
+                <a href="food.html#page2">しょうろんぽう</a>
+                <a href="food.html#page3">白きくらげのスープ</a>
+                <a href="food.html#page4">黒胡麻餡の白玉団子</a>
             </div>
+            <a href="about.html">について</a>
+            <a href="about.html#page2">お問い合わせ</a>
+        </div>
     </div>
 
 
-    <div id="fullpage" >
+    <div id="fullPage">
         <div class="section">
             <div id="bg">
 				<img id="picBg" src="./imgs/picbg.png" alt="picturebg">
-					<img class="mobilePic mobilePicUp" src="./imgs/uppic.png" alt="picturebg">
-					<img class="mobilePic mobilePicDown" src="./imgs/downpic.png" alt="picturebg">
+				<img class="mobilePic mobilePicUp" src="./imgs/uppic.png" alt="picturebg">
+				<img class="mobilePic mobilePicDown" src="./imgs/downpic.png" alt="picturebg">
 				<h2 class="pageTitle fadeWord">台湾絶品美味しい<br>食べ物おすすめ</h2>
                 <h3 class="smallDescription fadeWord">Best Taiwanese Cuisine Introduction</h3>
-                <div id="mobileArrow" onclick="downToNext()"></div>
+                <div id="mobileArrow" onclick="down_To_Next_Section()"></div>
             </div>
         </div>
         <div class="section">
             <div id="bg">
-					<img id="preparing" src="./imgs/doing.png" alt="foodbracket">
-					<h2 class="pageTitle lefter mobileTextUp fadeWord">良いお店を紹介します</h2>
-                    <h3 class="smallDescription upper lefter mobileSmallTextUpOne fadeWord">Share the Greatest Restaurant for You</h3>
-                    <div id="mobileArrow" onclick="downToNext()"></div>
+				<img id="preparing" src="./imgs/doing.png" alt="foodbracket">
+				<h2 class="pageTitle lefter mobileTextUp fadeWord">良いお店を紹介します</h2>
+                <h3 class="smallDescription upper lefter mobileSmallTextUpOne fadeWord">Share the Greatest Restaurant for You</h3>
+                <div id="mobileArrow" onclick="down_To_Next_Section()"></div>
             </div>
         </div>
         <div class="section">
             <div id="bg">
-					<img id="cooking" src="./imgs/preparing.png" alt="foodbracket">
-                    <h2 class="pageTitle mobileTextUp fadeWord">グルメ旅に行こう</h2>
-                    <h3 class="smallDescription upper mobileSmallTextUp fadeWord">Discover Now</h3>
-                    <a href="food.html" class="link"><div class="circle center fadeWord"></div></a>
+				<img id="cooking" src="./imgs/preparing.png" alt="foodbracket">
+                <h2 class="pageTitle mobileTextUp fadeWord">グルメ旅に行こう</h2>
+                <h3 class="smallDescription upper mobileSmallTextUp fadeWord">Discover Now</h3>
+                <a href="food.html" class="linkToLoading"><div class="circle center fadeWord"></div></a>
             </div>
         </div>      
     </div>
@@ -116,25 +112,18 @@
 
 
     <footer>
-            <div class="footercontainer">
-    
-    
-                <div class="first">
-                        <a href="https://twitter.com/share?text=HoJya台湾絶品美味しい食べ物おすすめ&url=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
-                        <a href="https://www.facebook.com/sharer.php?title=HoJya台湾絶品美味しい食べ物おすすめ&u=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
-                        <p>© 2018 HoJya Taiwan ltd </p>
-                </div>
-                <div class="second" id="movingArrow" onclick="downToNext()"></div>
-                <div class="third">				
-                    <a href="about.html#page2">Contact</a>
-                </div>
-                
+        <div class="footerContainer">
+            <div class="firstDiv">
+                <a href="https://twitter.com/share?text=HoJya 台湾絶品美味しい食べ物おすすめ&url=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
+                <a href="https://www.facebook.com/sharer.php?title=HoJya 台湾絶品美味しい食べ物おすすめ&u=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
+                <p>© 2018 HoJya Taiwan ltd </p>
             </div>
-        </footer>
-
-
-
-
+            <div class="secondDiv" id="movingArrow" onclick="down_To_Next_Section()"></div>
+            <div class="thirdDiv">				
+                <a href="about.html#page2" class="linkToLoading">Contact</a>
+            </div>
+        </div>
+    </footer>
 
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
@@ -143,5 +132,4 @@
 <script src="js/index.js"></script>    
 <link rel="stylesheet" type="text/css" href="css/full.css" media="all" />
 </body>
-   
 </html>

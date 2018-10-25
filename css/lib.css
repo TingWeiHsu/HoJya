@@ -26,28 +26,28 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+body{
 	line-height: 1;
 }
-ol, ul {
+ol, ul{
 	list-style: none;
 }
-blockquote, q {
+blockquote, q 
 	quotes: none;
 }
 blockquote:before, blockquote:after,
-q:before, q:after {
+q:before, q:after{
 	content: '';
 	content: none;
 }
-table {
+table{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 
+/* ======================= Basic setting ========================== */
 
-/* ======================= css reset ========================== */
 
 * {
 	-webkit-box-sizing: border-box;
@@ -55,17 +55,14 @@ table {
 			box-sizing: border-box;
   }
 
-  
-  a{
+a {
 	  text-decoration: none;
 	  color: #D44D5C;
   }
 
- 
 
+/* ======================= header part ========================== */
 
-
-  /* header part */
 
 	header{
 	overflow: hidden;
@@ -77,7 +74,7 @@ table {
 	z-index: 9995;
 	}
 
-	.headercontainer{
+	.headerContainer{
 		padding: 0 90px;
 		display: flex;
 		justify-content: center;
@@ -85,14 +82,14 @@ table {
 		height: 90px;
 	}
 
-	header>.headercontainer>.first,
-	header>.headercontainer>.second,
-	header>.headercontainer>.third{
+	header>.headerContainer>.firstDiv,
+	header>.headerContainer>.secondDiv,
+	header>.headerContainer>.thirdDiv{
 		flex: auto;
 		width: 33%;
 	}
 
-	header>.headercontainer>.first{
+	header>.headerContainer>.firstDiv{
 		background-image: url("../imgs/logo.png");
 		background-repeat: no-repeat;
 		background-position: left;
@@ -101,28 +98,26 @@ table {
 		cursor: pointer;
 	}
 
-	header>.headercontainer>.first>a{
+	header>.headerContainer>.firstDiv>a{
 		height: 45px;
 		width: 110px;
 		display: block;
 	}
 
-
-	header>.headercontainer>.second{
+	header>.headerContainer>.secondDiv{
 		text-align: center;
 	}
 
-	header>.headercontainer>.third{
+	header>.headerContainer>.thirdDiv{
 		text-align: right;
 	}
 
-
-	header>.headercontainer>.second>a {
+	header>.headerContainer>.secondDiv>a{
 		padding:24px 3%;
 		margin: 0 6%;
 	}
 
-	header>.headercontainer>.second>a:hover {
+	header>.headerContainer>.secondDiv>a:hover{
 		border-bottom: 5px #D44D5C solid;
 		opacity: 0.7;
 	}
@@ -131,12 +126,12 @@ table {
 		border-bottom: 5px #D44D5C solid;
 	}
 
-	header>.headercontainer>.third>a img{
+	header>.headerContainer>.thirdDiv>a img{
 		height: 20px;
 		margin: 0 1%;
 	}
 
-	header>.headercontainer>.third>a:first-child{
+	header>.headerContainer>.thirdDiv>a:first-child{
 		height: 20px;
 		margin: 0 1%;
 		width: 20px;
@@ -147,7 +142,7 @@ table {
 		display: inline-block;
 	}
 
-	header>.headercontainer>.third>a{
+	header>.headerContainer>.thirdDiv>a{
 		height: 20px;
 		margin: 0 1%;
 		width: 20px;
@@ -158,7 +153,7 @@ table {
 		display: inline-block;
 	}
 
-	header>.headercontainer>.third>a:last-child{
+	header>.headerContainer>.thirdDiv>a:last-child{
 		height: 20px;
 		margin: 0 1%;
 		width: 20px;
@@ -169,12 +164,13 @@ table {
 		display: inline-block;
 	}
 
-	header>.headercontainer>.third>a:hover{
+	header>.headerContainer>.thirdDiv>a:hover{
 		opacity: 0.7;
 	}
 
 
-/* footer part */
+/* ======================= footer part ========================== */
+
 
 	footer{
 		overflow: hidden;
@@ -186,7 +182,7 @@ table {
 		z-index: 9995;
 	}
 
-	.footercontainer{
+	.footerContainer{
 		padding: 0 90px;
 		display: flex;
 		justify-content: center;
@@ -194,32 +190,32 @@ table {
 		height: 90px;
 	}
 
-	footer>.footercontainer>.first,
-	footer>.footercontainer>.second,
-	footer>.footercontainer>.third{
+	footer>.footerContainer>.firstDiv,
+	footer>.footerContainer>.secondDiv,
+	footer>.footerContainer>.thirdDiv{
 		flex: auto;
 		width: 33%;
 	}
 
-	footer>.footercontainer>.first{
+	footer>.footerContainer>.firstDiv{
 		color: #D44D5C;
 		text-align: left;
 	}
 
-	footer>.footercontainer>.third{
+	footer>.footerContainer>.thirdDiv{
 		text-align: right;
 	}
 
-	footer>.footercontainer>.third>a:hover{
+	footer>.footerContainer>.thirdDiv>a:hover{
 		opacity: 0.8;
 	}
 
-	footer>.footercontainer>.second>img{
+	footer>.footerContainer>.secondDiv>img{
 		height: 20px;
 		margin-left: calc(50% - 10px);
 	}
 
-	footer>.footercontainer>.second{
+	footer>.footerContainer>.secondDiv{
 		width:auto;
 		background-image: url("../imgs/arrow.svg");
 		background-repeat: no-repeat;
@@ -233,14 +229,15 @@ table {
 	
 	}
 
-	@keyframes arrow {
+	@keyframes arrow{
 		0%   {transform:translate(0px, -6px)}
 		100% {transform:translate(0px, 6px)}
 	}
 
 
-	/* ======= left and right nav bar ======= */
+/* ======================= mobile nav red boxes part ========================== */
 
+	/* only show the red nav boxes smaller than 900px for mobile ver */
 	nav{
 		display: none;
 	}
@@ -252,8 +249,7 @@ table {
 	}
 
 
-
-	.leftBox{
+	.topLogoMobileBox{
 			position: fixed;
 			width: 130px;
 			height: 90px;
@@ -268,13 +264,14 @@ table {
 			background-size: 85%;
 	}
 	
-	.leftBox>a>div{
+	.topLogoMobileBox>a>div{
 		width: 130px;
 		height: 90px;
 		display: block;
 	}
 
-	.rightBox{
+	
+	.bottomNavMobileBox{
 		position: fixed;
 		width: 130px;
 		height: 90px;
@@ -285,14 +282,14 @@ table {
 		z-index: 9997;
 	}
 
-	.container {
+	.threeBarsContainer{
 		display: inline-block;
 		cursor: pointer;
 		margin-top: 25px;
 		margin-left: 47px;
 	}
 	
-	.bar1, .bar2, .bar3 {
+	.bar1, .bar2, .bar3{
 		width: 35px;
 		height: 3px;
 		background-color: #F5E9E2;
@@ -301,239 +298,232 @@ table {
 		border-radius: 20%;
 	}
 	
-	.change .bar1 {
+	.changeLooking .bar1{
 		-webkit-transform: rotate(-45deg) translate(-6px, 6px);
 		transform: rotate(-45deg) translate(-6px, 6px);
 	}
 	
-	.change .bar2 {opacity: 0;}
+	.changeLooking .bar2{opacity: 0;}
 	
-	.change .bar3 {
+	.changeLooking .bar3{
 		-webkit-transform: rotate(45deg) translate(-6px, -6px);
 		transform: rotate(45deg) translate(-8px, -8px);
 	}
 	
 
-/* gray background */
+/* ======================= gray background ========================== */
 
-#bg{
-    background-image: url("../imgs/bg.png");
-	background-repeat: repeat;
-    margin: 0 auto;
-    width: calc(100% - 180px);
-    height: 100vh;
-    overflow: hidden;
-  }
-
-
-
-
-
-
-/* ======= Header Footer RWD ======= */
-
-@media (max-width: 1100px) {
-
-	header>.headercontainer>.second>a {
-		padding:24px 1%;
-		/* margin: 0 3%; */
-	}
-}
-
-@media (max-width: 900px) {
 
 	#bg{
-		width: calc(100% - 100px);
-	  }
-
-	header{
-		height: 50px;
-		z-index: 9995;
+		background-image: url("../imgs/bg.png");
+		background-repeat: repeat;
+		margin: 0 auto;
+		width: calc(100% - 180px);
+		height: 100vh;
+		overflow: hidden;
 	}
 
-    .headercontainer{
-        display: none;
-	}
-	
-	footer{
-		height: 50px;
-		z-index: 9995;
-	}
 
-    .footercontainer{
-        display: none;
-    }
+/* ======================= header footer and mobile nav red boxes and bg RWD ======================= */
 
-    .leftBox{
-        top: 0px;
-        left:calc(50% - 65px);
-		transform: translate(0%,0%);
-		height: 70px;
-    }
 
-    .rightBox{
-		height: 70px;
-        top: auto;
-        bottom: 0px;
-		left:calc(50% - 65px);
-		transform: translate(0%,0%);
+	@media (max-width: 1100px) {
+
+		header>.headerContainer>.secondDiv>a{
+			padding:24px 1%;
+			/* margin: 0 3%; */
+		}
 	}
 
-	.container {
-		margin-top: 18px;
+	@media (max-width: 900px) {
+
+		#bg{
+			width: calc(100% - 100px);
+		}
+
+		header{
+			height: 50px;
+			z-index: 9995;
+		}
+
+		.headerContainer{
+			display: none;
+		}
+		
+		footer{
+			height: 50px;
+			z-index: 9995;
+		}
+
+		.footerContainer{
+			display: none;
+		}
+
+		.topLogoMobileBox{
+			top: 0px;
+			left:calc(50% - 65px);
+			transform: translate(0%,0%);
+			height: 70px;
+		}
+
+		.bottomNavMobileBox{
+			height: 70px;
+			top: auto;
+			bottom: 0px;
+			left:calc(50% - 65px);
+			transform: translate(0%,0%);
+		}
+
+		.threeBarsContainer {
+			margin-top: 18px;
+		}
+
 	}
 
-}
 
+	@media (max-width: 550px) {
 
+		#bg{
+			width: calc(100% - 40px);
+		}
 
-@media (max-width: 550px) {
+		header{
+			height: 20px;
+			z-index: 9995;
+		}
 
-	#bg{
-		width: calc(100% - 40px);
-	  }
+		footer{
+			height: 20px;
+			z-index: 9995;
+		}
 
-	header{
-		height: 20px;
-		z-index: 9995;
+		.topLogoMobileBox{
+			height: 35px;
+			width: 80px;
+			left:calc(50% - 40px);
+			transform: translate(0%,0%);
+		}
+		
+		.topLogoMobileBox>a>div{
+			width: 80px;
+			height: 35px;
+			display: block;
+		}
+
+		.bottomNavMobileBox{
+			height: 35px;
+			width: 80px;
+			bottom: 0px;
+			left:calc(50% - 40px);
+		}
+
+		.topLogoMobileBox>a img{
+			margin-top: 8px;
+			margin-left: 10px;
+		}
+
+		.bar1, .bar2, .bar3{
+			width: 25px;
+			height: 2px;
+			margin: 5px 0;
+		}
+
+		.threeBarsContainer{
+			margin-top: 4px;
+			margin-left: 28px;
+		}
+
 	}
 
-	footer{
-		height: 20px;
-		z-index: 9995;
+	@media (max-width: 550px) {
+
+		.changeLooking .bar1{
+			-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+			transform: rotate(-45deg) translate(-2px, 2px);
+		}
+
+		.threeBarsContainer{
+			margin-top: 6px;
+		}
+
 	}
 
-	.leftBox{
-		height: 35px;
-		width: 80px;
-        left:calc(50% - 40px);
-        transform: translate(0%,0%);
+
+/* ======================= mobile full page nav part ======================= */
+
+
+	#fullNav{
+		position: fixed;
+		width: 100%;
+		height: 0%;
+		background-color: #fff;
+		z-index: 9996;
+		opacity: 0;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 	}
-	
-	.leftBox>a>div{
-		width: 80px;
-		height: 35px;
+
+	#fullNav>div{
+		max-width: 860px;
+		margin-top:-150%;
+	}
+
+	#fullNav>div>a{
+		text-align: center;
+		font-size: 36px;
+		font-family: "Rounded Mplus 1c";
+		color: #D44D5C;
 		display: block;
+		line-height: 51px;
 	}
 
-    .rightBox{
-		height: 35px;
-		width: 80px;
-        bottom: 0px;
-		left:calc(50% - 40px);
+	.changeWordColor{
+		color: #333;
 	}
 
-	.leftBox>a img{
-		margin-top: 8px;
-		margin-left: 10px;
+	@media (max-width: 767px) {
+		#fullNav>div>a{
+			font-size: 30px;
+			line-height: 40px;
+		}
 	}
 
-	.bar1, .bar2, .bar3 {
-		width: 25px;
-		height: 2px;
-		margin: 5px 0;
+	.mobileNavFoodLink{
+		display: none;
 	}
 
-	.container {
-		margin-top: 4px;
-		margin-left: 28px;
-	}
-
-
-
-
-}
-
-@media (max-width: 550px) {
-	.change .bar1 {
-		-webkit-transform: rotate(-45deg) translate(-6px, 6px);
-		transform: rotate(-45deg) translate(-2px, 2px);
-	}
-
-	.container {
-		margin-top: 6px;
-	}
-}
-
-
-/* ====== mobile Nav ====== */
-
-#fullNav{
-    position: fixed;
-    width: 100%;
-    height: 0%;
-    background-color: #fff;
-    z-index: 9996;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    
-}
-
-#fullNav>div{
-    max-width: 860px;
-	margin-top:-150%;
-}
-
-#fullNav>div>a{
-    text-align: center;
-    font-size: 36px;
-    font-family: "Rounded Mplus 1c";
-    color: #D44D5C;
-    display: block;
-    line-height: 51px;
-}
-
-.changeWordColor {
-	color: #333;
-}
-
-
-/* #fullNav>div>a:hover{
-    opacity: 0.3;
-} */
-
-@media (max-width: 767px) {
-    #fullNav>div>a{
-        font-size: 30px;
-        line-height: 40px;
-    }
-}
-
-.smallLink{
-	display: none;
-}
-
-.smallLink>a{
-	text-align: center;
-    font-size: 16px;
-    font-family: "Rounded Mplus 1c";
-    color: #333;
-    display: block;
-	line-height: 30px;
-	opacity: 0.5;
-}
-
-.smallLink>a:hover{
-    opacity: 0.9;
-}
-
-@media (max-width: 900px) {
-
-	.smallLink{
+	.mobileNavFoodLink>a{
+		text-align: center;
+		font-size: 16px;
+		font-family: "Rounded Mplus 1c";
+		color: #333;
 		display: block;
+		line-height: 30px;
+		opacity: 0.5;
 	}
 
-    .smallLink>a{
-		display: block;
-        font-size: 14px;
-        line-height: 25px;
-    }
-}
+	.mobileNavFoodLink>a:hover{
+		opacity: 0.9;
+	}
 
-/* loading page */
+	@media (max-width: 900px) {
+
+		.mobileNavFoodLink{
+			display: block;
+		}
+
+		.mobileNavFoodLink>a{
+			display: block;
+			font-size: 14px;
+			line-height: 25px;
+		}
+	}
+
+
+/* ======================= loading's cover with jumping gif part  ======================= */
+
 
 .pageLoadingCover{
 	height: calc(100vh - 20px);
@@ -555,21 +545,13 @@ table {
     height: 10px;
     background-color: #D44D5C;
     border-radius: 50%;
-	position: absolute;
-    
+	position: absolute; 
 }
 
 @keyframes myshine {
     0%   {opacity: 1;}
     100% {opacity: 0;}
 }
-
-
-/* @keyframes myslowshine {
-    0%   {opacity: 0;}
-    100% {opacity: 1;}
-} */
-
 
 .dotOne{
 	top: calc(50% + 5%);
@@ -590,9 +572,6 @@ table {
 	animation: myshine .5s infinite;
 }
 
-
-
-
 @media (max-width: 900px) {
 	.pageLoadingCover{
 		background-size: 20%;
@@ -600,6 +579,7 @@ table {
 }
 
 @media (max-width: 500px) {
+
 	.pageLoadingCover{
 		background-size: 30%;
 	}
@@ -610,14 +590,15 @@ table {
 		background-color: #D44D5C;
 		border-radius: 50%;
 		position: absolute;
-		
 	}
+
 }
 
 
-/* adding sharing button */
+/*  ======================= footer first part with FB and Twitter sharing button  ======================= */
 
-.footercontainer>.first>a{
+
+.footerContainer>.firstDiv>a{
 	display: inline-block;
 	 width: 20px;
 	 height: 20px;
@@ -629,7 +610,7 @@ table {
  }
  
  
- .footercontainer>.first>a:nth-child(2){
+ .footerContainer>.firstDiv>a:nth-child(2){
 	 display: inline-block;
 	  width: 20px;
 	  height: 20px;
@@ -640,6 +621,6 @@ table {
 	  margin: 0px 10px 0px 5px;
   }
  
- .footercontainer>.first>p{
+ .footerContainer>.firstDiv>p{
 	 display: inline-block;
   }

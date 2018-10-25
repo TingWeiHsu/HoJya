@@ -1,4 +1,4 @@
-/* ======== 首頁 ======= */
+
 
 .pageTitle{
     left: 50%;
@@ -27,8 +27,6 @@
     text-align: center;
     line-height: 100px;
 }
-
-
 
 #picBg{
     display: block;
@@ -62,7 +60,7 @@
     left: calc(50% - 340px);
 }
 
-.enlarge{
+.enlargePic{
     position: absolute;
     z-index: 1500;
     display: block;
@@ -71,13 +69,12 @@
     transform: scale(0);
 }
 
-.transitionLarge {
+.transitionLarge{
     -webkit-transform: scale(1); 
     -moz-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
 }
-
 
 #picSlideBg{
     display: block;
@@ -93,16 +90,13 @@
     display: none;
 }
 
-
-
-#map {
+#map{
     position: absolute;
     z-index: 100;
     width: calc(100% - 180px);
     height: calc(100vh - 90px);
     background-color: grey;
   }
-
 
 #contactInfor{
     position: absolute;
@@ -141,91 +135,17 @@
     margin-top: -250px;
 }
 
+.fadeWord{
+    opacity: 0;
+    margin-top:+5%;
+}
 
 
+/* ======== mobile ======== */
 
-
-
-
-
-
-/* ======== 主要是調整跟改變mobile版本的圖片 ======== */
 
 @media (max-width: 1100px) {
 
-    #picBg{
-        display: none;
-    }
-
-    .mobilePic{
-        display: block;	
-    }
-
-    .mobilePicUp{
-        position: absolute;
-        top: 50px;
-        width: calc(100% - 180px);
-    }
-    
-    .mobilePicDown{
-        position: absolute;
-        bottom:  50px;
-        width: calc(100% - 180px);
-    }
-
-}
-
-@media (max-width: 900px) {
-
-    #map {
-        width: calc(100% - 100px);
-        height: calc(100vh - 50px);
-      }
-
-    .mobilePicUp{
-        width: calc(100% - 100px);
-    }
-
-    .mobilePicDown{
-        width: calc(100% - 100px);
-    }
-}
-
-
-
-@media (max-width: 550px) {
-
-    #map {
-        width: calc(100% - 40px);
-        height: calc(100vh - 20px);
-      }
-
-    .mobilePicUp{
-        top: 20px;
-        width: calc(100% - 40px);
-    }
-
-    .mobilePicDown{
-        bottom:  20px;
-        width: calc(100% - 40px);
-    }
-
-    #contactInfor{
-        width: 250px;
-        height: 320px;
-        top:calc(50% - 175px);
-        left: calc(50% - 125px);
-        padding: 50px 20px;
-        border-radius: 15px;
-    }
-
-}
-
-
-/* ======== 主要是調整mobile時字體 ======== */
-
-@media (max-width: 1100px) {
-    
     .pageTitle{
         left: 50%;
         font-size: 30px;
@@ -258,13 +178,51 @@
         top: calc(20% + 60px);
     }
 
-    .enlarge{
+    .enlargePic{
         position: absolute;
         z-index: 1500;
         display: none;
     }
 
+    #picBg{
+        display: none;
+    }
+
+    .mobilePic{
+        display: block;	
+    }
+
+    .mobilePicUp{
+        position: absolute;
+        top: 50px;
+        width: calc(100% - 180px);
+    }
+    
+    .mobilePicDown{
+        position: absolute;
+        bottom:  50px;
+        width: calc(100% - 180px);
+    }
+
 }
+
+@media (max-width: 900px) {
+
+    #map{
+        width: calc(100% - 100px);
+        height: calc(100vh - 50px);
+      }
+
+    .mobilePicUp{
+        width: calc(100% - 100px);
+    }
+
+    .mobilePicDown{
+        width: calc(100% - 100px);
+    }
+
+}
+
 
 @media (max-width: 650px) {
 
@@ -275,7 +233,32 @@
 }
 
 
-.fadeWord{
-opacity: 0;
-margin-top:+5%;
+@media (max-width: 550px) {
+
+    #map{
+        width: calc(100% - 40px);
+        height: calc(100vh - 20px);
+      }
+
+    .mobilePicUp{
+        top: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .mobilePicDown{
+        bottom:  20px;
+        width: calc(100% - 40px);
+    }
+
+    #contactInfor{
+        width: 250px;
+        height: 320px;
+        top:calc(50% - 175px);
+        left: calc(50% - 125px);
+        padding: 50px 20px;
+        border-radius: 15px;
+    }
+
 }
+
+
