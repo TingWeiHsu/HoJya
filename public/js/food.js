@@ -1,6 +1,6 @@
 // ==================== FOOD clicked cicle plus + to enlarge the food infor and make other things disappeared ==================== 
 
-    function click_Enlarge_Show_Detail(x) {
+    function clickEnlargeShowDetail(x) {
         // click + to toggle adding or remove css
         x.classList.toggle("clicked");
         

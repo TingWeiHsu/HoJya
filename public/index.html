@@ -14,14 +14,25 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Rosy">
     <meta property="og:title" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
-    <meta property="og:url" content="https://tingweihsu.github.io/HoJya-Project/index.html">
+    <meta property="og:url" content="https://hojya-taiwan-food.firebaseapp.com/index.html">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-21%20%E4%B8%8B%E5%8D%8810.15.40.png?alt=media&token=ed564af8-cebb-4ca0-82cb-cc7ff0adab05">
     <meta property="og:description" content="美味しい台湾料理とおすすめ">
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/index.css" media="all" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124200848-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-124200848-2');
+    </script>
+
 </head>
-<body onload="show_Loading_Cover()" onmousemove="move_Circle_Around(event)">
+<body onload="showLoadingCover()" onmousemove="moveCircleAround(event)">
 
 
     <div class="pageLoadingCover">
@@ -37,7 +48,7 @@
                 <a href="index.html"></a>
             </div>
             <div class="secondDiv">
-                <a href="index.html" class="linkToLoading" id="indexLink">Home</a>
+                <a href="index.html" class="linkToLoading hoverEffectLink" id="indexLink">Home</a>
                 <a href="food.html" class="linkToLoading" id="foodLink">Food</a>
                 <a href="about.html" class="linkToLoading" id="aboutLink">About</a>
             </div>
@@ -55,7 +66,7 @@
             <a href="index.html" class="linkToLoading"><div></div></a>
         </div>
 		<div class="bottomNavMobileBox">
-			<div class="threeBarsContainer" onclick="click_Show_Mobile_Nav(this)">
+			<div class="threeBarsContainer" onclick="clickShowMobileNav(this)">
 				<div class="bar1"></div>
 				<div class="bar2"></div>
 				<div class="bar3"></div>
@@ -88,7 +99,7 @@
 				<img class="mobilePic mobilePicDown" src="./imgs/downpic.png" alt="picturebg">
 				<h2 class="pageTitle fadeWord">台湾絶品美味しい<br>食べ物おすすめ</h2>
                 <h3 class="smallDescription fadeWord">Best Taiwanese Cuisine Introduction</h3>
-                <div id="mobileArrow" onclick="down_To_Next_Section()"></div>
+                <div id="mobileArrow" onclick="downToNextSection()"></div>
             </div>
         </div>
         <div class="section">
@@ -96,7 +107,7 @@
 				<img id="preparing" src="./imgs/doing.png" alt="foodbracket">
 				<h2 class="pageTitle lefter mobileTextUp fadeWord">良いお店を紹介します</h2>
                 <h3 class="smallDescription upper lefter mobileSmallTextUpOne fadeWord">Share the Greatest Restaurant for You</h3>
-                <div id="mobileArrow" onclick="down_To_Next_Section()"></div>
+                <div id="mobileArrow" onclick="downToNextSection()"></div>
             </div>
         </div>
         <div class="section">
@@ -114,11 +125,11 @@
     <footer>
         <div class="footerContainer">
             <div class="firstDiv">
-                <a href="https://twitter.com/share?text=HoJya 台湾絶品美味しい食べ物おすすめ&url=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
-                <a href="https://www.facebook.com/sharer.php?title=HoJya 台湾絶品美味しい食べ物おすすめ&u=https://tingweihsu.github.io/HoJya-Project/index.html" target="_blank"> </a>
+                <a href="https://twitter.com/share?text=HoJya 台湾絶品美味しい食べ物おすすめ&url=https://hojya-taiwan-food.firebaseapp.com/index.html" target="_blank"> </a>
+                <a href="https://www.facebook.com/sharer.php?title=HoJya 台湾絶品美味しい食べ物おすすめ&u=https://hojya-taiwan-food.firebaseapp.com/index.html" target="_blank"> </a>
                 <p>© 2018 HoJya Taiwan ltd </p>
             </div>
-            <div class="secondDiv" id="movingArrow" onclick="down_To_Next_Section()"></div>
+            <div class="secondDiv" id="movingArrow" onclick="downToNextSection()"></div>
             <div class="thirdDiv">				
                 <a href="about.html#page2" class="linkToLoading">Contact</a>
             </div>

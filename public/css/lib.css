@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: "Rounded Mplus 1c";
+	font-family: "Rounded Mplus 1c", "微軟正黑體";
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -32,7 +32,7 @@ body{
 ol, ul{
 	list-style: none;
 }
-blockquote, q 
+blockquote, q {
 	quotes: none;
 }
 blockquote:before, blockquote:after,
@@ -473,7 +473,7 @@ a {
 	#fullNav>div>a{
 		text-align: center;
 		font-size: 36px;
-		font-family: "Rounded Mplus 1c";
+		font-family: "Rounded Mplus 1c", "微軟正黑體";
 		color: #D44D5C;
 		display: block;
 		line-height: 51px;
@@ -497,7 +497,7 @@ a {
 	.mobileNavFoodLink>a{
 		text-align: center;
 		font-size: 16px;
-		font-family: "Rounded Mplus 1c";
+		font-family: "Rounded Mplus 1c", "微軟正黑體";
 		color: #333;
 		display: block;
 		line-height: 30px;
