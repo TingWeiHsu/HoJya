@@ -26,7 +26,7 @@ const createE = function(tagN, classN, textC, setKey, setValue){
         setTimeout(function(){ 
             // get the id from the icon user clicked, as the key for data
             let enterKey = e.target.id;
-            create_Restaurant_Section(enterKey);
+            createRestaurantSection(enterKey);
         }, 1000);
         
     });
@@ -48,7 +48,7 @@ const createE = function(tagN, classN, textC, setKey, setValue){
 
 // ==================== produce the restaurant information after got them from the database ==================== 
 
-    function create_Restaurant_Section(ek){
+    function createRestaurantSection(ek){
         // the gray bg which will cover the full screen first
         $(".clickCircle").css("display", "block");
         // show the real restaurant part page infor
@@ -153,7 +153,7 @@ const createE = function(tagN, classN, textC, setKey, setValue){
 
 // ==================== RESTAURANT move the circle plus icon in restaurant ==================== 
 
-function move_Restaurant_Circle_Around(e){
+function moveRestaurantCircleAround(e){
 
     // mouse move everytime will get x and y data
     let x = e.clientX;
@@ -164,7 +164,6 @@ function move_Restaurant_Circle_Around(e){
     let cY = cirxy.top + 35;
     let cX = cirxy.left + 35;
 
-
     // let's move our circle, everytime move just bit of px
     let newX = (x-cX)/20;
     let newY = (y-cY)/20;
@@ -173,7 +172,6 @@ function move_Restaurant_Circle_Around(e){
 
     let w = $(window).width();
     if (w > 1025) {
-    
         for (let i = 0; i < circleArr.length ; i++){
             if (i === 0) {
                 circleArr[i].style.transform = `translate(${newX}px,${newY}px)`; 
@@ -188,7 +186,7 @@ function move_Restaurant_Circle_Around(e){
 
 //  ==================== RESTAURANT removing the arrow when cannot scroll anymore ==================== 
 
-function detect_Remove_Unnecessary_Arrow() {
+function detectRemoveUnnecessaryArrow() {
     let totalWidth = document.getElementById('restaurantCard').scrollWidth;
     let oneWidth = $("#restaurantCard").width();
     let place = $("#restaurantCard").scrollLeft();
@@ -207,20 +205,3 @@ function detect_Remove_Unnecessary_Arrow() {
         $("#rightRestButton").css({'opacity':'1'});
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   

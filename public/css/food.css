@@ -26,7 +26,7 @@
     top: 40%;
     transform: translate(-50%,-50%);
     z-index: 200;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #D44D5C;
 }
 
@@ -37,7 +37,7 @@
     top: 45%;
     transform: translate(-50%,-50%);
     z-index: 200;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #0B0014;
 }
 
@@ -571,7 +571,7 @@
 
 .restDetail>h1{
     font-size: 30px;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #D44D5C;
     margin-bottom: 10px;
     text-align: center;
@@ -579,7 +579,7 @@
 
 .restDetail>h2{
     font-size: 16px;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #999999;
     margin-bottom: 20px;
     text-align: center;
@@ -588,7 +588,7 @@
 
 .restDetail>p{
     font-size: 14px;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #666666;
     margin-bottom: 6px;
     /* text-align: center; */

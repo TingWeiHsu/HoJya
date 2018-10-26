@@ -7,7 +7,7 @@
     top: 40%;
     transform: translate(-50%,-50%);
     z-index: 250;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #D44D5C;
     width: 700px;
     text-align: center;
@@ -21,7 +21,7 @@
     top: calc(40% + 150px);
     transform: translate(-50%,-50%);
     z-index: 250;
-    font-family: "Rounded Mplus 1c";
+    font-family: "Rounded Mplus 1c", "微軟正黑體";
     color: #D44D5C;
     width: 700px;
     text-align: center;

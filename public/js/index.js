@@ -2,7 +2,7 @@
 // ==================== ALL Changing page effect with loading ==================== 
     
     // when go to that page will show cover leave
-    function show_Loading_Cover(){
+    function showLoadingCover(){
         setTimeout(function(){ 
             $(".pageLoadingCover").animate({marginTop:"-100vh"},500,"swing");
         }, 500);
@@ -12,10 +12,9 @@
     $('a.linkToLoading').click(function(e){
         e.preventDefault();
         let moveTo = this.getAttribute("href");
-        $(".pageLoadingCover").animate({marginTop:"0%"},500,"swing");
-        setTimeout(function(){
+        $(".pageLoadingCover").animate({marginTop:"0%"},500,"swing", function(){
             window.location = moveTo;
-        }, 500);
+        });
     });
 
 
@@ -102,7 +101,7 @@
 
 // ==================== ALL click hambuger nav and show whole page Nav in mobile page ==================== 
 
-    function click_Show_Mobile_Nav(x){
+    function clickShowMobileNav(x){
         x.classList.toggle("changeLooking");
 
         // if the button was clicked, moved them to show on page, vice versa
@@ -129,7 +128,7 @@
 // ==================== ALL move all circle plus icon / elements ==================== 
 
 
-    function move_Circle_Around(e){
+    function moveCircleAround(e){
 
         // mouse move everytime will get position data
         let x = e.clientX;
@@ -171,31 +170,9 @@
 
 
 
-// ==================== ALL nav bar show underline when in that page ==================== 
-
-    if (window.location.pathname == "/index.html"){
-        $("#indexLink").addClass('hoverEffectLink');
-    } else {
-        $("#indexLink").removeClass('hoverEffectLink');
-    }
-
-    if (window.location.pathname == "/food.html"){
-        $("#foodLink").addClass('hoverEffectLink');
-    } else {
-        $("#foodLink").removeClass('hoverEffectLink');
-    }
-
-    if (window.location.pathname == "/about.html"){
-        $("#aboutLink").addClass('hoverEffectLink');
-    } else {
-        $("#aboutLink").removeClass('hoverEffectLink');
-    }
-
-
-
 // ==================== ALL click arrow will move to next page function ==================== 
 
-    function down_To_Next_Section(){
+    function downToNextSection(){
         let pageHash = window.location.hash.slice(5);
 
         // get number of page
@@ -223,9 +200,9 @@
 
 // ==================== ALL detect if scroll to last page, will make the clickable arrow disappeared ==================== 
 
-    document.getElementById("fullPage").addEventListener("transitionend",detect_Disappear_Footer_Arrow);
+    document.getElementById("fullPage").addEventListener("transitionend",detectDisappearFooterArrow);
 
-    function detect_Disappear_Footer_Arrow(){
+    function detectDisappearFooterArrow(){
         // get the right hash and right section number where user now
         let pageHash = window.location.hash.slice(5);
 
@@ -272,7 +249,3 @@
             });
         }
     }
-
-
-
-
