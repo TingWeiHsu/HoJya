@@ -46,12 +46,13 @@ function sendData(restaurantArr){
             $(".clickWhiteCircle").css("top", `calc(-2500px + ${y}px)`);
             $(".clickWhiteCircle").css("left", `calc(-2500px + ${x}px)`);
             $(".clickWhiteCircle").css("display", "block");
+        } else {
+            $(".clickCircle").fadeIn("5s");
         }
         // use seatimeout after the circle animation finished and start to show restaurant information
         setTimeout(function(){ 
             // get the id from the icon user clicked, as the key for data
             let enterKey = e.target.id;
-            
             getData(enterKey, sendData);
         }, 1000);
     });
@@ -173,7 +174,6 @@ function sendData(restaurantArr){
                 }
                 checkHover ();
             }
-            
     }
 
 
@@ -203,10 +203,8 @@ function moveRestaurantCircleAround(e){
             if (i === 0) {
                 circleArr[i].style.transform = `translate(${newX}px,${newY}px)`; 
             } 
-        }
-        
+        } 
     }
-    
 }
 
 
@@ -230,6 +228,5 @@ function detectRemoveUnnecessaryArrow() {
     } else {
         $("#rightRestButton").css({'opacity':'1'});
     }
-    
-   
 }
+
