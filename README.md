@@ -17,4 +17,4 @@ Therefore, I decided to make a site which looks like the encyclopedia of Taiwane
 ### Speciality
 Emphasis on user experience
 
-![](https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/hojyagithub.gif?alt=media&token=efac7c7a-01be-4ff5-b605-13d410413184)
+![](https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/hojya.gif?alt=media&token=e72d06a8-a08c-428b-a563-9a802ffbc97f)
