@@ -16,3 +16,5 @@ Therefore, I decided to make a site which looks like the encyclopedia of Taiwane
 
 ### Speciality
 Emphasis on user experience
+
+![](https://j.gifs.com/oQ3MEj.gif)
