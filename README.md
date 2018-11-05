@@ -2,7 +2,7 @@
 
 
 ### Purpose: 
-To introduce Taiwanese food for foreigners
+To introduce Taiwanese food for foreigners (Japanese version)
 
 ### Stacks: 
 HTML, CSS, JavaScript, jQuery, Fullpage.js, Firebase Database and Storage, Mocha, Google Analytics
