@@ -217,14 +217,19 @@ function detectRemoveUnnecessaryArrow() {
     let place = $("#restaurantCard").scrollLeft();
     let halfW = oneWidth/2;
 
+    console.log(totalWidth);
+    console.log(oneWidth);
+    console.log(place);
     if (place < Number(halfW)) {
         $("#leftRestButton").css({'opacity':'0'});
+        $("#leftRestButton").css({'cursor':'initial'});
     } else if (place > Number(halfW)) {
         $("#leftRestButton").css({'opacity':'1'});
     } 
 
     if (Number(totalWidth) - Number(oneWidth)- Number(halfW) < place){
         $("#rightRestButton").css({'opacity':'0'});
+        $("#rightRestButton").css({'cursor':'initial'});
     } else {
         $("#rightRestButton").css({'opacity':'1'});
     }
