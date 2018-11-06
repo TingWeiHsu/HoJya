@@ -14,8 +14,8 @@ food are, I found that most of photos looks not good and also lack of appropriat
 that we have so many fantastic food in Taiwan but why people in the world only know sushi and kimchi.
 Therefore, I decided to make a site which looks like the encyclopedia of Taiwanese food.
 
-### Speciality
+### Speciality:
 Emphasis on user experience
 
-### Screenshot
+### Screenshot:
 ![](https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/hojya.gif?alt=media&token=e72d06a8-a08c-428b-a563-9a802ffbc97f)
