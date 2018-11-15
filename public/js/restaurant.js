@@ -220,9 +220,18 @@ function detectRemoveUnnecessaryArrow() {
     console.log(totalWidth);
     console.log(oneWidth);
     console.log(place);
+
+    if (Number(halfW) == 0){
+        console.log("jeehheejek")
+        $("#rightRestButton").css({'opacity':'1'});
+    } else{
+        $("#rightRestButton").css({'opacity':'0'});
+    }
+    
     if (place < Number(halfW)) {
         $("#leftRestButton").css({'opacity':'0'});
         $("#leftRestButton").css({'cursor':'initial'});
+        console.log("qqqqq")
     } else if (place > Number(halfW)) {
         $("#leftRestButton").css({'opacity':'1'});
     } 
