@@ -15,11 +15,8 @@ function getData(en, callback){
     let db = firebase.database();
     db.ref(en).once('value').then(function(snapshot) {
         let restaurantArr = [];
-        console.log(snapshot.val());
         snapshot.forEach(function(data) {
-            console.log(data.val());
             restaurantArr.push(data.val());
-            console.log(restaurantArr);
         });
         callback(restaurantArr);
     });
@@ -217,12 +214,7 @@ function detectRemoveUnnecessaryArrow() {
     let place = $("#restaurantCard").scrollLeft();
     let halfW = oneWidth/2;
 
-    console.log(totalWidth);
-    console.log(oneWidth);
-    console.log(place);
-
     if (Number(halfW) == 0){
-        console.log("jeehheejek")
         $("#rightRestButton").css({'opacity':'1'});
     } else{
         $("#rightRestButton").css({'opacity':'0'});
@@ -231,7 +223,6 @@ function detectRemoveUnnecessaryArrow() {
     if (place < Number(halfW)) {
         $("#leftRestButton").css({'opacity':'0'});
         $("#leftRestButton").css({'cursor':'initial'});
-        console.log("qqqqq")
     } else if (place > Number(halfW)) {
         $("#leftRestButton").css({'opacity':'1'});
     } 
@@ -242,5 +233,10 @@ function detectRemoveUnnecessaryArrow() {
     } else {
         $("#rightRestButton").css({'opacity':'1'});
     }
+
+    if (Number(totalWidth) == Number(oneWidth) && Number(place) == 0){
+        $("#rightRestButton").css({'opacity':'1'});
+    }
+
 }
 
