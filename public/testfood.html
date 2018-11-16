@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" type="image/png" href="./imgs/smallmeatball.png"/>
+    <title>Food HoJya</title>
+    <meta name="description" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
+    <meta name="keywords" content="食べもの, 台湾, 料理,　美味しい,　うまい,　おすすめ,　紹介,　旅行,　国外,　小籠包,　日本,　日本語,　観光,　旅, グルメ, food, delicious, taiwan, taiwanese, cook, nice, great, introduction, recommendation, restaurants, travel, trip, best">
+    <meta name="author" content="Nozomi, TingWei Hsu">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Rosy">
+    <meta property="og:title" content="HoJya | 美味しい台湾料理とおすすめレストラン紹介サイト">
+    <meta property="og:url" content="https://hojya-taiwan-food.firebaseapp.com/index.html">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hojya-taiwan-food.appspot.com/o/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-21%20%E4%B8%8B%E5%8D%8810.15.40.png?alt=media&token=ed564af8-cebb-4ca0-82cb-cc7ff0adab05">
+    <meta property="og:description" content="美味しい台湾料理とおすすめ">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/lib.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/food.css" media="all" /> 
+
+
+    <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/test.css" media="all" /> 
+
+</head>
+<body onload="showLoadingCover()" onmousemove="moveCircleAround(event)">
+
+
+
+
+    <div class="pageLoadingCover">
+        <div class="smallDot dotOne"></div>
+        <div class="smallDot dotTwo"></div>
+        <div class="smallDot dotThree"></div>
+    </div>
+
+
+    <header>
+        <div class="headerContainer">
+            <div class="firstDiv">
+                <a href="index.html"></a>
+            </div>
+            <div class="secondDiv">
+                <a href="index.html" class="linkToLoading" id="indexLink">Home</a>
+                <a href="food.html" class="linkToLoading hoverEffectLink" id="foodLink">Food</a>
+                <a href="about.html" class="linkToLoading" id="aboutLink">About</a>
+            </div>
+            <div class="thirdDiv">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </header>
+
+
+	<nav>
+		<div class="topLogoMobileBox">
+			<a href="index.html" class="linkToLoading"><div></div></a>
+		</div>
+		<div class="bottomNavMobileBox">
+			<div class="threeBarsContainer" onclick="clickShowMobileNav(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		</div>
+    </nav>
+    
+
+    <div id="fullNav">
+        <div id="navMove">
+            <a href="index.html">ホーム</a>
+            <a href="food.html">台湾料理</a>
+            <div class="mobileNavFoodLink">
+                <a href="food.html#page1">牛肉の煮込み麺</a>
+                <a href="food.html#page2">しょうろんぽう</a>
+                <a href="food.html#page3">白きくらげのスープ</a>
+                <a href="food.html#page4">黒胡麻餡の白玉団子</a>
+            </div>
+            <a href="about.html">について</a>
+            <a href="about.html#page2">お問い合わせ</a>
+        </div>
+    </div>
+
+
+    <div id="circlePicDotNavigate">
+        <div class="centerLine"></div>
+        <a href="food.html#page1">
+            <div class="circlePic1"></div>
+            <div class="cir circleDotPlace1 grow"></div>
+        </a>
+        <a href="food.html#page2">
+            <div class="circlePic2"></div>
+            <div class="cir circleDotPlace2 grow"></div>
+        </a>
+        <a href="food.html#page3">
+            <div class="circlePic3"></div>
+            <div class="cir circleDotPlace3 grow"></div>
+        </a>
+        <a href="food.html#page4">
+            <div class="circlePic4"></div>
+            <div class="cir circleDotPlace4 grow"></div>
+        </a>
+    </div>
+
+
+    <div id="fullPage">
+        <div class="section">
+            <div id="bg">
+                <h2 class="productName fadeMoveWord">牛肉麵</h2>
+                <h3 class="productSubName fadeMoveWord">牛肉の煮込み麺</h3>
+                <div class="circle fadeMoveWord" onclick="clickEnlargeShowDetail(this)"></div>
+                <img class="bigBack" src="imgs/chop.png">
+                <img class="foodPhoto" src="./imgs/beefnoodles.png" alt="beefnoodles">
+                <div class="grayBackGroundCover"></div>
+            </div>
+            <div class="ingredientBox">
+                <h3>材 料</h3>
+                <p>牛すね肉、にんじん、大根、玉ねぎ、生姜、葱、セロリ、麺、八角、五香粉、豆板醤、ケチャップ、酒、醤油、砂糖、白胡椒</p>
+                <div class="restaurantBox">
+                    <p class="hoverText">おすすめ</p>
+                    <div class="restaurantEnter" id="beef_noodles"></div>   
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div id="bg">
+                <h2 class="productName fadeMoveWord">小籠包</h2>
+                <h3 class="productSubName fadeMoveWord">しょうろんぽう</h3>
+                <div class="circle fadeMoveWord" onclick="clickEnlargeShowDetail(this)"></div>
+                <img class="bigBack" src="imgs/chop.png">
+                <img class="foodPhoto" src="./imgs/syoronbou.png" alt="syoronbou">
+                <div class="grayBackGroundCover"></div>                
+            </div>
+                <div class="ingredientBox">
+                    <h3>材 料</h3>
+                    <p>豚ひき肉、玉ねぎ、しょうが、だし醤油、酒、オイスターソース、ゴマ油、塩・こしょう、強力粉、ごま油</p>
+                    <div class="restaurantBox">
+                        <p class="hoverText">おすすめ</p>
+                        <div class="restaurantEnter" id="syoronbou"></div>   
+                    </div>
+                </div>
+            </div>
+
+        <div class="section">
+            <div id="bg">
+                <h2 class="productName fadeMoveWord">銀耳四寶湯</h2>
+                <h3 class="productSubName fadeMoveWord">白きくらげのスープ</h3>
+                <div class="circle fadeMoveWord" onclick="clickEnlargeShowDetail(this)"></div>
+                <img class="bigBack" src="imgs/spoon.png">
+                <img class="foodPhoto" src="./imgs/food_soup.png" alt="sweetsoup">
+                <div class="grayBackGroundCover"></div>
+            </div>
+            <div class="ingredientBox">
+                <h3>材 料</h3>
+                <p>銀耳、蓮の実、紅棗、白果、桂圓(干しリュウガン)、氷砂糖</p>
+                <div class="restaurantBox">
+                    <p class="hoverText">おすすめ</p>
+                    <div class="restaurantEnter" id="snow_mushroom"></div>     
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div id="bg">
+                <h2 class="productName fadeMoveWord">芝麻甜湯圓</h2>
+                <h3 class="productSubName fadeMoveWord">黒胡麻餡の白玉団子</h3>
+                <div class="circle fadeMoveWord" onclick="clickEnlargeShowDetail(this)"></div>
+                <img class="bigBack" src="imgs/spoon.png">
+                <img class="foodPhoto" src="./imgs/food_riceball.png" alt="sweetsoup">
+                <div class="grayBackGroundCover"></div>
+            </div>
+            <div class="ingredientBox">
+                <h3>材 料</h3>
+                <p>すりごま黒、白玉粉、水、砂糖、ごま油</p>
+                <div class="restaurantBox">
+                    <p class="hoverText">おすすめ</p>
+                    <div class="restaurantEnter" id="sesame_mochi"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="clickCircle"></div>
+    <div class="clickWhiteCircle"></div>
+
+
+    <footer>
+        <div class="footerContainer">
+            <div class="firstDiv">
+                <a href="https://twitter.com/share?text=HoJya 台湾絶品美味しい食べ物おすすめ&url=https://hojya-taiwan-food.firebaseapp.com/index.html" target="_blank"> </a>
+                <a href="https://www.facebook.com/sharer.php?title=HoJya 台湾絶品美味しい食べ物おすすめ&u=https://hojya-taiwan-food.firebaseapp.com/index.html" target="_blank"> </a>
+                <p>© 2018 HoJya Taiwan ltd </p>
+            </div>
+            <div class="secondDiv" id="movingArrow" onclick="downToNextSection()"></div>
+            <div class="thirdDiv">				
+                <a href="about.html#page2" class="linkToLoading">Contact</a>
+            </div>    
+        </div>
+    </footer>
+
+
+    <div id="restaurantFullPage" onmousemove="moveRestaurantCircleAround(event)" >
+        <div class="restaurantCard" id="restaurantCard" onscroll="detectRemoveUnnecessaryArrow()"></div>
+        <div class="resClose"></div>
+    </div>
+
+    <div id="mocha"></div>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+var config = {
+    apiKey: "AIzaSyDyEowNWviLOxQeEUY_Lmp05I-LsjdDVJk",
+    authDomain: "hojya-taiwan-food.firebaseapp.com",
+    databaseURL: "https://hojya-taiwan-food.firebaseio.com",
+    projectId: "hojya-taiwan-food",
+    storageBucket: "hojya-taiwan-food.appspot.com",
+    messagingSenderId: "793087052568"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/index.js"></script>   
+<script src="js/food.js"></script>    
+<script src="js/restaurant.js"></script> 
+<link rel="stylesheet" type="text/css" href="css/full.css" media="all" />
+
+
+<script src="https://unpkg.com/chai/chai.js"></script>
+<script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+
+<script>mocha.setup({ui:'bdd',ignoreLeaks:true,globals:["requestAnimFrame"]})</script>
+
+<script src="./test/testrestaurant.js"></script>
+<script>
+  mocha.checkLeaks();
+  mocha.run();
+</script>
+
+
+
+
+</body>
+</html>

@@ -645,11 +645,13 @@
   .restaurantCard .btn.next{
     background-image: url('../imgs/arrR.svg');
     right: 10px;
+    opacity: 1;
   }
   
   .restaurantCard .btn.prev{
     background-image: url('../imgs/arrL.svg');
     left: 10px;
+    opacity: 1;
   }
 
   .resClose{
@@ -772,3 +774,6 @@
 #rightRestButton{
     opacity: 1;
 }
+
+
+

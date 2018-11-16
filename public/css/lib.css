@@ -216,6 +216,7 @@ a {
 	}
 
 	footer>.footerContainer>.secondDiv{
+		cursor: pointer;
 		width:auto;
 		background-image: url("../imgs/arrow.svg");
 		background-repeat: no-repeat;

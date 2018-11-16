@@ -12,9 +12,14 @@
     $('a.linkToLoading').click(function(e){
         e.preventDefault();
         let moveTo = this.getAttribute("href");
-        $(".pageLoadingCover").animate({marginTop:"0%"},500,"swing", function(){
+        // if already in about page then will just move to there but no animation
+        if ( moveTo == "about.html#page2" && window.location.pathname == "/about.html"){
             window.location = moveTo;
-        });
+        } else {
+            $(".pageLoadingCover").animate({marginTop:"0%"},500,"swing", function(){
+                window.location = moveTo;
+            });
+        }
     });
 
 
