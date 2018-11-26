@@ -23,11 +23,12 @@ function getData(en, callback){
 }
 
 function sendData(restaurantArr){
+    createRestaurantSection();
     for (let i = 0; i < restaurantArr.length; i++ ){
         let ek = restaurantArr[i];
         createRestaurantCard(ek);
     }
-    createRestaurantSection();
+    
 }
 
 
@@ -42,7 +43,9 @@ function sendData(restaurantArr){
             let y = e.clientY;
             $(".clickWhiteCircle").css("top", `calc(-2500px + ${y}px)`);
             $(".clickWhiteCircle").css("left", `calc(-2500px + ${x}px)`);
+            console.log("first");
             $(".clickWhiteCircle").css("display", "block");
+            
         } else {
             $(".clickCircle").fadeIn("5s");
         }
@@ -51,6 +54,7 @@ function sendData(restaurantArr){
             // get the id from the icon user clicked, as the key for data
             let enterKey = e.target.id;
             getData(enterKey, sendData);
+            $(".clickCircle").css("display", "block");
         }, 1000);
     });
 
@@ -74,11 +78,12 @@ function sendData(restaurantArr){
 // create arrows
 
     function createRestaurantSection(){
+        console.log("second");
         // the gray bg which will cover the full screen first
         $(".clickCircle").css("display", "block");
         // show the real restaurant part page infor
         $("#restaurantFullPage").css("display", "block");
-
+        
         let arrowSpanL = createE("span", "btn", null, "id", "leftRestButton");
         let arrowSpanR = createE("span", "btn", null, "id", "rightRestButton");
         arrowSpanL.classList.add("prev");
@@ -110,10 +115,11 @@ function sendData(restaurantArr){
     function createRestaurantCard(ek){
             // create a img source, make sure to got the img before show whole information
             let testImg = createE("img", null, null, "src", ek.bg);
-
+            console.log("3-1")
             testImg.onload = function(){
                 
                 // img finished, hide the gray full screen cover
+                console.log("3-2");
                 $(".clickCircle").fadeOut("5s");
 
                 // information part

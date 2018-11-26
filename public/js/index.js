@@ -73,7 +73,7 @@
                             $(".productName").animate({marginTop:"0%"},300);
                             $(".productSubName").animate({marginTop:"0%"},300);
                             $(".ingredientBox").animate({opacity:"0",marginTop:"35%"},300);
-                            }
+                        }
                     }
 
                 //  ============= detect which food page section is user watching and make right circle become white color inside ============= 
