@@ -19,6 +19,44 @@
     padding: 20px;
 }
 
+.foodSmoke{
+    left: 65%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    padding: 20px;
+    z-index: 200;
+    top: 40%;
+}
+
+.smokeAria{
+    left: 65%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    height: 30vh;
+    padding: 20px;
+    z-index: 200;
+    top: 40%;
+}
+
+.smokeAria>.cloud{
+    height: 200px;
+    width: 200px;
+    background-image: radial-gradient(circle, rgba(256, 256, 256, 0.9), rgba(256, 256, 256, 0.5), rgba(256, 256, 256, 0),rgba(256, 256, 256, 0)); 
+    animation-name: moveCloud;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes moveCloud {
+    0%   {top:0px; opacity: 0.3;}
+    25%  {top:-10px;opacity: 0.5;}
+    50%  {top:-50px;opacity: 0.8;}
+    75%  {top:-80px; height: 300px; width: 300px; opacity: 0.5;}
+    100% {top:-100px;opacity: 0.1;}
+}
+
 .productName{
     left: 26%;
     font-size: 36px;
@@ -81,6 +119,14 @@
         height: 45vh;
     }
 
+    .foodSmoke{
+        display: none;
+    }
+
+    .smokeAria{
+        display: none;
+    }
+
     .circle{
         left: calc(50% - 35px);
         top: calc(20% + 80px);
@@ -108,6 +154,14 @@
     .foodPhoto{
         top: 65%;
         height: 30vh;
+    }
+
+    .foodSmoke{
+        display: none;
+    }
+
+    .smokeAria{
+        display: none;
     }
 
     .circle{
